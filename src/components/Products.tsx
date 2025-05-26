@@ -1,6 +1,6 @@
 import React from 'react';
 import AnimatedSection from './AnimatedSection';
-import { Shield, Droplet, Brush, Flask, Package, WaterIcon } from 'lucide-react';
+import { Shield, Droplet, Brush, FlaskRound as Flask, Package, HeaterIcon as WaterIcon } from 'lucide-react';
 
 const products = [
   {
