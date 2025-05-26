@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Building2, Flask, Users, Leaf } from 'lucide-react';
+import { Building2, FlaskRound as Flask, Users, Leaf } from 'lucide-react';
 
 const About = () => {
   useEffect(() => {
