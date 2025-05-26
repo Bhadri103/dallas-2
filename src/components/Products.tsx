@@ -3,39 +3,39 @@ import React, { useEffect } from 'react';
 const productData = [
   {
     id: 1,
-    name: "Premium PVC Pipes",
-    description: "High-quality PVC pipes designed for durability and corrosion resistance. Perfect for plumbing and drainage systems.",
-    image: "https://images.pexels.com/photos/2760242/pexels-photo-2760242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    name: "Dallas Wall Plast",
+    description: "India's 1st Premium Dampproof Plaster with advanced waterproofing technology and lifetime guarantee.",
+    image: "https://images.pexels.com/photos/2760242/pexels-photo-2760242.jpeg"
   },
   {
     id: 2,
-    name: "Industrial Containers",
-    description: "Heavy-duty plastic containers for industrial storage solutions. Chemical resistant and available in various sizes.",
-    image: "https://images.pexels.com/photos/1329061/pexels-photo-1329061.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    name: "Dallas Groutt",
+    description: "Advanced Dampproof Grouting Solution designed for superior waterproofing and durability.",
+    image: "https://images.pexels.com/photos/1329061/pexels-photo-1329061.jpeg"
   },
   {
     id: 3,
-    name: "Precision Molded Parts",
-    description: "Custom-designed plastic components manufactured with precision for various industrial applications.",
-    image: "https://images.pexels.com/photos/6474041/pexels-photo-6474041.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    name: "Dallas Supreme White",
+    description: "Premium Dampproof Wallputty offering exceptional finish and protection against moisture.",
+    image: "https://images.pexels.com/photos/6474041/pexels-photo-6474041.jpeg"
   },
   {
     id: 4,
-    name: "Protective Packaging",
-    description: "Innovative packaging solutions that provide superior protection for sensitive products during transit.",
-    image: "https://images.pexels.com/photos/1797428/pexels-photo-1797428.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    name: "DrProof Series",
+    description: "Specialized waterproofing solutions for critical areas and high-moisture environments.",
+    image: "https://images.pexels.com/photos/1797428/pexels-photo-1797428.jpeg"
   },
   {
     id: 5,
-    name: "Medical Grade Plastics",
-    description: "Specialized plastic materials meeting the stringent requirements of the healthcare and medical industry.",
-    image: "https://images.pexels.com/photos/4021779/pexels-photo-4021779.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    name: "Gypsum Plaster",
+    description: "High-quality gypsum-based plaster for smooth, durable interior finishes.",
+    image: "https://images.pexels.com/photos/4021779/pexels-photo-4021779.jpeg"
   },
   {
     id: 6,
-    name: "Automotive Components",
-    description: "Lightweight yet durable plastic parts designed specifically for the automotive sector.",
-    image: "https://images.pexels.com/photos/3807329/pexels-photo-3807329.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    name: "Water Treater",
+    description: "Advanced water treatment solution for enhanced product performance and longevity.",
+    image: "https://images.pexels.com/photos/3807329/pexels-photo-3807329.jpeg"
   }
 ];
 
