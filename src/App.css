@@ -20,7 +20,7 @@ body {
   color: var(--text-dark);
   overflow-x: hidden;
 }
-
+ 
 .text-red {
   color: var(--primary-red);
 }

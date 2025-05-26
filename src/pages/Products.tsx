@@ -22,7 +22,7 @@ const productSlides = [
 
 const Products = () => {
   return (
-    <div className="pt-20">
+    <div >
       <Slider slides={productSlides} />
       <div className="py-16">
         <ProductsComponent />

@@ -3,7 +3,7 @@ import ContactComponent from '../components/Contact';
 
 const Contact = () => {
   return (
-    <div className="pt-20">
+    <div>
       <div className="container mx-auto px-4 py-16">
         <ContactComponent />
       </div>
