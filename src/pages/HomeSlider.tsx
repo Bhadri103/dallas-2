@@ -50,12 +50,12 @@ const Home = () => {
 
       <div className="container mx-auto px-6 py-20">
         <AnimatedSection>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-6 leading-tight tracking-tight text-gray-900">
+        <h2 className="text-4xl text-center font-bold text-gray-900 mb-6 font-inter">
             Welcome to{" "}
-            <span className="text-red-600 underline decoration-red-400 decoration-4">
+            <span className="text-red-600  decoration-4">
               Dallas Wallcare
             </span>
-          </h1>
+          </h2>
           <p className="text-lg md:text-xl text-center max-w-4xl mx-auto text-gray-700 font-medium leading-relaxed">
             Founded in 2019, we are committed to transforming India's
             construction landscape with our premium waterproof wall care

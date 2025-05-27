@@ -1,13 +1,20 @@
-import React, { useEffect } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay, EffectFade, EffectCube, EffectCreative } from 'swiper/modules';
-import { motion, useAnimation } from 'framer-motion';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-fade';
-import 'swiper/css/effect-cube';
-import 'swiper/css/effect-creative';
+import React, { useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import {
+  Navigation,
+  Pagination,
+  Autoplay,
+  EffectFade,
+  EffectCube,
+  EffectCreative,
+} from "swiper/modules";
+import { motion, useAnimation } from "framer-motion";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/effect-fade";
+import "swiper/css/effect-cube";
+import "swiper/css/effect-creative";
 
 interface Slide {
   image: string;
@@ -17,11 +24,15 @@ interface Slide {
 
 interface SliderProps {
   slides: Slide[];
-  effect?: 'slide' | 'fade' | 'cube' | 'creative';
+  effect?: "slide" | "fade" | "cube" | "creative";
   autoplay?: boolean;
 }
 
-const Slider = ({ slides, effect = 'creative', autoplay = true }: SliderProps) => {
+const Slider = ({
+  slides,
+  effect = "creative",
+  autoplay = true,
+}: SliderProps) => {
   const controls = useAnimation();
 
   useEffect(() => {
@@ -30,7 +41,14 @@ const Slider = ({ slides, effect = 'creative', autoplay = true }: SliderProps) =
 
   return (
     <Swiper
-      modules={[Navigation, Pagination, Autoplay, EffectFade, EffectCube, EffectCreative]}
+      modules={[
+        Navigation,
+        Pagination,
+        Autoplay,
+        EffectFade,
+        EffectCube,
+        EffectCreative,
+      ]}
       effect={effect}
       slidesPerView={1}
       navigation
@@ -42,7 +60,7 @@ const Slider = ({ slides, effect = 'creative', autoplay = true }: SliderProps) =
           translate: [0, 0, -400],
         },
         next: {
-          translate: ['100%', 0, 0],
+          translate: ["100%", 0, 0],
         },
       }}
       className="h-[80vh]"
@@ -62,7 +80,9 @@ const Slider = ({ slides, effect = 'creative', autoplay = true }: SliderProps) =
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="container mx-auto px-4"
               >
-                <div className="max-w-3xl">
+                <div className="max-w-3xl pl-6 md:pl-20">
+                  {" "}
+                  {/* 👈 Added left padding here */}
                   <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
                     {slide.title}
                   </h2>

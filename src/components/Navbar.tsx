@@ -39,6 +39,10 @@ const Navbar: React.FC = () => {
   const navItems: NavItem[] = [
     { label: "Home", path: "/" },
     {
+      label: "About",
+      path: "/about", 
+    },
+    {
       label: "Products",
       path: "/products",
       id: "products",
@@ -55,10 +59,22 @@ const Navbar: React.FC = () => {
               path: "/products/drproof/dallas",
               id: "drproof-dallas",
               subItems: [
-                { label: "Wall Plaster", path: "/products/drproof/dallas/wall-plaster" },
-                { label: "Wall Putty", path: "/products/drproof/dallas/wall-putty" },
-                { label: "Wall Primer", path: "/products/drproof/dallas/wall-primer" },
-                { label: "Gypsum Plaster", path: "/products/drproof/dallas/gypsum-plaster" },
+                {
+                  label: "Wall Plaster",
+                  path: "/products/drproof/dallas/wall-plaster",
+                },
+                {
+                  label: "Wall Putty",
+                  path: "/products/drproof/dallas/wall-putty",
+                },
+                {
+                  label: "Wall Primer",
+                  path: "/products/drproof/dallas/wall-primer",
+                },
+                {
+                  label: "Gypsum Plaster",
+                  path: "/products/drproof/dallas/gypsum-plaster",
+                },
               ],
             },
           ],
@@ -80,17 +96,17 @@ const Navbar: React.FC = () => {
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
   // Toggle mobile dropdown
   const toggleMobileDropdown = (itemId: string): void => {
-    setOpenDropdowns(prev => ({
+    setOpenDropdowns((prev) => ({
       ...prev,
-      [itemId]: !prev[itemId]
+      [itemId]: !prev[itemId],
     }));
   };
 
@@ -111,37 +127,44 @@ const Navbar: React.FC = () => {
 
   // Get current path (mock implementation since we don't have router)
   const getCurrentPath = (): string => {
-    return typeof window !== 'undefined' ? window.location.pathname : '/';
+    return typeof window !== "undefined" ? window.location.pathname : "/";
   };
 
   // Desktop dropdown component
-  const DesktopDropdown: React.FC<DesktopDropdownProps> = ({ item, isVisible, depth = 0 }) => {
+  const DesktopDropdown: React.FC<DesktopDropdownProps> = ({
+    item,
+    isVisible,
+    depth = 0,
+  }) => {
     if (!item.subItems || !isVisible) return null;
 
     return (
-      <div 
+      <div
         className={`absolute bg-white shadow-xl border border-gray-200 rounded-lg py-2 z-50 min-w-max ${
-          depth === 0 
-            ? 'top-full left-0 mt-2' 
-            : 'top-0 left-full ml-2'
+          depth === 0 ? "top-full left-0 mt-2" : "top-0 left-full ml-2"
         }`}
-        style={{ minWidth: '220px' }}
+        style={{ minWidth: "220px" }}
       >
         {item.subItems.map((subItem: SubItem, index: number) => (
-          <div key={subItem.path || subItem.id || `subitem-${index}`} className="relative group">
+          <div
+            key={subItem.path || subItem.id || `subitem-${index}`}
+            className="relative group"
+          >
             <a
               href={subItem.path}
               className={`flex items-center justify-between px-4 py-3 text-gray-700 hover:text-red-600  transition-all duration-200 ${
-                getCurrentPath() === subItem.path ? "text-red-600  font-medium" : ""
+                getCurrentPath() === subItem.path
+                  ? "text-red-600  font-medium"
+                  : ""
               }`}
             >
               <span>{subItem.label}</span>
               {subItem.subItems && <ChevronRight size={16} className="ml-2" />}
             </a>
-            <DesktopDropdown 
-              item={subItem} 
-              isVisible={true} 
-              depth={depth + 1} 
+            <DesktopDropdown
+              item={subItem}
+              isVisible={true}
+              depth={depth + 1}
             />
           </div>
         ))}
@@ -150,12 +173,19 @@ const Navbar: React.FC = () => {
   };
 
   // Mobile dropdown component
-  const MobileDropdown: React.FC<MobileDropdownProps> = ({ item, depth = 0 }) => {
-    const hasSubItems: boolean = Boolean(item.subItems && item.subItems.length > 0);
+  const MobileDropdown: React.FC<MobileDropdownProps> = ({
+    item,
+    depth = 0,
+  }) => {
+    const hasSubItems: boolean = Boolean(
+      item.subItems && item.subItems.length > 0
+    );
     const isOpen: boolean = Boolean(item.id && openDropdowns[item.id]);
 
     return (
-      <div className={`${depth > 0 ? 'ml-4 border-l-2 border-gray-100 pl-4' : ''}`}>
+      <div
+        className={`${depth > 0 ? "ml-4 border-l-2 border-gray-100 pl-4" : ""}`}
+      >
         <div className="flex items-center">
           <a
             href={item.path}
@@ -174,14 +204,16 @@ const Navbar: React.FC = () => {
               aria-expanded={isOpen}
               aria-label={`Toggle ${item.label} menu`}
             >
-              <ChevronDown 
-                size={18} 
-                className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} 
+              <ChevronDown
+                size={18}
+                className={`transition-transform duration-300 ${
+                  isOpen ? "rotate-180" : ""
+                }`}
               />
             </button>
           )}
         </div>
-        
+
         {hasSubItems && isOpen && item.subItems && (
           <div className="mt-2 space-y-1">
             {item.subItems.map((subItem: SubItem, index: number) => (
@@ -214,15 +246,23 @@ const Navbar: React.FC = () => {
             {/* Desktop Menu */}
             <div className="hidden lg:flex items-center space-x-1">
               {navItems.map((item: NavItem, index: number) => {
-                const hasSubItems: boolean = Boolean(item.subItems && item.subItems.length > 0);
-                const showDropdown: boolean = Boolean(item.id && hoverDropdown === item.id);
+                const hasSubItems: boolean = Boolean(
+                  item.subItems && item.subItems.length > 0
+                );
+                const showDropdown: boolean = Boolean(
+                  item.id && hoverDropdown === item.id
+                );
 
                 return (
-                  <div 
+                  <div
                     key={item.path || item.id || `navitem-${index}`}
                     className="relative"
-                    onMouseEnter={() => hasSubItems && item.id && handleDesktopMouseEnter(item.id)}
-                    onMouseLeave={() => hasSubItems && handleDesktopMouseLeave()}
+                    onMouseEnter={() =>
+                      hasSubItems && item.id && handleDesktopMouseEnter(item.id)
+                    }
+                    onMouseLeave={() =>
+                      hasSubItems && handleDesktopMouseLeave()
+                    }
                   >
                     <a
                       href={item.path}
@@ -232,9 +272,11 @@ const Navbar: React.FC = () => {
                     >
                       {item.label}
                       {hasSubItems && (
-                        <ChevronDown 
-                          size={16} 
-                          className={`transition-transform duration-300 ${showDropdown ? 'rotate-180' : ''}`} 
+                        <ChevronDown
+                          size={16}
+                          className={`transition-transform duration-300 ${
+                            showDropdown ? "rotate-180" : ""
+                          }`}
                         />
                       )}
                     </a>
@@ -245,8 +287,8 @@ const Navbar: React.FC = () => {
             </div>
 
             {/* Mobile Menu Button */}
-            <button 
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="lg:hidden p-2 rounded-lg text-gray-800 hover:text-red-600   transition-all duration-200"
               type="button"
               aria-expanded={mobileMenuOpen}
@@ -258,9 +300,13 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Mobile Menu */}
-        <div className={`lg:hidden bg-white border-t shadow-lg transition-all duration-300 ease-in-out ${
-          mobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
-        }`}>
+        <div
+          className={`lg:hidden bg-white border-t shadow-lg transition-all duration-300 ease-in-out ${
+            mobileMenuOpen
+              ? "max-h-screen opacity-100"
+              : "max-h-0 opacity-0 overflow-hidden"
+          }`}
+        >
           <div className="px-4 py-4 space-y-2 max-h-96 overflow-y-auto">
             {navItems.map((item: NavItem, index: number) => (
               <MobileDropdown

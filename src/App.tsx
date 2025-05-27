@@ -8,6 +8,7 @@ import Products from './pages/Products';
 import Services from './pages/Services';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
+import Testimonials from './pages/Testimonials';
 import './App.css';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/testimonials" element={<Testimonials />} />
           </Routes>
         </main>
         <Footer />

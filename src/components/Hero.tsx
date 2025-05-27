@@ -8,23 +8,25 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const slides = [
   {
-    title: "India's First Next-Gen",
-    highlightWords: ["Damp Proof", "Wall Care Product"],
-    text: "Recognized as India's only manufacturer of next-generation buildings that meet international standards, we're setting new benchmarks in construction excellence.",
-    image: "https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg"
+    title: "India’s First Next-Gen Damp Proof Wall Care Product",
+    text: "Recognized as India’s only manufacturer of next-generation buildings that meet international standards, we're setting new benchmarks in construction excellence.",
   },
   {
-    title: "Scientifically Engineered,",
-    highlightWords: ["Not Just", "Endorsed"],
-    text: "DALLAS, our international waterproof building product, is set apart not just by endorsements from doctors or engineers—it's a scientifically crafted solution made by scientists.",
-    image: "https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg"
+    title: "Scientifically Engineered, Not Just Endorsed",
+    text: "DALLAS, our international waterproof building product, is set apart not just by endorsements from doctors or engineers—it’s a scientifically crafted solution made by scientists.",
   },
   {
-    title: "Over 15,000 Projects",
-    highlightWords: ["Across", "South India"],
-    text: "From Thiruvananthapuram to Kannur in Kerala, and throughout Karnataka and Tamil Nadu, we've successfully completed thousands of projects with lifetime guarantees.",
-    image: "https://images.pexels.com/photos/544966/pexels-photo-544966.jpeg"
-  }
+    title: "Revolutionizing Indian Construction",
+    text: "At Dallas Wall Care Pvt. Ltd., we aim to transform India’s construction landscape with premium, science-backed solutions that enhance durability, strength, and longevity.",
+  },
+  {
+    title: "Next-Gen Protection for Modern Structures",
+    text: "Our mission is to pioneer cutting-edge solutions that guard against dampness, mold, chemical exposure, and environmental stress—backed by real research, not marketing fluff.",
+  },
+  {
+    title: "Lifetime Guarantee, Unmatched Durability",
+    text: "Builders across India trust Dallas—a next-gen wall care product that provides lifetime-guaranteed protection through a scientific, advanced formulation.",
+  },
 ];
 
 const Hero = () => {
@@ -55,7 +57,8 @@ const Hero = () => {
             <div
               className="relative min-h-screen flex items-center justify-center"
               style={{
-                backgroundImage: `url("${slide.image}")`,
+                backgroundImage:
+                  'url("https://images.unsplash.com/photo-1604709177225-055f5cce0878?auto=format&fit=crop&w=1920&q=80")',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }}
@@ -64,12 +67,7 @@ const Hero = () => {
 
               <div className="relative z-10 text-center px-6 max-w-3xl">
                 <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 animate-fade-in-up">
-                  {slide.title}{' '}
-                  {slide.highlightWords.map((word, i) => (
-                    <span key={i} className="text-primary">
-                      {word}{' '}
-                    </span>
-                  ))}
+                  {slide.title}
                 </h1>
                 <p className="text-lg md:text-xl text-gray-200 animate-fade-in-up delay-200">
                   {slide.text}

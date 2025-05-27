@@ -92,14 +92,14 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <AnimatedSection>
             <div className="max-w-4xl mx-auto text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-6 font-inter">
+              <h2 className="text-4xl font-extrabold text-gray-900 mb-6 font-inter">
                 Revolutionizing India's Construction Industry
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed font-medium font-inter">
                 At Dallas Wall care Pvt. Ltd., we are dedicated to
                 revolutionizing the construction industry in India with our
                 premium waterproof wall care product,{" "}
-                <span className="text-[#E63946]">Dallas</span>. Founded in
+                <strong className="text-[#E63946]">Dallas</strong>. Founded in
                 2019...
               </p>
             </div>
@@ -126,7 +126,7 @@ const Home = () => {
       {/* Vision & Mission */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16 text-gray-800">
+          <h2 className="text-4xl font-extrabold text-center mb-16 text-gray-800">
             Our Vision & Mission
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
@@ -169,7 +169,7 @@ const Home = () => {
                   <p className="text-gray-700 leading-relaxed">
                     Builders across India are in search of a lifetime-guaranteed
                     solution—and{" "}
-                    <span className="text-red-600">Dallas</span> delivers
+                    <strong className="text-red-600">Dallas</strong> delivers
                     with an advanced formulation that ensures exceptional
                     durability and long-term structural protection.
                   </p>
@@ -184,10 +184,12 @@ const Home = () => {
       {/* Key Features Grid */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-16">
-            Why <span className="text-red-600">Dallas Wallcare</span> Stands
-            Apart
-          </h2>
+          <AnimatedSection>
+            <h2 className="text-4xl font-bold text-center text-gray-800 mb-16">
+              Why <span className="text-red-600">Dallas Wallcare</span> Stands
+              Apart
+            </h2>
+          </AnimatedSection>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {features.map((feature, index) => (
@@ -268,23 +270,15 @@ const Home = () => {
       </section>
 
       <section className="py-20 bg-gray-100 text-gray-900 relative">
+ <h2 className="text-4xl font-bold text-center text-gray-800 mb-16 relative z-10">
+          Built for a <span className="text-red-600">Better Tomorrow</span>
+        </h2>{" "}
         <div className="container mx-auto px-4 relative z-10">
-          <AnimatedSection>
-            <h2 className="text-4xl font-bold text-center text-gray-800 mb-16">
-              Why Choose <span className="text-red-600"> Dallas </span> Ready
-              Plast?
-            </h2>
-          </AnimatedSection>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {whyChooseReasons.map((reason, index) => (
-              <AnimatedSection
-                key={index}
-                delay={index * 0.1}
-                className="h-full"
-              >
-                <div className="flex h-full items-start gap-4 bg-white border border-gray-300 rounded-xl p-5 shadow-md transition-transform hover:scale-[1.02]">
-                  <div className="p-2 text-red-700 rounded-full shadow-md">
+              <AnimatedSection key={index} delay={index * 0.1}>
+                <div className="flex items-start gap-4 bg-white border border-gray-300 rounded-xl p-5 shadow-md transition-transform hover:scale-[1.02]">
+                  <div className="p-2  text-red-700 rounded-full shadow-md">
                     <CheckCircle className="w-6 h-6" />
                   </div>
                   <span className="text-lg font-medium leading-relaxed tracking-wide">
@@ -294,36 +288,13 @@ const Home = () => {
               </AnimatedSection>
             ))}
           </div>
-
-          {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto items-stretch">
-  {whyChooseReasons.map((reason, index) => (
-    <AnimatedSection
-      key={index}
-      delay={index * 0.1}
-      className="h-full"
-    >
-      <div className="flex h-full items-start gap-4 bg-white border border-gray-300 rounded-xl p-5 shadow-md transition-transform hover:scale-[1.02]">
-        <div className="p-2 text-red-700 rounded-full shadow-md flex-shrink-0">
-          <CheckCircle className="w-6 h-6" />
         </div>
-        <span className="text-lg font-medium leading-relaxed tracking-wide flex-1">
-          {reason}
-        </span>
-      </div>
-    </AnimatedSection>
-  ))}
-</div> */}
-        </div>
-
         {/* Optional subtle gradient blur background effect */}
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-[80vw] h-[80vw] bg-yellow-400 opacity-10 rounded-full blur-3xl z-0" />
       </section>
 
       {/* Sustainability & Customer Focus */}
       <section className="py-20 bg-green-50">
-        <h2 className="text-4xl font-bold text-center text-gray-800 mb-16 relative z-10">
-          Built for a <span className="text-red-600">Better Tomorrow</span>
-        </h2>{" "}
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             <AnimatedSection>
@@ -377,7 +348,7 @@ const Home = () => {
       </section>
 
       {/* Call to Action */}
-      {/* <section className="py-20 bg-gray-900 text-white">
+      <section className="py-20 bg-gray-900 text-white">
         <div className="container mx-auto px-4 text-center">
           <AnimatedSection>
             <h2 className="text-4xl font-bold mb-6">Join Us on Our Journey</h2>
@@ -405,7 +376,7 @@ const Home = () => {
             </div>
           </AnimatedSection>
         </div>
-      </section> */}
+      </section>
 
       {/* Add CSS for animations */}
       <style jsx>{`
