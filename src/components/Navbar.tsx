@@ -44,42 +44,7 @@ const Navbar: React.FC = () => {
     },
     {
       label: "Products",
-      path: "/products",
-      id: "products",
-      subItems: [
-        { label: "Dallas", path: "/products/dallas" },
-        { label: "Mackado", path: "/products/mackado" },
-        {
-          label: "Dr.Proof",
-          path: "/products/drproof",
-          id: "drproof",
-          subItems: [
-            {
-              label: "Dallas",
-              path: "/products/drproof/dallas",
-              id: "drproof-dallas",
-              subItems: [
-                {
-                  label: "Wall Plaster",
-                  path: "/products/drproof/dallas/wall-plaster",
-                },
-                {
-                  label: "Wall Putty",
-                  path: "/products/drproof/dallas/wall-putty",
-                },
-                {
-                  label: "Wall Primer",
-                  path: "/products/drproof/dallas/wall-primer",
-                },
-                {
-                  label: "Gypsum Plaster",
-                  path: "/products/drproof/dallas/gypsum-plaster",
-                },
-              ],
-            },
-          ],
-        },
-      ],
+      path: "/products", 
     },
     { label: "Service", path: "/services" },
     { label: "Gallery", path: "/gallery" },

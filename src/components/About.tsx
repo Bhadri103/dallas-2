@@ -57,20 +57,13 @@ const About = () => {
   return (
     <div className="bg-gray-50">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-red-600 to-yellow-500 text-white py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">About Dallas Wallcare</h1>
-          <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto">
-            Building tomorrow's construction solutions with innovation, integrity, and excellence
-          </p>
-        </div>
-      </div>
+     
 
       {/* Our Story Section */}
       <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Story</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">About Dallas Wallcare</h2>
             <p className="text-xl text-gray-600">The Legacy Behind Dallas Wallcare: A Story of Grit and Growth</p>
           </div>
 
