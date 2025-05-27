@@ -36,20 +36,17 @@ const Navbar: React.FC = () => {
   const [hoverDropdown, setHoverDropdown] = useState<string | null>(null);
   const navRef = useRef<HTMLElement>(null);
 
+  // Base path for GitHub Pages
+  const basePath = "/dallas-2";
+
   const navItems: NavItem[] = [
-    { label: "Home", path: "/" },
-    {
-      label: "About",
-      path: "/about", 
-    },
-    {
-      label: "Products",
-      path: "/products", 
-    },
-    { label: "Service", path: "/services" },
-    { label: "Gallery", path: "/gallery" },
-    { label: "Testimonials", path: "/testimonials" },
-    { label: "Contacts", path: "/contact" },
+    { label: "Home", path: `${basePath}/` },
+    { label: "About", path: `${basePath}/about` },
+    { label: "Products", path: `${basePath}/products` },
+    { label: "Service", path: `${basePath}/services` },
+    { label: "Gallery", path: `${basePath}/gallery` },
+    { label: "Testimonials", path: `${basePath}/testimonials` },
+    { label: "Contacts", path: `${basePath}/contact` },
   ];
 
   // Close dropdowns when clicking outside
@@ -200,7 +197,7 @@ const Navbar: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
-            <a href="/" className="flex items-center space-x-3">
+            <a href={`${basePath}/`} className="flex items-center space-x-3">
               <Factory size={36} className="text-red-600" />
               <span className="text-2xl font-bold">
                 <span className="text-red-600">DALLAS</span>
@@ -281,9 +278,7 @@ const Navbar: React.FC = () => {
             ))}
           </div>
         </div>
-      </nav>
-
-      {/* Spacer to prevent content from hiding behind fixed navbar */}
+      </nav> 
       <div className="h-20"></div>
     </>
   );
