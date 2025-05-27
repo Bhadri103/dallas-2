@@ -13,7 +13,7 @@ import './App.css';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/dallas-2">
       <div className="font-sans min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-grow">

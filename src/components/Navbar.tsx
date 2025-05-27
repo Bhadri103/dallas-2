@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Factory, Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 
 interface SubItem {
@@ -35,18 +36,16 @@ const Navbar: React.FC = () => {
   const [openDropdowns, setOpenDropdowns] = useState<DropdownState>({});
   const [hoverDropdown, setHoverDropdown] = useState<string | null>(null);
   const navRef = useRef<HTMLElement>(null);
-
-  // Base path for GitHub Pages
-  const basePath = "/dallas-2";
+  const location = useLocation();
 
   const navItems: NavItem[] = [
-    { label: "Home", path: `${basePath}/` },
-    { label: "About", path: `${basePath}/about` },
-    { label: "Products", path: `${basePath}/products` },
-    { label: "Service", path: `${basePath}/services` },
-    { label: "Gallery", path: `${basePath}/gallery` },
-    { label: "Testimonials", path: `${basePath}/testimonials` },
-    { label: "Contacts", path: `${basePath}/contact` },
+    { label: "Home", path: "/" },
+    { label: "About", path: "/about" },
+    { label: "Products", path: "/products" },
+    { label: "Service", path: "/services" },
+    { label: "Gallery", path: "/gallery" },
+    { label: "Testimonials", path: "/testimonials" },
+    { label: "Contacts", path: "/contact" },
   ];
 
   // Close dropdowns when clicking outside
@@ -87,11 +86,6 @@ const Navbar: React.FC = () => {
     setOpenDropdowns({});
   };
 
-  // Get current path (mock implementation since we don't have router)
-  const getCurrentPath = (): string => {
-    return typeof window !== "undefined" ? window.location.pathname : "/";
-  };
-
   // Desktop dropdown component
   const DesktopDropdown: React.FC<DesktopDropdownProps> = ({
     item,
@@ -112,17 +106,17 @@ const Navbar: React.FC = () => {
             key={subItem.path || subItem.id || `subitem-${index}`}
             className="relative group"
           >
-            <a
-              href={subItem.path}
-              className={`flex items-center justify-between px-4 py-3 text-gray-700 hover:text-red-600  transition-all duration-200 ${
-                getCurrentPath() === subItem.path
-                  ? "text-red-600  font-medium"
+            <Link
+              to={subItem.path}
+              className={`flex items-center justify-between px-4 py-3 text-gray-700 hover:text-red-600 transition-all duration-200 ${
+                location.pathname === subItem.path
+                  ? "text-red-600 font-medium"
                   : ""
               }`}
             >
               <span>{subItem.label}</span>
               {subItem.subItems && <ChevronRight size={16} className="ml-2" />}
-            </a>
+            </Link>
             <DesktopDropdown
               item={subItem}
               isVisible={true}
@@ -149,19 +143,19 @@ const Navbar: React.FC = () => {
         className={`${depth > 0 ? "ml-4 border-l-2 border-gray-100 pl-4" : ""}`}
       >
         <div className="flex items-center">
-          <a
-            href={item.path}
+          <Link
+            to={item.path}
             onClick={closeMobileMenu}
-            className={`flex-1 block px-4 py-3 text-gray-800 hover:text-red-600   rounded-lg transition-all duration-200 ${
-              getCurrentPath() === item.path ? "text-red-600   font-medium" : ""
+            className={`flex-1 block px-4 py-3 text-gray-800 hover:text-red-600 rounded-lg transition-all duration-200 ${
+              location.pathname === item.path ? "text-red-600 font-medium" : ""
             }`}
           >
             {item.label}
-          </a>
+          </Link>
           {hasSubItems && item.id && (
             <button
               onClick={() => toggleMobileDropdown(item.id!)}
-              className="p-3 text-gray-600 hover:text-red-600   rounded-lg transition-all duration-200"
+              className="p-3 text-gray-600 hover:text-red-600 rounded-lg transition-all duration-200"
               type="button"
               aria-expanded={isOpen}
               aria-label={`Toggle ${item.label} menu`}
@@ -197,13 +191,13 @@ const Navbar: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
-            <a href={`${basePath}/`} className="flex items-center space-x-3">
+            <Link to="/" className="flex items-center space-x-3">
               <Factory size={36} className="text-red-600" />
               <span className="text-2xl font-bold">
                 <span className="text-red-600">DALLAS</span>
                 <span className="text-yellow-500">WALLCARE</span>
               </span>
-            </a>
+            </Link>
 
             {/* Desktop Menu */}
             <div className="hidden lg:flex items-center space-x-1">
@@ -226,10 +220,10 @@ const Navbar: React.FC = () => {
                       hasSubItems && handleDesktopMouseLeave()
                     }
                   >
-                    <a
-                      href={item.path}
-                      className={`flex items-center gap-2 px-4 py-3 text-gray-800 hover:text-red-600   rounded-lg font-medium transition-all duration-200 ${
-                        getCurrentPath() === item.path ? "text-red-600  " : ""
+                    <Link
+                      to={item.path}
+                      className={`flex items-center gap-2 px-4 py-3 text-gray-800 hover:text-red-600 rounded-lg font-medium transition-all duration-200 ${
+                        location.pathname === item.path ? "text-red-600" : ""
                       }`}
                     >
                       {item.label}
@@ -241,7 +235,7 @@ const Navbar: React.FC = () => {
                           }`}
                         />
                       )}
-                    </a>
+                    </Link>
                     <DesktopDropdown item={item} isVisible={showDropdown} />
                   </div>
                 );
@@ -251,7 +245,7 @@ const Navbar: React.FC = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-lg text-gray-800 hover:text-red-600   transition-all duration-200"
+              className="lg:hidden p-2 rounded-lg text-gray-800 hover:text-red-600 transition-all duration-200"
               type="button"
               aria-expanded={mobileMenuOpen}
               aria-label="Toggle mobile menu"
@@ -278,7 +272,9 @@ const Navbar: React.FC = () => {
             ))}
           </div>
         </div>
-      </nav> 
+      </nav>
+
+      {/* Spacer to prevent content from hiding behind fixed navbar */}
       <div className="h-20"></div>
     </>
   );
