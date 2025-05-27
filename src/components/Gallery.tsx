@@ -319,21 +319,21 @@ const Gallery = () => {
           border-radius: 2px;
         }
       `}</style>
-
-      <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold section-title text-gray-800">
-          Gallery
+      <div className="text-center mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        Our  <span className="text-[#E63946]"> Gallery</span>
         </h2>
-        
-        <p className="text-gray-600 max-w-4xl mx-auto mb-8 text-lg leading-relaxed">
+        <p className="text-xl text-gray-600">
           Backed by McGlasgo Research, Dallas completed over{" "}
           <strong className="text-red-600">15,000 projects</strong> across South
           India—including from Thiruvananthapuram to Kannur in Kerala, and
-          throughout Karnataka and Tamil Nadu.
+          throughout Karnataka and Tamil Nadu.{" "}
         </p>
+      </div>
 
+      <div className="text-center mb-16">
         <div className="p-8 mb-8 max-w-5xl mx-auto">
-           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="bg-white rounded-lg p-6 shadow-md">
               <div className="text-3xl font-bold text-red-600 mb-2">
                 15,000+

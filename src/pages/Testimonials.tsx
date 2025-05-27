@@ -319,16 +319,19 @@ const Testimonials: React.FC = () => {
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6 font-inter">
-            Client Success Stories
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Client<span className="text-[#E63946]"> Success Stories</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
+          <p className="text-xl text-gray-600">
             Discover why over 15,000 clients trust Dallas Wallcare for their
             waterproofing needs. From heritage buildings to modern complexes,
-            our solutions deliver lasting results.
+            our solutions deliver lasting results.{" "}
           </p>
+        </div>
+
+        <div className="text-center mb-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             {projectStats.map((stat, index) => (
               <div
@@ -375,7 +378,7 @@ const Testimonials: React.FC = () => {
                   <div className="flex items-center justify-center gap-1 mb-4">
                     {renderStars(testimonials[currentTestimonial].rating)}
                   </div>
-                  <div className="flex flex-wrap justify-center gap-2">
+                  {/* <div className="flex flex-wrap justify-center gap-2">
                     {testimonials[currentTestimonial].tags.map((tag, index) => (
                       <span
                         key={index}
@@ -384,7 +387,7 @@ const Testimonials: React.FC = () => {
                         {tag}
                       </span>
                     ))}
-                  </div>
+                  </div> */}
                 </div>
                 <div className="lg:w-2/3">
                   <blockquote className="text-lg text-gray-700 mb-6 leading-relaxed">
@@ -591,7 +594,7 @@ const Testimonials: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="text-center bg-gradient-to-r from-red-600 to-red-700 text-white p-12 rounded-2xl">
+        {/* <section className="text-center bg-gradient-to-r from-red-600 to-red-700 text-white p-12 rounded-2xl">
           <h2 className="text-3xl font-bold mb-4">
             Ready to Join Our Success Stories?
           </h2>
@@ -606,7 +609,7 @@ const Testimonials: React.FC = () => {
               Call Now: +91-XXXXXXXXX
             </button>
           </div>
-        </section>
+        </section> */}
       </div>
     </div>
   );

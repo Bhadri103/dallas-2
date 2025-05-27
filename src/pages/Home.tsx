@@ -88,42 +88,6 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       <HomeSlider />
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <AnimatedSection>
-            <div className="max-w-4xl mx-auto text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-6 font-inter">
-                Revolutionizing India's Construction Industry
-              </h2>
-              <p className="text-lg text-gray-700 leading-relaxed font-medium font-inter">
-                At Dallas Wall care Pvt. Ltd., we are dedicated to
-                revolutionizing the construction industry in India with our
-                premium waterproof wall care product,{" "}
-                <span className="text-[#E63946]">Dallas</span>. Founded in
-                2019...
-              </p>
-            </div>
-          </AnimatedSection>
-
-          <AnimatedSection delay={0.3}>
-            <div className="bg-white rounded-3xl shadow-lg p-10 mb-12 transition-transform hover:scale-[1.03] duration-300">
-              <div className="text-center">
-                <FlaskConical className="w-16 h-16 text-[#E63946] mx-auto mb-5" />
-                <h3 className="text-2xl font-bold text-gray-900 font-inter mb-3">
-                  Scientifically Made by Scientists
-                </h3>
-                <p className="text-gray-700 font-medium">
-                  DALLAS, an international waterproof building product, is set
-                  apart not just by endorsements from doctors or engineers—it's
-                  a scientifically made scientist product.
-                </p>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* Vision & Mission */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-16 text-gray-800">
@@ -168,10 +132,9 @@ const Home = () => {
                   </p>
                   <p className="text-gray-700 leading-relaxed">
                     Builders across India are in search of a lifetime-guaranteed
-                    solution—and{" "}
-                    <span className="text-red-600">Dallas</span> delivers
-                    with an advanced formulation that ensures exceptional
-                    durability and long-term structural protection.
+                    solution—and <span className="text-red-600">Dallas</span>{" "}
+                    delivers with an advanced formulation that ensures
+                    exceptional durability and long-term structural protection.
                   </p>
                   <div className="flex-grow" />
                 </div>

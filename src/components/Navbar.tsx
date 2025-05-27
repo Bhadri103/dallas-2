@@ -48,6 +48,20 @@ const Navbar: React.FC = () => {
     { label: "Contacts", path: "/contact" },
   ];
 
+  // Scroll to top function
+  const scrollToTop = (): void => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+
+  // Handle menu click with scroll to top
+  const handleMenuClick = (): void => {
+    scrollToTop();
+    closeMobileMenu();
+  };
+
   // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -108,6 +122,7 @@ const Navbar: React.FC = () => {
           >
             <Link
               to={subItem.path}
+              onClick={scrollToTop}
               className={`flex items-center justify-between px-4 py-3 text-gray-700 hover:text-red-600 transition-all duration-200 ${
                 location.pathname === subItem.path
                   ? "text-red-600 font-medium"
@@ -145,7 +160,7 @@ const Navbar: React.FC = () => {
         <div className="flex items-center">
           <Link
             to={item.path}
-            onClick={closeMobileMenu}
+            onClick={handleMenuClick}
             className={`flex-1 block px-4 py-3 text-gray-800 hover:text-red-600 rounded-lg transition-all duration-200 ${
               location.pathname === item.path ? "text-red-600 font-medium" : ""
             }`}
@@ -191,9 +206,9 @@ const Navbar: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
-            <Link to="/" className="flex items-center space-x-3">
+            <Link to="/" onClick={scrollToTop} className="flex items-center space-x-3">
               <Factory size={36} className="text-red-600" />
-              <span className="text-2xl font-bold">
+              <span className="text-lg font-bold">
                 <span className="text-red-600">DALLAS</span>
                 <span className="text-yellow-500">WALLCARE</span>
               </span>
@@ -222,6 +237,7 @@ const Navbar: React.FC = () => {
                   >
                     <Link
                       to={item.path}
+                      onClick={scrollToTop}
                       className={`flex items-center gap-2 px-4 py-3 text-gray-800 hover:text-red-600 rounded-lg font-medium transition-all duration-200 ${
                         location.pathname === item.path ? "text-red-600" : ""
                       }`}

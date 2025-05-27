@@ -48,20 +48,24 @@ const Home = () => {
     <div className="bg-gradient-to-b from-white via-gray-50 to-gray-100 min-h-screen">
       <Slider slides={homeSlides} effect="fade" />
 
-      <div className="container mx-auto px-6 py-20">
-        <AnimatedSection>
-        <h2 className="text-4xl text-center font-bold text-gray-900 mb-6 font-inter">
-            Welcome to{" "}
-            <span className="text-red-600  decoration-4">
-              Dallas Wallcare
-            </span>
-          </h2>
-          <p className="text-lg md:text-xl text-center max-w-4xl mx-auto text-gray-700 font-medium leading-relaxed">
-            Founded in 2019, we are committed to transforming India's
-            construction landscape with our premium waterproof wall care
-            solutions.
-          </p>
-        </AnimatedSection>
+      <div className="container mx-auto px-6 py-20 ">
+       <AnimatedSection>
+  <h2 className="text-4xl text-center font-bold text-gray-900 mb-6 font-inter">
+    Welcome to{" "}
+    <span className="text-red-600  decoration-4">Dallas Wallcare</span>
+  </h2>
+  <div className="w-4/5 mx-auto">
+    <p className="text-lg text-gray-700 leading-relaxed font-medium font-inter text-center ">
+      At Dallas Wall care Pvt. Ltd., we are dedicated to revolutionizing
+      the construction industry in India with our premium waterproof wall
+      care product, Dallas.
+      Founded in 2019. 
+      DALLAS, an international waterproof building product, is set apart
+      not just by endorsements from doctors or engineers—it's a
+      scientifically made scientist product.
+    </p>
+  </div>
+</AnimatedSection>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-20">
           {features.map((feature, index) => (

@@ -7,12 +7,12 @@ import {
   Shield,
   Wrench,
   Building,
-  Heart,  
-  UserPlus,  
-  CheckCircle,  
-  Star,  
-  Target, 
-  Zap, 
+  Heart,
+  UserPlus,
+  CheckCircle,
+  Star,
+  Target,
+  Zap,
 } from "lucide-react";
 const serviceSlides = [
   {
@@ -129,22 +129,19 @@ const Slider = ({ slides }) => {
 const Services = () => {
   return (
     <div className="min-h-screen bg-gray-50">
-      <Slider slides={serviceSlides} />
+      {/* <Slider slides={serviceSlides} /> */}
 
       {/* Main Header */}
       <div className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold section-title mx-auto">
-            Our Services
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Our <span className="text-[#E63946]">Services</span>
           </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto">
-            Explore a visual journey through our advanced manufacturing
-            facilities, innovative processes, and high-quality products —
-            showcasing our commitment to excellence at every stage.
+          <p className="text-xl text-gray-600">
+            Discover our cutting-edge facilities, innovative processes, and
+            top-quality products.
           </p>
         </div>
-
-        {/* Factory Services Section */}
         <div className="mb-16">
           <div className="bg-white rounded-2xl shadow-xl p-8 border-l-4 border-red-600">
             <div className="flex items-center mb-6">
