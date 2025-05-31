@@ -201,84 +201,89 @@ const Contact = () => {
         </div>
 
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 items-stretch">
-          {/* Contact Info - appears second on small screens, first on large */}
           <div className="animate-on-scroll bg-white rounded-xl shadow-xl p-8 h-full order-2 lg:order-1">
-               <h3 className="text-2xl font-bold mb-6 text-gray-700">
-                Contact Information
-              </h3>
-              <div className="space-y-5">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 bg-red-100 p-3 rounded-full mr-4">
-                    <MapPin size={22} className="text-red-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800 mb-1">
-                      Head Office & Manufacturing
-                    </h4>
-                    <p className="text-gray-600">
-                      Dallas Wallcare Pvt. Ltd.
-                      <br />
-                      Near Coimbatore, Tamil Nadu, India
-                    </p>
-                  </div>
+            <h3 className="text-2xl font-bold mb-6 text-gray-700">
+              Contact Information
+            </h3>
+            <div className="space-y-5">
+              <div className="flex items-start">
+                <div className="flex-shrink-0 bg-red-100 p-3 rounded-full mr-4">
+                  <MapPin size={22} className="text-red-600" />
                 </div>
-
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 bg-red-100 p-3 rounded-full mr-4">
-                    <Phone size={22} className="text-red-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800 mb-1">Phone</h4>
-                    <p className="text-gray-600 hover:text-red-600">
-                      [Contact Number]
-                    </p>
-                  </div>
+                <div>
+                  <h4 className="font-semibold text-gray-800 mb-1">
+                    Head Office & Manufacturing
+                  </h4>
+                  <p className="text-gray-600">
+                    Dallas Wallcare Pvt. Ltd.
+                    <br />
+                    No 1/394, S.F.NO. 436/B1, VADUGAPALAYAM
+                    <br />
+                    Vadampacheri, Coimbatore - 641669
+                    <br />
+                    Tamil Nadu, India
+                    <br />
+                    GSTIN: 33AAICD2314F1Z7
+                  </p>
                 </div>
+              </div>
 
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 bg-red-100 p-3 rounded-full mr-4">
-                    <Mail size={22} className="text-red-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800 mb-1">Email</h4>
-                    <p className="text-gray-600 hover:text-red-600">
-                      [Email Address]
-                    </p>
-                  </div>
+              <div className="flex items-start">
+                <div className="flex-shrink-0 bg-red-100 p-3 rounded-full mr-4">
+                  <Phone size={22} className="text-red-600" />
                 </div>
-
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 bg-red-100 p-3 rounded-full mr-4">
-                    <Globe size={22} className="text-red-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800 mb-1">
-                      Website
-                    </h4>
-                    <p className="text-gray-600 hover:text-red-600">
-                      [Website URL]
-                    </p>
-                  </div>
+                <div>
+                  <h4 className="font-semibold text-gray-800 mb-1">Phone</h4>
+                  <p className="text-gray-600 hover:text-red-600">
+                    Mobile: +91 9342216880
+                    <br />
+                    Toll Free: 1800 572 4998
+                  </p>
                 </div>
+              </div>
 
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 bg-red-100 p-3 rounded-full mr-4">
-                    <Clock size={22} className="text-red-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800 mb-1">
-                      Working Hours
-                    </h4>
-                    <p className="text-gray-600">
-                      Monday - Friday: 9:00 AM - 6:00 PM
-                      <br />
-                      Saturday: 10:00 AM - 2:00 PM
-                      <br />
-                      Sunday: Closed
-                     
-                    </p>
-                  </div>
-               
+              <div className="flex items-start">
+                <div className="flex-shrink-0 bg-red-100 p-3 rounded-full mr-4">
+                  <Mail size={22} className="text-red-600" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-800 mb-1">Email</h4>
+                  <p className="text-gray-600 hover:text-red-600">
+                    info@dallaswallcare.com
+                    <br />
+                    magesh@mcglasgo.com
+                  </p>
+                </div>
+              </div>
+{/* 
+              <div className="flex items-start">
+                <div className="flex-shrink-0 bg-red-100 p-3 rounded-full mr-4">
+                  <Globe size={22} className="text-red-600" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-800 mb-1">Website</h4>
+                  <p className="text-gray-600 hover:text-red-600">
+                    www.dallaswallcare.com
+                  </p>
+                </div>
+              </div> */}
+
+              <div className="flex items-start">
+                <div className="flex-shrink-0 bg-red-100 p-3 rounded-full mr-4">
+                  <Clock size={22} className="text-red-600" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-800 mb-1">
+                    Working Hours
+                  </h4>
+                  <p className="text-gray-600">
+                    Monday - Friday: 9:00 AM - 6:00 PM
+                    <br />
+                    Saturday: 10:00 AM - 2:00 PM
+                    <br />
+                    Sunday: Closed
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -287,10 +292,9 @@ const Contact = () => {
               Send Us a Message
             </h3>
             <p className="text-sm text-gray-500 mb-6">
-              For specific needs such as product sales, technical support,
-              dealership opportunities, or project consultations, please select
-              the appropriate subject below or use the contact details provided.
+              Reach out for sales, support, or project inquiries.
             </p>
+
             {submitStatus === "success" && (
               <div
                 className="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6 rounded-md"
@@ -503,7 +507,7 @@ const Contact = () => {
                 <p className="text-gray-600 text-sm">{item.description}</p>
               </div>
             ))}
-          </div> 
+          </div>
         </section>
       </div>
     </div>

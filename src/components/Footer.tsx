@@ -1,15 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Facebook, Twitter, Instagram, Linkedin, Factory } from "lucide-react";
+import {
+  Facebook,
+  Twitter,
+  Globe,
+  Instagram,
+  Linkedin,
+  Mail,
+  MailOpen,
+  Phone,
+  Factory,
+  MapPin,
+  PhoneCall,
+} from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  // Scroll to top function
   const scrollToTop = (): void => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   };
 
@@ -37,8 +48,8 @@ const Footer = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <Link 
-              to="/" 
+            <Link
+              to="/"
               onClick={scrollToTop}
               className="flex items-center space-x-2 mb-6 hover:opacity-80 transition-opacity duration-300"
             >
@@ -49,33 +60,48 @@ const Footer = () => {
               </span>
             </Link>
             <p className="text-gray-400 mb-6">
-              Innovative wall solutions crafted with sustainability, durability, and customer satisfaction at the core.
+              Innovative wall solutions crafted with sustainability, durability,
+              and customer satisfaction at the core.
             </p>
-    
+
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://www.facebook.com/share/16iZyF63Q2/"
                 className="bg-gray-800 p-2 rounded-full hover:bg-red-600 transition-colors duration-300"
+                title="Visit our Facebook page"
               >
                 <Facebook size={20} />
               </a>
+
               <a
-                href="#"
+                href="https://www.instagram.com/dallaswallcare?igsh=MW9odWMydXgzcXJxeg=="
                 className="bg-gray-800 p-2 rounded-full hover:bg-red-600 transition-colors duration-300"
-              >
-                <Twitter size={20} />
-              </a>
-              <a
-                href="#"
-                className="bg-gray-800 p-2 rounded-full hover:bg-red-600 transition-colors duration-300"
+                title="Follow us on Instagram"
               >
                 <Instagram size={20} />
               </a>
+
               <a
-                href="#"
+                href="https://www.dallaswallcare.com/"
                 className="bg-gray-800 p-2 rounded-full hover:bg-red-600 transition-colors duration-300"
+                title="Visit our website"
               >
-                <Linkedin size={20} />
+                <Globe size={20} />
+              </a>
+
+              <a
+                href="mailto:info@dallaswallcare.com"
+                className="bg-gray-800 p-2 rounded-full hover:bg-red-600 transition-colors duration-300"
+                title="Send email to info"
+              >
+                <Mail size={20} />
+              </a>  
+              <a
+                href="tel:+919342216880"
+                className="bg-gray-800 p-2 rounded-full hover:bg-red-600 transition-colors duration-300"
+                title="Call us"
+              >
+                <Phone size={20} />
               </a>
             </div>
           </div>
@@ -120,24 +146,77 @@ const Footer = () => {
 
           <div>
             <h3 className="text-lg font-bold mb-6 border-b border-gray-700 pb-2">
-              Newsletter
+              Contact Information
             </h3>
-            <p className="text-gray-400 mb-4">
-              Subscribe to our newsletter for the latest updates, industry
-              insights, and product information.
-            </p>
-            <div className="space-y-3">
-              <input
-                type="email"
-                placeholder="Your Email Address"
-                className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-1 focus:ring-red-600"
-              />
-              <button
-                type="button"
-                className="w-full bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-md transition-colors duration-300"
-              >
-                Subscribe
-              </button>
+
+            <div className="space-y-4 text-sm">
+              <div>
+                <p className="text-gray-300 font-semibold flex items-start">
+                  <MapPin size={16} className="mr-2 mt-0.5 text-red-600" />
+                  Addresses:
+                </p>
+                <div className="ml-6 space-y-2">
+                  <p className="text-gray-400 leading-relaxed">
+                    No 1/394, S.F.NO. 436/B1, VADUGAPALAYAM, Vadampacheri,
+                    Coimbatore - 641669
+                  </p>
+                  <p className="text-gray-400 leading-relaxed">
+                    SF NO 268 VADAVALLI, ANNUR (Tk), COIMBATORE-641697
+                  </p>
+                </div>
+              </div>
+
+              {/* Contact Details */}
+              <div>
+                <p className="text-gray-300 font-semibold flex items-center">
+                  <PhoneCall size={16} className="mr-2 text-red-600" />
+                  Contact:
+                </p>
+                <div className="ml-6 space-y-1">
+                  <p className="text-gray-400">
+                    <a
+                      href="tel:+919342216880"
+                      className="hover:text-yellow-400 transition-colors"
+                    >
+                      Mob: +919342216880
+                    </a>
+                  </p>
+                  <p className="text-gray-400">
+                    <a
+                      href="tel:18005724998"
+                      className="hover:text-yellow-400 transition-colors"
+                    >
+                      Tollfree: 1800 572 4998
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+              {/* Email */}
+              <div>
+                <p className="text-gray-300 font-semibold flex items-center">
+                  <Mail size={16} className="mr-2 text-red-600" />
+                  Email:
+                </p>
+                <div className="ml-6 space-y-1">
+                  <p className="text-gray-400">
+                    <a
+                      href="mailto:info@dallaswallcare.com"
+                      className="hover:text-yellow-400 transition-colors"
+                    >
+                      info@dallaswallcare.com
+                    </a>
+                  </p>
+                  <p className="text-gray-400">
+                    <a
+                      href="mailto:magesh@mcglasgo.com"
+                      className="hover:text-yellow-400 transition-colors"
+                    >
+                      magesh@mcglasgo.com
+                    </a>
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -160,14 +239,7 @@ const Footer = () => {
               className="text-gray-400 hover:text-white hover:text-red-600 transition-colors duration-300"
             >
               Terms of Service
-            </Link>
-            <Link
-              to="/"
-              onClick={scrollToTop}
-              className="text-gray-400 hover:text-white hover:text-red-600 transition-colors duration-300"
-            >
-              Sitemap
-            </Link>
+            </Link> 
           </div>
         </div>
       </div>
