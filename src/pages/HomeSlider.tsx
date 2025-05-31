@@ -55,7 +55,7 @@ const Home = () => {
     <span className="text-red-600  decoration-4">Dallas Wallcare</span>
   </h2>
   <div className="w-4/5 mx-auto">
-    <p className="text-lg text-gray-700 leading-relaxed font-medium font-inter text-center ">
+    <p className="text-  text-gray-700 leading-relaxed font-  font-inter text-center ">
       At Dallas Wall care Pvt. Ltd., we are dedicated to revolutionizing
       the construction industry in India with our premium waterproof wall
       care product, Dallas.
