@@ -15,7 +15,9 @@ import {
   Phone,
   Mail,
 } from "lucide-react";
+import CompletedProjects from "../components/CompletedProjects";
 import HomeSlider from "./HomeSlider";
+import CustomerReviews from "../components/CustomerReviews";
 import Slider from "../components/Slider";
 interface AnimatedSectionProps {
   children: ReactNode;
@@ -179,25 +181,26 @@ const Home = () => {
               </h2>
             </AnimatedSection>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch relative z-10">
               {/* Left Text Content */}
               <AnimatedSection>
-                <div className="space-y-6 bg-white rounded-xl shadow-lg p-8">
+                <div className="h-full space-y-6 bg-white rounded-xl shadow-lg p-8 flex flex-col">
                   <p className="text-lg text-gray-700 leading-relaxed">
                     Our manufacturing facility sets the gold standard for
-                    quality and innovation. From high-purity imported minerals
-                    to proprietary binders, every component is selected for
+                    quality and innovation. From “high-purity imported minerals”
+                    to “proprietary binders,” every component is selected for
                     excellence.
                   </p>
                   <p className="text-lg text-gray-700 leading-relaxed">
-                    With McGlasgo’s scientific backing, our labs ensure rigorous
-                    multi-phase testing, certifying unmatched reliability and
-                    high performance in every wall care product.
+                    With McGlasgo's scientific backing, our labs ensure
+                    “rigorous multi-phase testing,” certifying “unmatched
+                    reliability” and “high performance” in every wall care
+                    product.
                   </p>
-                  <div className="mt-6 border-t pt-6">
-                    <p className="font-semibold text-gray-800">
-                      Built on science. Driven by innovation. Trusted across
-                      India.
+                  <div className="mt-6 border-t pt-6 flex-grow flex items-end">
+                    <p className="font-semibold text-red-500">
+                      “Built on science.” “Driven by innovation.” “Trusted
+                      across India.”
                     </p>
                   </div>
                 </div>
@@ -205,7 +208,7 @@ const Home = () => {
 
               {/* Right Highlight Card */}
               <AnimatedSection delay={0.3}>
-                <div className="bg-gradient-to-br from-yellow-300 via-orange-400 to-red-500 rounded-3xl p-10 shadow-xl transform hover:scale-[1.02] transition-transform">
+                <div className="h-full bg-gradient-to-br from-yellow-300 via-orange-400 to-red-500 rounded-3xl p-10 shadow-xl transform hover:scale-[1.02] transition-transform flex flex-col">
                   <div className="flex items-center space-x-4 mb-6">
                     <div className="bg-red-700 text-white p-3 rounded-full shadow-md">
                       <Zap className="w-6 h-6" />
@@ -214,10 +217,12 @@ const Home = () => {
                       Innovation & Research
                     </h4>
                   </div>
-                  <p className="text-white/90 leading-relaxed drop-shadow-sm">
-                    Through McGlasgo’s research center, our experts refine
-                    formulas biannually— keeping Dallas Wallcare products on the
-                    cutting edge of global construction technology.
+                  <p className="text-white/90 leading-relaxed drop-shadow-sm flex-grow">
+                    Through McGlasgo's research center, our experts refine
+                    formulas biannually—keeping Dallas Wallcare products on the
+                    cutting edge of global construction technology. This ongoing
+                    innovation ensures superior performance, durability, and
+                    industry-leading quality for every project we support.
                   </p>
                 </div>
               </AnimatedSection>
@@ -387,6 +392,8 @@ const Home = () => {
           animation: fade-in 0.8s ease-out forwards;
         }
       `}</style>
+      <CompletedProjects />
+      <CustomerReviews />
     </div>
   );
 };

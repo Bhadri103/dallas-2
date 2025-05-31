@@ -321,7 +321,7 @@ const Gallery = () => {
       `}</style>
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
-        Our  <span className="text-[#E63946]"> Gallery</span>
+          Our <span className="text-[#E63946]"> Gallery</span>
         </h2>
         <p className="text-xl text-gray-600">
           Backed by McGlasgo Research, Dallas completed over{" "}
@@ -382,11 +382,14 @@ const Gallery = () => {
           </div>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <h4 className="text-xl font-bold mb-4 text-gray-800">
-            Our Recent Projects
-          </h4>
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-gray-800 mb-4 relative z-10">
+         Our Recent <span className="text-red-600">Projects</span>
+          </h2>
+        
         </div>
+
+         
       </div>
 
       {/* Filter buttons */}

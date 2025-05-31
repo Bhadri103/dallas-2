@@ -187,17 +187,16 @@ const Contact = () => {
 
   return (
     <div className="bg-gray-50 ">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-2 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-center text-gray-800 mb-5">
             Get in Touch with
             <span className="text-red-600"> Dallas Wallcare</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            We're here to assist you. Whether you have questions about our
-            products, need technical support, or want to discuss a project,
-            please reach out.
-          </p>
+         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Have questions or need help? We're here for you.
+            </p>
+         
         </div>
 
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 items-stretch">
@@ -223,7 +222,7 @@ const Contact = () => {
                     <br />
                     Tamil Nadu, India
                     <br />
-                    GSTIN: 33AAICD2314F1Z7
+                    <b>GSTIN: </b>33AAICD2314F1Z7
                   </p>
                 </div>
               </div>
@@ -255,7 +254,7 @@ const Contact = () => {
                   </p>
                 </div>
               </div>
-{/* 
+              {/* 
               <div className="flex items-start">
                 <div className="flex-shrink-0 bg-red-100 p-3 rounded-full mr-4">
                   <Globe size={22} className="text-red-600" />

@@ -18,6 +18,7 @@ import {
   MapPin,
   Calendar,
 } from "lucide-react";
+import CustomerReviews from "../components/CustomerReviews";
 
 // Interfaces for data structures
 interface Testimonial {
@@ -325,9 +326,10 @@ const Testimonials: React.FC = () => {
             Client<span className="text-[#E63946]"> Success Stories</span>
           </h2>
           <p className="text-xl text-gray-600">
-            Discover why over 15,000 clients trust Dallas Wallcare for their
-            waterproofing needs. From heritage buildings to modern complexes,
-            our solutions deliver lasting results.{" "}
+            Trusted by over{" "}
+            <span className="text-red-600 font-semibold">15,000 clients</span>,
+            Dallas Wallcare delivers lasting waterproofing solutions for all
+            buildings.
           </p>
         </div>
 
@@ -353,7 +355,7 @@ const Testimonials: React.FC = () => {
             What Our Clients Say
           </h2>
           <div className="relative max-w-6xl mx-auto">
-            <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-12">
+            <div className="bg-white rounded-2xl shadow-md p-8 md:p-12">
               <div className="flex flex-col lg:flex-row items-center gap-8">
                 <div className="lg:w-1/3 text-center">
                   <div className="relative inline-block mb-6">
@@ -448,9 +450,8 @@ const Testimonials: React.FC = () => {
             </div>
           </div>
         </section>
-
-        {/* Case Studies Section */}
-        <section className="mb-20">
+        <CustomerReviews />
+        {/* <section className="mb-20">
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
             Detailed Case Studies
           </h2>
@@ -565,13 +566,16 @@ const Testimonials: React.FC = () => {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Key Benefits Section */}
-        <section className="mb-20">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
-            Why Choose Dallas Wallcare?
-          </h2>
+        <section className="mb-20 mt-6">
+          <div className="text-center mb-5">
+            <h2 className="text-4xl font-bold text-center text-gray-800 relative z-10">
+              Why Clients Prefer{" "}
+              <span className="text-red-600">Dallas Wallcare</span>
+            </h2>{" "}
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {keyBenefits.map((benefit, index) => (
               <div
@@ -585,9 +589,9 @@ const Testimonials: React.FC = () => {
                   {benefit.title}
                 </h3>
                 <p className="text-gray-600 mb-4">{benefit.description}</p>
-                <div className="text-red-600 font-bold text-lg">
+                {/* <div className="text-red-600 font-bold text-lg">
                   {benefit.stats}
-                </div>
+                </div> */}
               </div>
             ))}
           </div>
