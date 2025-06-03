@@ -50,17 +50,17 @@ const Home = () => {
 
       <div className="container mx-auto px-6 py-20 ">
         <AnimatedSection>
-          <h2 className="text-4xl text-center font-bold text-gray-900 mb-6 font-inter">
+          {/* <h2 className="text-4xl text-center font-bold text-gray-900 mb-6 font-inter">
             Welcome to{" "}
             <span className="text-red-600 decoration-4">Dallas Wallcare</span>
-          </h2>
+          </h2> */}
           <div className="w-4/5 mx-auto">
-            <p className="text-lg text-gray-700 leading-relaxed font-inter text-center mb-6">
+            {/* <p className="text-lg text-gray-700 leading-relaxed font-inter text-center mb-6">
               At Dallas Wall care Pvt. Ltd., we are dedicated to revolutionizing
               the construction industry in India with our premium waterproof
               wall care product, Dallas. Founded in 2019, we continue to set new
               standards in the construction industry.
-            </p>
+            </p> */}
 
             <div className="   pl-6 mb-6">
               <p className="text-xl text-center font-bold bg-gradient-to-r from-red-500 to-yellow-500 bg-clip-text text-transparent">
