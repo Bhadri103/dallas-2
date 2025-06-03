@@ -1,5 +1,33 @@
-import React, { useEffect } from "react";
-import { Users, Award, Target, Heart, Star, Building2 } from "lucide-react";
+import React, { useEffect, ReactNode } from "react";
+import {
+  Users,
+  Award,
+  Eye,
+  Target,
+  Heart,
+  Star,
+  Building2,
+  Leaf,
+  Zap,
+} from "lucide-react";
+
+interface AnimatedSectionProps {
+  children: ReactNode;
+  className?: string;
+  delay?: number;
+}
+const AnimatedSection = ({
+  children,
+  className = "",
+  delay = 0,
+}: AnimatedSectionProps) => (
+  <div
+    className={`animate-fade-in ${className}`}
+    style={{ animationDelay: `${delay}s` }}
+  >
+    {children}
+  </div>
+);
 
 const About = () => {
   useEffect(() => {
@@ -63,9 +91,6 @@ const About = () => {
 
   return (
     <div className="bg-gray-50">
-      {/* Hero Section */}
-
-      {/* Our Story Section */}
       <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -157,12 +182,128 @@ const About = () => {
         </div>
       </section>
 
-      {/* Leadership Team Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-16 text-gray-800">
+            Our Vision & Mission
+          </h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            <AnimatedSection>
+              <div className="flex h-full">
+                <div className="bg-gradient-to-br from-red-50 to-red-100 rounded-2xl p-8 shadow-xl flex flex-col transition-transform transform hover:scale-[1.02] w-full">
+                  <Eye className="w-12 h-12 text-red-600 mb-6" />
+                  <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                    Our Vision
+                  </h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    We aim to be the foremost leader in India's construction
+                    materials sector by upholding a relentless dedication to
+                    quality, sustainability, and ground-breaking innovation. Our
+                    goal is to equip builders and contractors with superior
+                    technologies that set new industry standards, ensuring every
+                    project achieves exceptional performance and enduring
+                    durability.
+                  </p>
+                  <div className="flex-grow" />
+                </div>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.2}>
+              <div className="flex h-full">
+                <div className="bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-2xl p-8 shadow-xl flex flex-col transition-transform transform hover:scale-[1.02] w-full">
+                  <Target className="w-12 h-12 text-yellow-600 mb-6" />
+                  <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                    Our Mission
+                  </h3>
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    At DALLAS WALLCARE, our mission is to pioneer
+                    next-generation construction solutions that protect against
+                    dampness, mold, chemical exposure, and environmental stress.
+                    In a market flooded with unverified claims, we stand apart
+                    through innovation, scientific research, and expert
+                    manufacturing.
+                  </p>
+                  <p className="text-gray-700 leading-relaxed">
+                    Builders across India are in search of a lifetime-guaranteed
+                    solution—and <span className="text-red-600">Dallas</span>{" "}
+                    delivers with an advanced formulation that ensures
+                    exceptional durability and long-term structural protection.
+                  </p>
+                  <div className="flex-grow" />
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+      <section className="py-20 bg-gradient-to-b from-white to-blue-50 relative overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <AnimatedSection>
+              <h2 className="text-4xl font-bold text-center text-gray-800 mb-16 relative z-10">
+                Our <span className="text-red-600">Expertise</span>
+              </h2>
+            </AnimatedSection>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch relative z-10">
+              {/* Left Text Content */}
+              <AnimatedSection>
+                <div className="h-full space-y-6 bg-white rounded-xl shadow-lg p-8 flex flex-col">
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    Our manufacturing facility sets the gold standard for
+                    quality and innovation. From “high-purity imported minerals”
+                    to “proprietary binders,” every component is selected for
+                    excellence.
+                  </p>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    With McGlasgo's scientific backing, our labs ensure
+                    “rigorous multi-phase testing,” certifying “unmatched
+                    reliability” and “high performance” in every wall care
+                    product.
+                  </p>
+                  <div className="mt-6 border-t pt-6 flex-grow flex items-end">
+                    <p className="font-semibold text-red-500">
+                      “Built on science.” “Driven by innovation.” “Trusted
+                      across India.”
+                    </p>
+                  </div>
+                </div>
+              </AnimatedSection>
+
+              {/* Right Highlight Card */}
+              <AnimatedSection delay={0.3}>
+                <div className="h-full bg-gradient-to-br from-yellow-300 via-orange-400 to-red-500 rounded-3xl p-10 shadow-xl transform hover:scale-[1.02] transition-transform flex flex-col">
+                  <div className="flex items-center space-x-4 mb-6">
+                    <div className="bg-red-700 text-white p-3 rounded-full shadow-md">
+                      <Zap className="w-6 h-6" />
+                    </div>
+                    <h4 className="text-2xl font-bold text-white drop-shadow-md">
+                      Innovation & Research
+                    </h4>
+                  </div>
+                  <p className="text-white/90 leading-relaxed drop-shadow-sm flex-grow">
+                    Through McGlasgo's research center, our experts refine
+                    formulas biannually—keeping Dallas Wallcare products on the
+                    cutting edge of global construction technology. This ongoing
+                    innovation ensures superior performance, durability, and
+                    industry-leading quality for every project we support.
+                  </p>
+                </div>
+              </AnimatedSection>
+            </div>
+          </div>
+        </div>
+
+        {/* Decorative Elements */}
+        <div className="absolute -top-10 -right-10 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
+        <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-red-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse delay-2000"></div>
+      </section>
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Our <span className="text-[#E63946]">Team </span> 
+              Our <span className="text-[#E63946]">Team </span>
             </h2>
             <p className="text-xl text-gray-600">
               Leadership That Drives Innovation
@@ -200,7 +341,6 @@ const About = () => {
             ))}
           </div>
 
-          {/* Scientific Backing */}
           <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8">
             <div className="text-center mb-8">
               <Award className="w-12 h-12 text-blue-600 mx-auto mb-4" />
@@ -219,17 +359,16 @@ const About = () => {
           </div>
         </div>
       </section>
-
-      {/* Values Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our <span className="text-[#E63946]">Values </span></h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Our <span className="text-[#E63946]">Values </span>
+            </h2>
             <p className="text-xl text-gray-600">
               The principles that guide everything we do
             </p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="animate-on-scroll bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-all duration-300">
               <Target className="w-12 h-12 text-red-600 mx-auto mb-4" />
@@ -239,7 +378,6 @@ const About = () => {
                 materials science.
               </p>
             </div>
-
             <div
               className="animate-on-scroll bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-all duration-300"
               style={{ transitionDelay: "0.1s" }}
@@ -275,6 +413,61 @@ const About = () => {
                 generations.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+      <section className="py-20 bg-green-50">
+        <h2 className="text-4xl font-bold text-center text-gray-800 mb-16 relative z-10">
+          Built for a <span className="text-red-600">Better Tomorrow</span>
+        </h2>{" "}
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            <AnimatedSection>
+              <div className="flex h-full">
+                <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col">
+                  <Leaf className="w-12 h-12 text-green-600 mb-6" />
+                  <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                    Commitment to Sustainability
+                  </h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    Environmental responsibility is at the core of our
+                    operations. We adopt eco-conscious manufacturing methods and
+                    energy-saving technologies that minimize our ecological
+                    footprint without compromising product quality. Through
+                    comprehensive life cycle assessments, we continuously align
+                    our practices with our values of sustainability and
+                    innovation.
+                  </p>
+                  <div className="flex-grow" />
+                </div>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.2}>
+              <div className="flex h-full">
+                <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col">
+                  <Users className="w-12 h-12 text-blue-600 mb-6" />
+                  <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                    Customer-Centric Approach
+                  </h3>
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    Customer satisfaction is paramount at Dallas Wallcare.
+                    Beyond delivering superior products, we provide a lifetime
+                    guarantee on our waterproof wall plaster, reflecting our
+                    confidence in its durability and consistent performance over
+                    time.
+                  </p>
+                  <p className="text-gray-700 leading-relaxed">
+                    Our commitment extends beyond product delivery. We offer
+                    complimentary post-application support, with a dedicated
+                    team monitoring completed projects and providing expert
+                    technical assistance—ensuring builders and homeowners enjoy
+                    peace of mind.
+                  </p>
+                  <div className="flex-grow" />
+                </div>
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>

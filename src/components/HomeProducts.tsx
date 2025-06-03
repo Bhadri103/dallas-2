@@ -524,104 +524,10 @@ const ProductsPage = () => {
   );
 
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <div className="  min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-96 overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src={heroSlides[currentSlide].image}
-            alt="Dallas Products"
-            className="w-full h-full object-cover transition-opacity duration-1000"
-          />
-          <div className="absolute inset-0 bg-black/50"></div>
-        </div>
-        <div className="relative z-10 flex items-center justify-center h-full text-white text-center">
-          <div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">
-              {heroSlides[currentSlide].title}
-            </h1>
-            <p className="text-xl md:text-2xl opacity-90">
-              {heroSlides[currentSlide].subtitle}
-            </p>
-          </div>
-        </div>
 
-        {/* Slide indicators */}
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-          {heroSlides.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => setCurrentSlide(idx)}
-              className={`w-3 h-3 rounded-full transition-colors ${
-                currentSlide === idx ? "bg-white" : "bg-white/50"
-              }`}
-            />
-          ))}
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      {/* <section className="py-12 bg-white border-b">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-3xl font-bold text-red-600 mb-2">
-                10,000+
-              </div>
-              <div className="text-gray-600">Happy Customers</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-red-600 mb-2">15+</div>
-              <div className="text-gray-600">Years Experience</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-red-600 mb-2">50+</div>
-              <div className="text-gray-600">Cities Served</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-red-600 mb-2">99.8%</div>
-              <div className="text-gray-600">Quality Rate</div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-      {/* Product Overview */}
-      {/* <section className="py-12 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold mb-4">Product Overview</h2>
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-              Our focus is on quality over quantity, offering high-performance
-              materials such as waterproofing plasters, wall putty, gypsum
-              plaster, waterproof polymers and protective coatings—each tailored
-              to meet the diverse construction needs of the region.
-            </p>
-          </div>
-          <div className="mt-12">
-            <h3 className="text-xl font-bold text-center mb-6">
-              Certifications & Standards
-            </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {certifications.map((cert, idx) => (
-                <div
-                  key={idx}
-                  className="bg-gray-50 p-4 rounded-lg text-center"
-                >
-                  <div className="text-blue-600 mb-2 flex justify-center">
-                    {cert.icon}
-                  </div>
-                  <div className="font-semibold text-sm">{cert.name}</div>
-                  <div className="text-xs text-gray-600">{cert.code}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-      {/* Main Products Section */}
-      <section className="py-16">
+      <section className="pt-16">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -745,7 +651,6 @@ const ProductsPage = () => {
                   </div>
                 </div>
 
-                {/* Expandable Details - Positioned Absolutely */}
                 {activeProduct === product.id && (
                   <div className="absolute top-full left-0 right-0 mt-2 bg-gradient-to-br from-blue-50 via-white to-purple-50 rounded-2xl shadow-2xl border border-blue-200 z-10 animate-fadeIn animate-highlight">
                     <div className="p-6 space-y-4 relative overflow-hidden">
@@ -835,7 +740,6 @@ const ProductsPage = () => {
               </div>
             ))}
           </div>
-
           <style jsx>{`
             @keyframes fadeIn {
               from {
@@ -909,6 +813,15 @@ const ProductsPage = () => {
               animation: shimmer 2s ease-in-out infinite;
             }
           `}</style>
+          <div className="w-full mt-8  flex justify-center">
+            <a
+              href="/dallas-2/products"
+              className="inline-flex items-center justify-center bg-red-600 text-white text-md font-semibold px-5 py-2 rounded-full shadow-md hover:bg-red-700 hover:shadow-lg transition duration-300 ease-in-out"
+            >
+              Explore Our Products
+              <ArrowRight className="ml-3 w-6 h-6" />
+            </a>
+          </div>
         </div>
       </section>
 
@@ -946,141 +859,6 @@ const ProductsPage = () => {
           </div>
         </div>
       )}
-
-      {/* Why Choose Dallas Section */}
-      <section className="py-16 bg-gray-100">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Why Choose <span className="text-[#E63946]">Dallas?</span>
-            </h2>
-            <p className="text-xl text-gray-600">
-              Unmatched Quality, Value, and Innovation in Construction Materials
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {whyChoose.map((item, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-all duration-300"
-              >
-                <div className="flex justify-center mb-4">{item.icon}</div>
-                <h3 className="text-lg font-bold mb-2">{item.title}</h3>
-                <p className="text-gray-600 text-sm mb-3">{item.description}</p>
-                {/* <p className="text-red-600 font-semibold">{item.stat}</p> */}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Our <span className="text-[#E63946]">Service Areas</span>
-            </h2>
-            <p className="text-xl text-gray-600">
-              Expanding our reach across India, bringing quality products closer
-              to you.
-            </p>
-          </div>
-
-          <div className="flex flex-wrap justify-center gap-4">
-            {serviceAreas.map((area, index) => (
-              <div
-                key={index}
-                className="bg-red-50 text-black-800 px-6 py-3 rounded-full flex items-center shadow-sm"
-              >
-                <MapPin className="w-5 h-5 mr-2" />
-                <span className="font-semibold">{area}</span>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <p className="text-gray-700 text-lg mb-4">
-              Don't see your city listed? Contact us to inquire about delivery
-              to your location!
-            </p>
-            <a
-              href="tel:+919342216880"
-              className="inline-flex items-center bg-red-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-red-700 transition-colors shadow-lg"
-            >
-              <Phone className="w-5 h-5 mr-2" />
-              Call us
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-16 bg-gray-100">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Frequently Asked <span className="text-[#E63946]">Questions</span>
-            </h2>
-            <p className="text-xl text-gray-600">
-              Find quick answers to common queries about our products and
-              services.
-            </p>
-          </div>
-
-          <div className="space-y-6">
-            {[
-              {
-                q: "What makes Dallas Wall Plaster waterproof?",
-                a: "Dallas Wall Plaster is formulated with advanced polymer additives and specific hydrophobic agents that create a dense, non-porous structure, preventing water penetration and ensuring lasting dampness resistance. This unique composition is a result of over 15 years of R&D.",
-              },
-              {
-                q: "Do I need special tools or skilled labor for application?",
-                a: "No! One of the key advantages of Dallas products like Wall Plaster and Wall Putty is their ease of application. They are designed for standard construction practices and do not require specialized tools or highly skilled labor, saving you time and cost.",
-              },
-              {
-                q: "How does the lifetime guarantee work for Dallas Wall Plaster?",
-                a: "Our Lifetime Guarantee for Dallas Wall Plaster covers its waterproof performance for the entire lifespan of the structure. In the unlikely event of dampness returning due to product failure, we commit to providing material replacement and re-application support, subject to our terms and conditions.",
-              },
-              {
-                q: "What is the 'Dallas Watertreater' and why is it important?",
-                a: "Dallas Watertreater is a proprietary water modification solution designed to optimize the performance of our products. When mixed with water used for our plasters and putties, it enhances workability, improves hydration, and ensures better bonding and overall strength of the final application. It is crucial for achieving optimal results.",
-              },
-              {
-                q: "Are Dallas products eco-friendly?",
-                a: "Yes, Dallas is committed to sustainable practices. Our products are manufactured with environmentally conscious materials and processes, striving for low VOC (Volatile Organic Compounds) content. We are working towards achieving carbon neutrality by 2025.",
-              },
-              {
-                q: "Can I get a customized solution for a large project?",
-                a: "Absolutely. For large-scale or unique construction projects, Dallas offers customized product solutions and technical consultation. Our team of experts can work with you to tailor specific formulations and application strategies to meet your project's precise requirements. Contact our sales team for more details.",
-              },
-            ].map((faq, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-md p-6">
-                <button
-                  className="flex justify-between items-center w-full text-left font-bold text-gray-800 text-lg"
-                  onClick={() =>
-                    setActiveApplication(
-                      activeApplication === `faq-${index}`
-                        ? null
-                        : `faq-${index}`
-                    )
-                  }
-                >
-                  {faq.q}
-                  {activeApplication === `faq-${index}` ? (
-                    <ChevronUp className="w-5 h-5 text-red-600" />
-                  ) : (
-                    <ChevronDown className="w-5 h-5 text-gray-600" />
-                  )}
-                </button>
-                {activeApplication === `faq-${index}` && (
-                  <p className="mt-4 text-gray-700 leading-relaxed">{faq.a}</p>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-            
     </div>
   );
 };

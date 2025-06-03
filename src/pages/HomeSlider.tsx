@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "../components/Slider";
 import AnimatedSection from "../components/AnimatedSection";
 import { ArrowRight, Shield, Star, Users } from "lucide-react";
-
+import HomeProducts from "../components/HomeProducts";
 const homeSlides = [
   {
     image: "https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg",
@@ -49,25 +49,37 @@ const Home = () => {
       <Slider slides={homeSlides} effect="fade" />
 
       <div className="container mx-auto px-6 py-20 ">
-       <AnimatedSection>
-  <h2 className="text-4xl text-center font-bold text-gray-900 mb-6 font-inter">
-    Welcome to{" "}
-    <span className="text-red-600  decoration-4">Dallas Wallcare</span>
-  </h2>
-  <div className="w-4/5 mx-auto">
-    <p className="text-  text-gray-700 leading-relaxed font-  font-inter text-center ">
-      At Dallas Wall care Pvt. Ltd., we are dedicated to revolutionizing
-      the construction industry in India with our premium waterproof wall
-      care product, Dallas.
-      Founded in 2019. 
-      DALLAS, an international waterproof building product, is set apart
-      not just by endorsements from doctors or engineers—it's a
-      scientifically made scientist product.
-    </p>
-  </div>
-</AnimatedSection>
+        <AnimatedSection>
+          <h2 className="text-4xl text-center font-bold text-gray-900 mb-6 font-inter">
+            Welcome to{" "}
+            <span className="text-red-600 decoration-4">Dallas Wallcare</span>
+          </h2>
+          <div className="w-4/5 mx-auto">
+            <p className="text-lg text-gray-700 leading-relaxed font-inter text-center mb-6">
+              At Dallas Wall care Pvt. Ltd., we are dedicated to revolutionizing
+              the construction industry in India with our premium waterproof
+              wall care product, Dallas. Founded in 2019, we continue to set new
+              standards in the construction industry.
+            </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-20">
+            <div className="   pl-6 mb-6">
+              <p className="text-xl text-center font-bold bg-gradient-to-r from-red-500 to-yellow-500 bg-clip-text text-transparent">
+                Recognized as India's only manufacturer of Next-Gen buildings
+                that meet international standards
+              </p>
+            </div>
+
+            <div className=" pl-6">
+              <p className="text-xl text-center font-bold bg-gradient-to-r from-red-600 to-yellow-400 bg-clip-text text-transparent">
+                DALLAS, an international waterproof building product, is set
+                apart not just by endorsements from doctors or engineers—it's a
+                scientifically made scientist product
+              </p>
+            </div>
+          </div>
+        </AnimatedSection>
+
+        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-20">
           {features.map((feature, index) => (
             <AnimatedSection key={index} delay={index * 0.2}>
               <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-shadow duration-300 ease-in-out cursor-default">
@@ -81,17 +93,9 @@ const Home = () => {
               </div>
             </AnimatedSection>
           ))}
-        </div>
-
-        <AnimatedSection className="mt-24 text-center">
-          <a
-            href="/products"
-            className="inline-flex items-center justify-center bg-red-600 text-white text-lg font-semibold px-12 py-4 rounded-full shadow-md hover:bg-red-700 hover:shadow-lg transition duration-300 ease-in-out"
-          >
-            Explore Our Products
-            <ArrowRight className="ml-3 w-6 h-6" />
-          </a>
-        </AnimatedSection>
+        </div> */}
+        <HomeProducts />
+       
       </div>
     </div>
   );
