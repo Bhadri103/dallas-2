@@ -49,35 +49,24 @@ const Home = () => {
       <Slider slides={homeSlides} effect="fade" />
 
       <div className="container mx-auto px-6 py-20 ">
-        <AnimatedSection>
-          {/* <h2 className="text-4xl text-center font-bold text-gray-900 mb-6 font-inter">
-            Welcome to{" "}
-            <span className="text-red-600 decoration-4">Dallas Wallcare</span>
-          </h2> */}
-          <div className="w-4/5 mx-auto">
-            {/* <p className="text-lg text-gray-700 leading-relaxed font-inter text-center mb-6">
-              At Dallas Wall care Pvt. Ltd., we are dedicated to revolutionizing
-              the construction industry in India with our premium waterproof
-              wall care product, Dallas. Founded in 2019, we continue to set new
-              standards in the construction industry.
-            </p> */}
+       <AnimatedSection>
+  <div className="w-4/5 mx-auto">
+    <div className="marquee-container pl-6 mb-6">
+      <p className="marquee text-md text-blue-500 font-bold">
+        Recognized as India's only manufacturer of Next-Gen buildings
+        that meet international standards
+      </p>
+    </div>
 
-            <div className="   pl-6 mb-6">
-              <p className="text-xl text-center font-bold bg-gradient-to-r from-red-500 to-yellow-500 bg-clip-text text-transparent">
-                Recognized as India's only manufacturer of Next-Gen buildings
-                that meet international standards
-              </p>
-            </div>
-
-            <div className=" pl-6">
-              <p className="text-xl text-center font-bold bg-gradient-to-r from-red-600 to-yellow-400 bg-clip-text text-transparent">
-                DALLAS, an international waterproof building product, is set
-                apart not just by endorsements from doctors or engineers—it's a
-                scientifically made scientist product
-              </p>
-            </div>
-          </div>
-        </AnimatedSection>
+    <div className="pl-6">
+      <p className="text-[16px] text-center  bg-gradient-to-r from-red-600 to-yellow-400 bg-clip-text text-transparent">
+        DALLAS, an international waterproof building product, is set
+        apart not just by endorsements from doctors or engineers—it's a
+        scientifically made scientist product
+      </p>
+    </div>
+  </div>
+</AnimatedSection>
 
         {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-20">
           {features.map((feature, index) => (
@@ -95,7 +84,6 @@ const Home = () => {
           ))}
         </div> */}
         <HomeProducts />
-       
       </div>
     </div>
   );

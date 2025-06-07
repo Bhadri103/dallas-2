@@ -30,6 +30,7 @@ import {
   IndianRupee,
 } from "lucide-react";
 
+const Banner = "./images/Banner.jpeg";
 const ProductsPage = () => {
   const [activeProduct, setActiveProduct] = useState<string | null>(null);
   const [activeTechData, setActiveTechData] = useState<any[] | null>(null);
@@ -38,61 +39,17 @@ const ProductsPage = () => {
   );
   const [activeTestimonial, setActiveTestimonial] = useState(0);
 
-  // Hero carousel data
-  const heroSlides = [
-    {
-      image:
-        "https://images.pexels.com/photos/8961065/pexels-photo-8961065.jpeg?auto=compress&cs=tinysrgb&w=1200&h=600",
-      title: "Lifetime Guaranteed Protection",
-      subtitle: "Advanced Engineering Meets Quality",
-    },
-    {
-      image:
-        "https://images.pexels.com/photos/7218013/pexels-photo-7218013.jpeg?auto=compress&cs=tinysrgb&w=1200&h=600",
-      title: "Factory Direct Pricing",
-      subtitle: "Superior Performance, Unmatched Value",
-    },
-    {
-      image:
-        "https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=1200&h=600",
-      title: "Trusted by 10,000+ Customers",
-      subtitle: "Quality Construction Solutions Since 2015",
-    },
-  ];
-
-  // Customer testimonials
-  const testimonials = [
-    {
-      name: "Rajesh Kumar",
-      location: "Chennai, Tamil Nadu",
-      project: "Residential Villa",
-      rating: 5,
-      comment:
-        "Dallas waterproof plaster has been amazing. No dampness issues for 3 years now. The lifetime guarantee gives great peace of mind.",
-      image:
-        "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150&h=150",
-    },
-    {
-      name: "Priya Sharma",
-      location: "Bangalore, Karnataka",
-      project: "Commercial Building",
-      rating: 5,
-      comment:
-        "Used Dallas products for our office building. The application was easy and the finish quality is excellent. Highly recommended!",
-      image:
-        "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150&h=150",
-    },
-    {
-      name: "Vikram Patel",
-      location: "Mumbai, Maharashtra",
-      project: "Apartment Complex",
-      rating: 5,
-      comment:
-        "Factory direct pricing saved us significant costs. The technical support team was very helpful throughout the project.",
-      image:
-        "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=150&h=150",
-    },
-  ];
+  // Direct public folder references
+  const Aafee = "./images/Aafee.png";
+  const Banner = "./images/Banner.jpeg";
+  const Ceramikha = "./images/Ceramikha.png";
+  const DallasGroutPlus = "./images/DallasGroutPlus.jpeg";
+  const DallasWallutty = "./images/DallasWallutty.jpeg";
+  const DallasDrM1Bond = "./images/DallasDrM1Bond.jpeg";
+  const DallasGypsumPlasty = "./images/DallasGypsmPlasty.jpeg";
+  const DallasReadyPlaster = "./images/DallasReadyPlasty.jpeg";
+  const DallasSupremeGyplast = "./images/DallasSupremeGyplast.jpeg";
+  const DallasTileAdhensive = "./images/DallasTileAdhensive.jpeg";
 
   // Technical Data for Wall Plaster
   const wallPlasterTechData = [
@@ -140,56 +97,557 @@ const ProductsPage = () => {
     { property: "Working Temperature", value: "5°C to 40°C", isCode: "" },
   ];
 
-  // Technical Data for Wall Putty
-  const wallPuttyTechData = [
+  const dallasProducts = [
     {
-      property: "Product Name",
-      value: "Dallas Supreme White Wallputty",
-      isCode: "",
+      id: "wall-plaster",
+      name: "Dallas Ready Plast",
+      tagline: "India's 1st Premium Dampproof Plaster",
+      image: DallasReadyPlaster,
+      icon: "🏗️",
+      price: "Starting from ₹450/bag",
+      originalPrice: "₹520/bag",
+      savings: "₹70 per bag",
+      mainProducts: [
+        "Ready Plast Waterproof Formula",
+        "Self-curing Technology",
+      ],
+      packageContents: [
+        "Waterproof Wall Plaster Bag (30 KG)",
+        "Waterproof 2X Plaster Bag (50 KG) for bathroom & other highly dampen areas",
+        "Waterproof Liquid (for lintel area from DrProof)",
+        "Dallas Waterproof Grout (50 KG)",
+        "Dallas Watertreater (20-Litre Container)",
+      ],
+      applicationSteps: [
+        "Fill a 200-litre drum with clean water",
+        "Add 2 litres of Dallas Watertreater to the water and mix gently",
+        "Measure the required amount of Dallas Ready Plaster and gradually add 16–20% of the prepared water mixture",
+        "Mix thoroughly until a uniform consistency is achieved",
+        "Apply using standard plastering techniques",
+        "Allow to cure for 24-48 hours for optimal strength",
+      ],
+      specialFeatures: [
+        "No special tools or skilled labor required",
+        "Reduces labor and overall plastering costs",
+        "Surprise gift included in every Dallas bag",
+        "Lifetime guarantee on waterproof performance",
+        "Self-curing technology",
+        "Crack-resistant formula",
+      ],
+      benefits: [
+        "No special tools required",
+        "Reduces labor costs",
+        "Lifetime guarantee",
+        "Superior adhesion",
+        "Weather resistant",
+        "Crack-resistant formula",
+      ],
+      hasTechData: true,
+      techData: wallPlasterTechData,
+      warranty: "Lifetime Guarantee",
+      deliveryTime: "2-3 days",
     },
-    { property: "Base", value: "Cement based", isCode: "" },
-    { property: "Appearance", value: "White powder", isCode: "" },
-    { property: "Density", value: "1.4 g/cm³", isCode: "" },
-    { property: "Coverage", value: "8-12 m² per kg", isCode: "" },
-    { property: "Drying Time", value: "4-6 hours", isCode: "" },
-    { property: "Recoat Time", value: "6-8 hours", isCode: "" },
-    { property: "Water Resistance", value: "> 90%", isCode: "" },
-    { property: "pH Level", value: "8-10", isCode: "" },
-    { property: "Shelf Life", value: "12 months", isCode: "" },
+    {
+      id: "wall-putty",
+      name: "Dallas Wall Putty",
+      tagline: "Supreme White Dampproof Wallputty",
+      image: DallasWallutty,
+      icon: "🎨",
+      price: "50% OFF MRP - ₹320/bag",
+      originalPrice: "₹640/bag",
+      savings: "₹320 per bag",
+      discount: "50% OFF",
+      features: ["Supreme White Finish", "Dampproof Formula"],
+      packageContents: [
+        "Dallas Waterproof Wallputty bag (40 KG)",
+        "Dallas Watertreater (10 or 20-Litre Container)",
+        "Surprise gift awaits in your Dallas bag",
+        "Application guide and tools",
+      ],
+      applicationSteps: [
+        "Step 1: Fill a 200-liter drum with clean water and add 2 liters of Dallas Watertreater, mix gently",
+        "Step 2: Use the same W-Treated Water to mix with Dallas grout preparation for consistent grout mixture",
+        "Step 3: Measure required Dallas Wall Putty and gradually add 28–30% of the prepared W-Treated Water",
+        "Step 4: Paint/spray wall with Special Wall Putty Grout, let set, then apply Dallas Wall Putty (2-3 coats)",
+        "Step 5: Allow each coat to dry completely before applying the next",
+      ],
+      benefits: [
+        "Superior adhesion",
+        "Damp resistance",
+        "Easy application",
+        "Long-lasting finish",
+        "Excellent coverage",
+        "Smooth texture",
+      ],
+      specialOffer:
+        "Dallas offers its waterproof wall putty at a 50% discount off the Maximum Retail Price (MRP)",
+      warranty: "5 Year Guarantee",
+      deliveryTime: "1-2 days",
+    },
+    {
+      id: "wall-primer",
+      name: "Dallas Wall Primer",
+      tagline: "DampResist Wall Primer Solutions",
+      image: DallasDrM1Bond,
+      icon: "🖌️",
+      price: "Starting from ₹180/L",
+      originalPrice: "₹220/L",
+      savings: "₹40 per litre",
+      features: ["Water-based Formula", "Excellent Penetration"],
+      benefits: [
+        "Resists efflorescence",
+        "Breathable film",
+        "Improves topcoat coverage",
+        "Quick drying",
+        "Prevents peeling",
+        "Long-lasting protection",
+      ],
+      packageContents: [
+        "Wall Primer (Various sizes: 1L, 4L, 10L, 20L)",
+        "Application brush included (for 4L+ packs)",
+        "Detailed instruction manual",
+      ],
+      warranty: "3 Year Guarantee",
+      deliveryTime: "Same day",
+    },
+    {
+      id: "gypsum-plaster",
+      name: "Dallas Gypsum Plaster",
+      tagline: "Professional Grade Gypsum Solutions",
+      image: DallasGypsumPlasty,
+      icon: "🔧",
+      price: "Starting from ₹380/bag",
+      originalPrice: "₹450/bag",
+      savings: "₹70 per bag",
+      features: ["High-quality Gypsum", "Superior Adhesion"],
+      benefits: [
+        "Excellent adhesion",
+        "Professional finish",
+        "Easy to work with",
+        "Durable results",
+        "Cost-effective",
+        "Environmentally friendly",
+      ],
+      packageContents: [
+        "Premium Gypsum Plaster (25 KG bag)",
+        "Mixing guide and ratio chart",
+        "Quality assurance certificate",
+      ],
+      warranty: "2 Year Guarantee",
+      deliveryTime: "2-3 days",
+    },
+    {
+      id: "supreme-gyplast",
+      name: "Dallas Supreme Gyplast",
+      tagline: "Premium Gypsum Plaster Solution",
+      image: DallasSupremeGyplast,
+      icon: "⭐",
+      price: "Starting from ₹420/bag",
+      originalPrice: "₹490/bag",
+      savings: "₹70 per bag",
+      features: ["Premium Gypsum Formula", "Superior Finish Quality"],
+      benefits: [
+        "Excellent finish",
+        "Time saving",
+        "Cost effective",
+        "Easy application",
+        "Durable results",
+        "Professional quality",
+      ],
+      packageContents: [
+        "Supreme Gypsum Plaster (25 KG bag)",
+        "Premium mixing guide",
+        "Quality certificate",
+      ],
+      warranty: "3 Year Guarantee",
+      deliveryTime: "2-3 days",
+    },
+    {
+      id: "grout-plus",
+      name: "Dallas Grout Plus",
+      tagline: "Advanced Tile Grouting Solution",
+      image: DallasGroutPlus,
+      icon: "🔲",
+      price: "Starting from ₹280/bag",
+      originalPrice: "₹350/bag",
+      savings: "₹70 per bag",
+      features: ["Waterproof Grout Formula", "Stain Resistant"],
+      benefits: [
+        "Long-lasting color",
+        "Easy maintenance",
+        "Professional finish",
+        "Water resistance",
+        "Durability",
+        "Versatile application",
+      ],
+      packageContents: [
+        "Waterproof Grout (25 KG bag)",
+        "Color consistency guide",
+        "Application tools",
+      ],
+      warranty: "5 Year Guarantee",
+      deliveryTime: "1-2 days",
+    },
+    {
+      id: "tile-adhesive",
+      name: "Dallas Tile Adhesive",
+      tagline: "Superior Bonding Solutions",
+      image: DallasTileAdhensive,
+      icon: "🔧",
+      price: "Starting from ₹420/bag",
+      originalPrice: "₹480/bag",
+      savings: "₹60 per bag",
+      features: ["High Bond Strength", "Water Resistant"],
+      benefits: [
+        "Superior adhesion",
+        "Crack resistance",
+        "Weather proof",
+        "Easy application",
+        "Cost effective",
+        "Professional grade",
+      ],
+      packageContents: [
+        "Tile Adhesive (25 KG bag)",
+        "Mixing ratio guide",
+        "Application notched trowel",
+      ],
+      warranty: "3 Year Guarantee",
+      deliveryTime: "2-3 days",
+    },
+    {
+      id: "water-treater",
+      name: "Dallas Watertreater",
+      tagline: "Water Treatment Solutions",
+      image: Aafee,
+      icon: "🌊",
+      price: "₹120/10L, ₹220/20L",
+      features: ["Water Modification System", "Enhanced Workability"],
+      benefits: [
+        "Improves bonding",
+        "Better material flow",
+        "System integration",
+        "Quality assurance",
+        "Extended working time",
+        "Reduced water consumption",
+      ],
+      packageContents: [
+        "Water Treater Solution (10L or 20L)",
+        "Measuring cup included",
+        "Usage instructions",
+      ],
+      warranty: "1 Year Quality Guarantee",
+      deliveryTime: "Same day",
+    },
   ];
 
-  // Certifications and standards
-  const certifications = [
+  const drProofProducts = [
     {
-      name: "BIS Certification",
-      code: "IS 269",
-      icon: <BadgeCheck className="w-6 h-6" />,
-    },
-    {
-      name: "ISO 9001:2015",
-      code: "Quality Management",
-      icon: <Award className="w-6 h-6" />,
-    },
-    {
-      name: "CE Marking",
-      code: "European Conformity",
-      icon: <CheckCircle className="w-6 h-6" />,
-    },
-    {
-      name: "Green Building",
-      code: "IGBC Approved",
-      icon: <Leaf className="w-6 h-6" />,
+      id: "dr-proof",
+      name: "Dr. Proof",
+      tagline: "Advanced Waterproofing Solutions",
+      image: DallasDrM1Bond,
+      icon: "💧",
+      price: "Custom pricing available",
+      features: ["Liquid Membranes", "Protective Coatings"],
+      benefits: [
+        "Seamless protection",
+        "UV resistance",
+        "Flexible application",
+        "Professional grade",
+        "Long-term durability",
+        "Multiple surface compatibility",
+      ],
+      specialFeatures: [
+        "Professional installation service available",
+        "Customized solutions for unique requirements",
+        "Technical consultation included",
+        "Crack Bridging Technology",
+        "Chemical Resistance",
+        "UV Stable Formula",
+      ],
+      packageContents: [
+        "Liquid Membrane System",
+        "Professional application kit",
+        "Technical consultation",
+        "Installation guide",
+      ],
+      warranty: "10 Year Guarantee",
+      deliveryTime: "3-5 days",
     },
   ];
 
-  // Product categories with comprehensive data
+  const ceramikhaProducts = [
+    {
+      id: "ceramikha",
+      name: "Ceramikha",
+      tagline: "Advanced Ceramic Solutions",
+      image: Ceramikha,
+      icon: "🏺",
+      price: "Custom pricing available",
+      features: ["Ceramic Technology", "High Durability"],
+      benefits: [
+        "Premium quality",
+        "Low maintenance",
+        "Aesthetic value",
+        "Durability",
+        "Weather resistance",
+        "Cost effective",
+      ],
+      specialFeatures: [
+        "Advanced ceramic formulation",
+        "Superior aesthetic appeal",
+        "Long-lasting performance",
+        "Weather resistant coating",
+      ],
+      packageContents: [
+        "Ceramic coating system",
+        "Application kit",
+        "Color guide",
+        "Maintenance instructions",
+      ],
+      warranty: "5 Year Guarantee",
+      deliveryTime: "3-5 days",
+    },
+  ];
+  const heroSlides = [
+    {
+      image: Banner,
+      title: "Lifetime Guaranteed Protection",
+      subtitle: "Advanced Engineering Meets Quality",
+    },
+    {
+ 
+        image: Banner,
+      title: "Factory Direct Pricing",
+      subtitle: "Superior Performance, Unmatched Value",
+    },
+    {
+ 
+       image: Banner,
+      title: "Trusted by 10,000+ Customers",
+      subtitle: "Quality Construction Solutions Since 2015",
+    },
+  ];
+  const ProductCard = ({ product }) => (
+    <div className="relative">
+      <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col h-full">
+        <div className="relative">
+          <img
+            src={product.image}
+            alt={product.name}
+            className="w-full h-48 object-contain"
+          />
+          {product.discount && (
+            <div className="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-bold">
+              {product.discount}
+            </div>
+          )}
+          <div className="absolute top-4 left-4 text-3xl bg-white/90 rounded-full p-2">
+            {product.icon}
+          </div>
+          {product.originalPrice && (
+            <div className="absolute bottom-4 left-4 bg-green-600 text-white px-2 py-1 rounded text-xs">
+              Save {product.savings}
+            </div>
+          )}
+        </div>
+
+        <div className="p-6 flex flex-col flex-grow">
+          <h3 className="text-xl font-bold mb-2">{product.name}</h3>
+          <p className="text-gray-600 mb-3">{product.tagline}</p>
+
+          <div className="mb-4">
+            <div className="text-lg font-bold text-red-600">
+              {product.price}
+            </div>
+            {product.originalPrice && (
+              <div className="text-sm text-gray-500 line-through">
+                MRP: {product.originalPrice}
+              </div>
+            )}
+          </div>
+
+          <div className="grid grid-cols-2 gap-2 mb-4">
+            <div className="bg-blue-50 p-2 rounded text-center">
+              <Shield className="w-4 h-4 mx-auto mb-1 text-blue-600" />
+              <div className="text-xs font-semibold">{product.warranty}</div>
+            </div>
+            <div className="bg-green-50 p-2 rounded text-center">
+              <Truck className="w-4 h-4 mx-auto mb-1 text-green-600" />
+              <div className="text-xs font-semibold">
+                {product.deliveryTime}
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-2 mb-4 flex-grow">
+            <h4 className="font-semibold text-sm text-gray-800">
+              Key Highlights:
+            </h4>
+            {(() => {
+              const items =
+                product.mainProducts ||
+                product.features ||
+                product.benefits ||
+                [];
+              const displayItems = items.slice(0, 2);
+
+              while (displayItems.length < 2) {
+                displayItems.push(`${product.warranty} warranty included`);
+              }
+
+              return displayItems.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-center text-sm text-gray-600"
+                >
+                  <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                  {item}
+                </div>
+              ));
+            })()}
+          </div>
+
+          <button
+            onClick={() =>
+              setActiveProduct(activeProduct === product.id ? null : product.id)
+            }
+            className="w-full bg-gradient-to-r from-red-600 to-orange-500 text-white py-2 px-4 rounded-lg hover:from-red-700 hover:to-orange-600 transition-colors flex items-center justify-center mt-auto"
+          >
+            <span>
+              {activeProduct === product.id ? "Hide Details" : "View Details"}
+            </span>
+            <ArrowRight
+              className={`w-4 h-4 ml-2 transition-transform ${
+                activeProduct === product.id ? "rotate-90" : ""
+              }`}
+            />
+          </button>
+        </div>
+      </div>
+
+      {activeProduct === product.id && (
+        <div className="absolute top-full left-0 right-0 mt-2 bg-gradient-to-br from-blue-50 via-white to-purple-50 rounded-2xl shadow-2xl border border-blue-200 z-10 animate-fadeIn animate-highlight">
+          <div className="p-6 space-y-4 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-100/30 to-transparent animate-shimmer"></div>
+
+            {product.packageContents && (
+              <div className="p-4 bg-blue-50 rounded-lg">
+                <h5 className="font-semibold text-sm mb-2 flex items-center">
+                  <Package className="w-4 h-4 mr-2 text-blue-700" />
+                  Package Contents
+                </h5>
+                <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
+                  {product.packageContents.map((item, idx) => (
+                    <li key={idx}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {product.applicationSteps && (
+              <div className="p-4 bg-green-50 rounded-lg">
+                <h5 className="font-semibold text-sm mb-2 flex items-center">
+                  <Brush className="w-4 h-4 mr-2 text-green-700" />
+                  Application Steps
+                </h5>
+                <ol className="list-decimal list-inside text-sm text-gray-700 space-y-1">
+                  {product.applicationSteps.map((step, idx) => (
+                    <li key={idx}>{step}</li>
+                  ))}
+                </ol>
+              </div>
+            )}
+
+            {product.benefits && (
+              <div className="p-4 bg-purple-50 rounded-lg">
+                <h5 className="font-semibold text-sm mb-2 flex items-center">
+                  <HeartHandshake className="w-4 h-4 mr-2 text-purple-700" />
+                  Key Benefits
+                </h5>
+                <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
+                  {product.benefits.map((benefit, idx) => (
+                    <li key={idx}>{benefit}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {product.specialFeatures && (
+              <div className="p-4 bg-yellow-50 rounded-lg">
+                <h5 className="font-semibold text-sm mb-2 flex items-center">
+                  <Star className="w-4 h-4 mr-2 text-yellow-700" />
+                  Special Features
+                </h5>
+                <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
+                  {product.specialFeatures.map((feature, idx) => (
+                    <li key={idx}>{feature}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {product.specialOffer && (
+              <div className="p-4 bg-red-100 rounded-lg text-red-800 font-medium text-sm flex items-center">
+                <IndianRupee className="w-4 h-4 mr-2" />
+                {product.specialOffer}
+              </div>
+            )}
+
+            {product.hasTechData && (
+              <button
+                onClick={() => setActiveTechData(product.techData)}
+                className="w-full bg-blue-100 text-blue-800 py-2 px-4 rounded-lg flex items-center justify-center hover:bg-blue-200 transition-colors text-sm font-semibold"
+              >
+                <FileText className="w-4 h-4 mr-2" />
+                View Technical Data Sheet
+              </button>
+            )}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+  // Customer testimonials
+  const testimonials = [
+    {
+      name: "Rajesh Kumar",
+      location: "Chennai, Tamil Nadu",
+      project: "Residential Villa",
+      rating: 5,
+      comment:
+        "Dallas waterproof plaster has been amazing. No dampness issues for 3 years now. The lifetime guarantee gives great peace of mind.",
+      image:
+        "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150&h=150",
+    },
+    {
+      name: "Priya Sharma",
+      location: "Bangalore, Karnataka",
+      project: "Commercial Building",
+      rating: 5,
+      comment:
+        "Used Dallas products for our office building. The application was easy and the finish quality is excellent. Highly recommended!",
+      image:
+        "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150&h=150",
+    },
+    {
+      name: "Vikram Patel",
+      location: "Mumbai, Maharashtra",
+      project: "Apartment Complex",
+      rating: 5,
+      comment:
+        "Factory direct pricing saved us significant costs. The technical support team was very helpful throughout the project.",
+      image:
+        "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=150&h=150",
+    },
+  ];
+
   const products = [
     {
       id: "wall-plaster",
       name: "Dallas Wall Plaster",
       tagline: "India's 1st Premium Dampproof Plaster",
-      image:
-        "https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=600&h=400",
+      image: DallasReadyPlaster,
       icon: "🏗️",
       price: "Starting from ₹450/bag",
       originalPrice: "₹520/bag",
@@ -241,8 +699,7 @@ const ProductsPage = () => {
       id: "wall-putty",
       name: "Dallas Wall Putty",
       tagline: "Supreme White Dampproof Wallputty",
-      image:
-        "https://images.pexels.com/photos/4792513/pexels-photo-4792513.jpeg?auto=compress&cs=tinysrgb&w=600&h=400",
+      image: DallasWallutty,
       icon: "🎨",
       price: "50% OFF MRP - ₹320/bag",
       originalPrice: "₹640/bag",
@@ -280,8 +737,7 @@ const ProductsPage = () => {
       id: "wall-primer",
       name: "Dallas Wall Primer",
       tagline: "DampResist Wall Primer Solutions",
-      image:
-        "https://images.pexels.com/photos/1669754/pexels-photo-1669754.jpeg?auto=compress&cs=tinysrgb&w=600&h=400",
+      image: DallasDrM1Bond,
       icon: "🖌️",
       price: "Starting from ₹180/L",
       originalPrice: "₹220/L",
@@ -314,8 +770,7 @@ const ProductsPage = () => {
       id: "dr-proof",
       name: "Dr. Proof",
       tagline: "Advanced Waterproofing Solutions",
-      image:
-        "https://images.pexels.com/photos/209274/pexels-photo-209274.jpeg?auto=compress&cs=tinysrgb&w=600&h=400",
+      image: Banner,
       icon: "💧",
       price: "Custom pricing available",
       features: [
@@ -346,8 +801,7 @@ const ProductsPage = () => {
       id: "gypsum-plaster",
       name: "Gypsum Plaster",
       tagline: "Professional Grade Solutions",
-      image:
-        "https://images.pexels.com/photos/7031602/pexels-photo-7031602.jpeg?auto=compress&cs=tinysrgb&w=600&h=400",
+      image: DallasGypsumPlasty,
       icon: "🔧",
       price: "Starting from ₹380/bag",
       originalPrice: "₹450/bag",
@@ -380,8 +834,7 @@ const ProductsPage = () => {
       id: "water-treater",
       name: "Water Treater",
       tagline: "Dallas Watertreater Solutions",
-      image:
-        "https://images.pexels.com/photos/3621104/pexels-photo-3621104.jpeg?auto=compress&cs=tinysrgb&w=600&h=400",
+      image: Aafee,
       icon: "🌊",
       price: "₹120/10L, ₹220/20L",
       features: [
@@ -408,8 +861,159 @@ const ProductsPage = () => {
       warranty: "1 Year Quality Guarantee",
       deliveryTime: "Same day",
     },
+    // Additional products using remaining images
+    {
+      id: "grout-plus",
+      name: "Dallas Grout Plus",
+      tagline: "Advanced Tile Grouting Solution",
+      image: DallasGroutPlus,
+      icon: "🔲",
+      price: "Starting from ₹280/bag",
+      originalPrice: "₹350/bag",
+      savings: "₹70 per bag",
+      features: [
+        "Waterproof grout formula",
+        "Stain resistant",
+        "Easy application",
+        "Multiple color options",
+        "Anti-fungal properties",
+        "Crack resistant",
+      ],
+      benefits: [
+        "Long-lasting color",
+        "Easy maintenance",
+        "Professional finish",
+        "Water resistance",
+        "Durability",
+        "Versatile application",
+      ],
+      warranty: "5 Year Guarantee",
+      deliveryTime: "1-2 days",
+    },
+    {
+      id: "tile-adhesive",
+      name: "Dallas Tile Adhesive",
+      tagline: "Superior Bonding Solutions",
+      image: DallasTileAdhensive,
+      icon: "🔧",
+      price: "Starting from ₹420/bag",
+      originalPrice: "₹480/bag",
+      savings: "₹60 per bag",
+      features: [
+        "High bond strength",
+        "Water resistant",
+        "Flexible formula",
+        "Easy mixing",
+        "Extended open time",
+        "Non-slip formula",
+      ],
+      benefits: [
+        "Superior adhesion",
+        "Crack resistance",
+        "Weather proof",
+        "Easy application",
+        "Cost effective",
+        "Professional grade",
+      ],
+      warranty: "3 Year Guarantee",
+      deliveryTime: "2-3 days",
+    },
+    {
+      id: "supreme-gyplast",
+      name: "Dallas Supreme Gyplast",
+      tagline: "Premium Gypsum Plaster Solution",
+      image: DallasSupremeGyplast,
+      icon: "⭐",
+      price: "Starting from ₹420/bag",
+      originalPrice: "₹490/bag",
+      savings: "₹70 per bag",
+      features: [
+        "Premium gypsum formula",
+        "Superior finish",
+        "Quick setting",
+        "Smooth application",
+        "High coverage",
+        "Professional grade",
+      ],
+      benefits: [
+        "Excellent finish",
+        "Time saving",
+        "Cost effective",
+        "Easy application",
+        "Durable results",
+        "Professional quality",
+      ],
+      warranty: "3 Year Guarantee",
+      deliveryTime: "2-3 days",
+    },
+    {
+      id: "ceramikha",
+      name: "Ceramikha",
+      tagline: "Advanced Ceramic Solutions",
+      image: Ceramikha,
+      icon: "🏺",
+      price: "Custom pricing available",
+      features: [
+        "Ceramic technology",
+        "High durability",
+        "Aesthetic appeal",
+        "Easy maintenance",
+        "Weather resistant",
+        "Long lasting",
+      ],
+      benefits: [
+        "Premium quality",
+        "Low maintenance",
+        "Aesthetic value",
+        "Durability",
+        "Weather resistance",
+        "Cost effective",
+      ],
+      warranty: "5 Year Guarantee",
+      deliveryTime: "3-5 days",
+    },
+  ];
+  // Technical Data for Wall Putty
+  const wallPuttyTechData = [
+    {
+      property: "Product Name",
+      value: "Dallas Supreme White Wallputty",
+      isCode: "",
+    },
+    { property: "Base", value: "Cement based", isCode: "" },
+    { property: "Appearance", value: "White powder", isCode: "" },
+    { property: "Density", value: "1.4 g/cm³", isCode: "" },
+    { property: "Coverage", value: "8-12 m² per kg", isCode: "" },
+    { property: "Drying Time", value: "4-6 hours", isCode: "" },
+    { property: "Recoat Time", value: "6-8 hours", isCode: "" },
+    { property: "Water Resistance", value: "> 90%", isCode: "" },
+    { property: "pH Level", value: "8-10", isCode: "" },
+    { property: "Shelf Life", value: "12 months", isCode: "" },
   ];
 
+  // Certifications and standards
+  const certifications = [
+    {
+      name: "BIS Certification",
+      code: "IS 269",
+      icon: <BadgeCheck className="w-6 h-6" />,
+    },
+    {
+      name: "ISO 9001:2015",
+      code: "Quality Management",
+      icon: <Award className="w-6 h-6" />,
+    },
+    {
+      name: "CE Marking",
+      code: "European Conformity",
+      icon: <CheckCircle className="w-6 h-6" />,
+    },
+    {
+      name: "Green Building",
+      code: "IGBC Approved",
+      icon: <Leaf className="w-6 h-6" />,
+    },
+  ];
   const whyChoose = [
     {
       icon: <Award className="w-8 h-8 text-yellow-500" />,
@@ -531,15 +1135,15 @@ const ProductsPage = () => {
           <img
             src={heroSlides[currentSlide].image}
             alt="Dallas Products"
-            className="w-full h-full object-cover transition-opacity duration-1000"
+            className="w-full h-full object-contain transition-opacity duration-1000"
           />
           <div className="absolute inset-0 bg-black/50"></div>
         </div>
         <div className="relative z-10 flex items-center justify-center h-full text-white text-center">
           <div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">
+            <h2 className="text-1xl md:text-6xl font-bold mb-4">
               {heroSlides[currentSlide].title}
-            </h1>
+            </h2>
             <p className="text-xl md:text-2xl opacity-90">
               {heroSlides[currentSlide].subtitle}
             </p>
@@ -621,219 +1225,64 @@ const ProductsPage = () => {
       </section> */}
 
       {/* Main Products Section */}
-      <section className="py-16">
+
+      <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Our <span className="text-[#E63946]">Products</span>
-            </h2>
-            <p className="text-xl text-gray-600">
-              Quality over quantity - High-performance construction materials
-            </p>
+          {/* <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Our <span className="text-[#E63946]">Products</span>
+          </h2>
+          <p className="text-xl text-gray-600">
+            Quality over quantity - High-performance construction materials
+          </p>
+        </div> */}
+
+          {/* Dallas Products */}
+          <div className="mb-16">
+            <div className="flex items-center mb-8">
+              <div className="flex-grow h-px bg-gradient-to-r from-transparent via-red-500 to-transparent"></div>
+              <h3 className="mx-6 text-2xl md:text-3xl font-bold text-[#E63946] bg-white px-4 py-2 rounded-full shadow-lg">
+                Dallas Products
+              </h3>
+              <div className="flex-grow h-px bg-gradient-to-r from-transparent via-red-500 to-transparent"></div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {dallasProducts.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {products.map((product, index) => (
-              <div key={product.id} className="relative">
-                {/* Base Card - Fixed Height */}
-                <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col h-full">
-                  <div className="relative">
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="w-full h-48 object-cover"
-                    />
-                    {product.discount && (
-                      <div className="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-bold">
-                        {product.discount}
-                      </div>
-                    )}
-                    <div className="absolute top-4 left-4 text-3xl bg-white/90 rounded-full p-2">
-                      {product.icon}
-                    </div>
-                    {product.originalPrice && (
-                      <div className="absolute bottom-4 left-4 bg-green-600 text-white px-2 py-1 rounded text-xs">
-                        Save {product.savings}
-                      </div>
-                    )}
-                  </div>
+          {/* Dr. Proof Products */}
+          <div className="mb-16">
+            <div className="flex items-center mb-8">
+              <div className="flex-grow h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
+              <h3 className="mx-6 text-2xl md:text-3xl font-bold text-red bg-white px-4 py-2 rounded-full shadow-lg">
+                Dr. Proof Solutions
+              </h3>
+              <div className="flex-grow h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {drProofProducts.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+          </div>
 
-                  <div className="p-6 flex flex-col flex-grow">
-                    <h3 className="text-xl font-bold mb-2">{product.name}</h3>
-                    <p className="text-gray-600 mb-3">{product.tagline}</p>
-
-                    <div className="mb-4">
-                      <div className="text-lg font-bold text-red-600">
-                        {product.price}
-                      </div>
-                      {product.originalPrice && (
-                        <div className="text-sm text-gray-500 line-through">
-                          MRP: {product.originalPrice}
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Product Info Cards */}
-                    <div className="grid grid-cols-2 gap-2 mb-4">
-                      <div className="bg-blue-50 p-2 rounded text-center">
-                        <Shield className="w-4 h-4 mx-auto mb-1 text-blue-600" />
-                        <div className="text-xs font-semibold">
-                          {product.warranty}
-                        </div>
-                      </div>
-                      <div className="bg-green-50 p-2 rounded text-center">
-                        <Truck className="w-4 h-4 mx-auto mb-1 text-green-600" />
-                        <div className="text-xs font-semibold">
-                          {product.deliveryTime}
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Standardized Features Section - Always show exactly 2 items */}
-                    <div className="space-y-2 mb-4 flex-grow">
-                      <h4 className="font-semibold text-sm text-gray-800">
-                        Key Highlights:
-                      </h4>
-                      {/* Get features from mainProducts, features, or benefits - always show exactly 2 */}
-                      {(() => {
-                        const items =
-                          product.mainProducts ||
-                          product.features ||
-                          product.benefits ||
-                          [];
-                        const displayItems = items.slice(0, 2);
-
-                        // If we have less than 2 items, pad with generic ones
-                        while (displayItems.length < 2) {
-                          displayItems.push(
-                            `${product.warranty} warranty included`
-                          );
-                        }
-
-                        return displayItems.map((item, idx) => (
-                          <div
-                            key={idx}
-                            className="flex items-center text-sm text-gray-600"
-                          >
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            {item}
-                          </div>
-                        ));
-                      })()}
-                    </div>
-
-                    {/* Button stays at bottom */}
-                    <button
-                      onClick={() =>
-                        setActiveProduct(
-                          activeProduct === product.id ? null : product.id
-                        )
-                      }
-                      className="w-full bg-gradient-to-r from-red-600 to-orange-500 text-white py-2 px-4 rounded-lg hover:from-red-700 hover:to-orange-600 transition-colors flex items-center justify-center mt-auto"
-                    >
-                      <span>
-                        {activeProduct === product.id
-                          ? "Hide Details"
-                          : "View Details"}
-                      </span>
-                      <ArrowRight
-                        className={`w-4 h-4 ml-2 transition-transform ${
-                          activeProduct === product.id ? "rotate-90" : ""
-                        }`}
-                      />
-                    </button>
-                  </div>
-                </div>
-
-                {/* Expandable Details - Positioned Absolutely */}
-                {activeProduct === product.id && (
-                  <div className="absolute top-full left-0 right-0 mt-2 bg-gradient-to-br from-blue-50 via-white to-purple-50 rounded-2xl shadow-2xl border border-blue-200 z-10 animate-fadeIn animate-highlight">
-                    <div className="p-6 space-y-4 relative overflow-hidden">
-                      {/* Animated background highlight */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-100/30 to-transparent animate-shimmer"></div>
-                      {/* Package Contents */}
-                      {product.packageContents && (
-                        <div className="p-4 bg-blue-50 rounded-lg">
-                          <h5 className="font-semibold text-sm mb-2 flex items-center">
-                            <Package className="w-4 h-4 mr-2 text-blue-700" />
-                            Package Contents
-                          </h5>
-                          <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
-                            {product.packageContents.map((item, idx) => (
-                              <li key={idx}>{item}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-
-                      {/* Application Steps */}
-                      {product.applicationSteps && (
-                        <div className="p-4 bg-green-50 rounded-lg">
-                          <h5 className="font-semibold text-sm mb-2 flex items-center">
-                            <Brush className="w-4 h-4 mr-2 text-green-700" />
-                            Application Steps
-                          </h5>
-                          <ol className="list-decimal list-inside text-sm text-gray-700 space-y-1">
-                            {product.applicationSteps.map((step, idx) => (
-                              <li key={idx}>{step}</li>
-                            ))}
-                          </ol>
-                        </div>
-                      )}
-
-                      {/* Benefits */}
-                      {product.benefits && (
-                        <div className="p-4 bg-purple-50 rounded-lg">
-                          <h5 className="font-semibold text-sm mb-2 flex items-center">
-                            <HeartHandshake className="w-4 h-4 mr-2 text-purple-700" />
-                            Key Benefits
-                          </h5>
-                          <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
-                            {product.benefits.map((benefit, idx) => (
-                              <li key={idx}>{benefit}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-
-                      {/* Special Features */}
-                      {product.specialFeatures && (
-                        <div className="p-4 bg-yellow-50 rounded-lg">
-                          <h5 className="font-semibold text-sm mb-2 flex items-center">
-                            <Star className="w-4 h-4 mr-2 text-yellow-700" />
-                            Special Features
-                          </h5>
-                          <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
-                            {product.specialFeatures.map((feature, idx) => (
-                              <li key={idx}>{feature}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-
-                      {/* Special Offer for Wall Putty */}
-                      {product.specialOffer && (
-                        <div className="p-4 bg-red-100 rounded-lg text-red-800 font-medium text-sm flex items-center">
-                          <IndianRupee className="w-4 h-4 mr-2" />
-                          {product.specialOffer}
-                        </div>
-                      )}
-
-                      {/* Technical Data Link/Button */}
-                      {product.hasTechData && (
-                        <button
-                          onClick={() => setActiveTechData(product.techData)}
-                          className="w-full bg-blue-100 text-blue-800 py-2 px-4 rounded-lg flex items-center justify-center hover:bg-blue-200 transition-colors text-sm font-semibold"
-                        >
-                          <FileText className="w-4 h-4 mr-2" />
-                          View Technical Data Sheet
-                        </button>
-                      )}
-                    </div>
-                  </div>
-                )}
-              </div>
-            ))}
+          {/* Ceramikha Products */}
+          <div className="mb-16">
+            <div className="flex items-center mb-8">
+              <div className="flex-grow h-px bg-gradient-to-r from-transparent via-amber-500 to-transparent"></div>
+              <h3 className="mx-6 text-2xl md:text-3xl font-bold text-[#F77F00] bg-white px-4 py-2 rounded-full shadow-lg">
+                Ceramikha Solutions
+              </h3>
+              <div className="flex-grow h-px bg-gradient-to-r from-transparent via-amber-500 to-transparent"></div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {ceramikhaProducts.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
           </div>
 
           <style jsx>{`
@@ -877,32 +1326,12 @@ const ProductsPage = () => {
               }
             }
 
-            @keyframes glow {
-              0%,
-              100% {
-                background: linear-gradient(
-                  135deg,
-                  #fff700 0%,
-                  /* Bright Yellow */ #ff8800 50%,
-                  /* Orange */ #ff0000 100% /* Red */
-                );
-              }
-              // 50% {
-              //   background: linear-gradient(
-              //     135deg,
-              //     #ffe066 0%,
-              //     #ffae42 50%,
-              //     #ff4d4d 100%
-              //   );
-              // }
-            }
-
             .animate-fadeIn {
               animation: fadeIn 0.3s ease-out;
             }
 
             .animate-highlight {
-              animation: highlight 0.8s ease-out, glow 2s ease-in-out infinite;
+              animation: highlight 0.8s ease-out;
             }
 
             .animate-shimmer {
@@ -912,7 +1341,6 @@ const ProductsPage = () => {
         </div>
       </section>
 
-      {/* Technical Data Modal */}
       {activeTechData && (
         <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 z-50">
           <div className="bg-white rounded-lg shadow-xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
@@ -1080,7 +1508,6 @@ const ProductsPage = () => {
           </div>
         </div>
       </section>
-            
     </div>
   );
 };

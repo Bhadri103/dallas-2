@@ -13,6 +13,7 @@ import {
   MapPin,
   PhoneCall,
 } from "lucide-react";
+  const logo = "./images/logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -51,13 +52,15 @@ const Footer = () => {
             <Link
               to="/"
               onClick={scrollToTop}
-              className="flex items-center space-x-2 mb-6 hover:opacity-80 transition-opacity duration-300"
+              className="flex items-center align-ceter space-x-2 mb-6 hover:opacity-80 transition-opacity duration-300"
             >
-              <Factory size={32} className="text-red-600" />
+              {/* <Factory size={32} className="text-red-600" />
               <span className="text-2xl font-bold">
                 <span className="text-red-600">DALLAS</span>
                 <span className="text-yellow-500">WALLCARE</span>
-              </span>
+              </span> */}
+
+              <img src={logo} alt="" className="h-24 w-auto" />
             </Link>
             <p className="text-gray-400 mb-6">
               Innovative wall solutions crafted with sustainability, durability,
@@ -95,7 +98,7 @@ const Footer = () => {
                 title="Send email to info"
               >
                 <Mail size={20} />
-              </a>  
+              </a>
               <a
                 href="tel:+919342216880"
                 className="bg-gray-800 p-2 rounded-full hover:bg-red-600 transition-colors duration-300"
@@ -239,7 +242,7 @@ const Footer = () => {
               className="text-gray-400 hover:text-white hover:text-red-600 transition-colors duration-300"
             >
               Terms of Service
-            </Link> 
+            </Link>
           </div>
         </div>
       </div>

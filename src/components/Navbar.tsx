@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Factory, Menu, X, ChevronDown, ChevronRight } from "lucide-react";
-
+  const logo = "./images/logo.png";
 interface SubItem {
   label: string;
   path: string;
@@ -207,11 +207,12 @@ const Navbar: React.FC = () => {
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <Link to="/" onClick={scrollToTop} className="flex items-center space-x-3">
-              <Factory size={36} className="text-red-600" />
+              {/* <Factory size={36} className="text-red-600" />
               <span className="text-lg font-bold">
                 <span className="text-red-600">DALLAS</span>
                 <span className="text-yellow-500">WALLCARE</span>
-              </span>
+              </span> */}
+<img src={logo} alt="" className="h-14 w-auto" />
             </Link>
 
             {/* Desktop Menu */}

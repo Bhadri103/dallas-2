@@ -35,3 +35,20 @@ body {
   background-color: #dc2626 !important; /* Tailwind's red-600 or custom red */
   opacity: 1;
 }
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.marquee {
+  animation: marquee 15s linear infinite;
+  white-space: nowrap;
+  display: inline-block;
+}
+.marquee-container {
+  overflow: hidden;
+  width: 100%;
+}

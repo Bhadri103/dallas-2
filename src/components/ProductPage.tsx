@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
-
-  const Aafee = "./images/Aafee.png";
-  const Banner = "./images/Banner.jpeg";
-  const Ceramikha = "./images/Ceramikha.png";
-  const DallasGroutPlus = "./images/DallasGroutPlus.jpeg";
-  const DallasWallutty = "./images/DallasWallutty.jpeg";
-  const DallasDrM1Bond = "./images/DallasDrM1Bond.jpeg";
-  const DallasGypsumPlasty = "./images/DallasGypsmPlasty.jpeg";
-  const DallasReadyPlaster = "./images/DallasReadyPlasty.jpeg";
-  const DallasSupremeGyplast = "./images/DallasSupremeGyplast.jpeg";
-  const DallasTileAdhensive = "./images/DallasTileAdhensive.jpeg";
+const Aafee = "./images/Aafee.jpeg";
+const Banner = "./images/Banner.jpeg";
+const Ceramikha = "./images/Ceramikha.png";
+const DallasGroutPlus = "./images/DallasGroutPlus.jpeg";
+const DallasWallutty = "./images/DallasWallutty.jpeg";
+const DallasDrM1Bond = "./images/DallasDrM1Bond.jpeg";
+const DallasGypsumPlasty = "./images/DallasGypsmPlasty.jpeg";
+const DallasReadyPlaster = "./images/DallasReadyPlasty.jpeg";
+const DallasSupremeGyplast = "./images/DallasSupremeGyplast.jpeg";
+const DallasTileAdhensive = "./images/DallasTileAdhensive.jpeg";
 
 const ProductsPage = () => {
   // Brand Categories
@@ -96,12 +95,12 @@ const ProductsPage = () => {
       image: DallasDrM1Bond,
       price: "₹580/bag",
     },
-    // {
-    //   id: "drproof-protective-coating",
-    //   name: "Protective Coating",
-    //   image: Aafee,
-    //   price: "Custom Pricing",
-    // },
+    {
+      id: "drproof-protective-coating",
+      name: "Protective Coating",
+      image: Aafee,
+      price: "Custom Pricing",
+    },
   ];
 
   return (
