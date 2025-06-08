@@ -99,9 +99,68 @@ const nextGenFeatures_WallPutty = [
     "Uses Imported raw-material , white Clinker , Binders etc"
 ];
 
+// Generic next-gen features for products where specific ones aren't defined
+const nextGenFeatures_Generic = [
+  "High Performance Formulation",
+  "Eco-Friendly Composition",
+  "Long-Lasting Durability",
+  "Easy Application Process",
+  "Cost-Effective Solution",
+  "Quality Assured"
+];
+
+// Next-Gen features specific to waterproofing/primer
+const nextGenFeatures_PrimerWaterproofing = [
+  "Advanced Polymer Technology",
+  "Excellent Penetration & Sealing",
+  "Prevents Dampness & Efflorescence",
+  "Enhances Adhesion of Topcoats",
+  "Breathable & Flexible Film",
+  "UV Resistant for Exterior Use"
+];
+
+// Next-Gen features specific to grouting
+const nextGenFeatures_Grout = [
+  "Waterproof & Stain Resistant Formula",
+  "Durable & Long-Lasting Color",
+  "Resistant to Mildew & Fungal Growth",
+  "Easy to Clean & Maintain",
+  "High Compressive Strength",
+  "Flexible & Crack-Resistant"
+];
+
+// Next-Gen features specific to water treatment
+const nextGenFeatures_WaterTreater = [
+  "Optimizes Water Quality for Construction",
+  "Improves Workability of Mixes",
+  "Reduces Water Consumption",
+  "Enhances Bonding Strength",
+  "Prevents Efflorescence & Leaching",
+  "Eco-Friendly & Non-Toxic"
+];
+
+// Next-Gen features specific to ceramic solutions
+const nextGenFeatures_Ceramic = [
+  "High-Performance Ceramic Binders",
+  "Exceptional Hardness & Durability",
+  "Superior Aesthetic Finish",
+  "Scratch & Abrasion Resistant",
+  "Easy to Apply & Polish",
+  "Weatherproof for All Climates"
+];
+
+
+// Default brochure data to apply to products
+const defaultBrochures = [
+  { language: "English", url: "/brochures/default_english.pdf" },
+  { language: "Malayalam", url: "/brochures/default_malayalam.pdf" },
+  { language: "Telugu", url: "/brochures/default_telugu.pdf" },
+  { language: "Kannada", url: "/brochures/default_kannada.pdf" },
+];
+
 
 export const wallPlasterTechData = [
-  { property: "Product Name", value: "Ready Plast (Waterproof Wall Plaster)", isCode: "" },
+  { property: "Product Name", value: "Ready Plaster (Waterproof Wall Plaster)", isCode: "" },
   { property: "Manufacturer", value: "Dallas WellCare Pvt Ltd.", isCode: "" },
   { property: "Product Code", value: "1001", isCode: "" },
   { property: "Appearance", value: "Smooth, off-grey paste", isCode: "" },
@@ -124,14 +183,15 @@ export const wallPlasterTechData = [
 export const dallasProducts = [
   {
     id: "wall-plaster",
-    name: "DALLAS Ready Plast",
-    tagline: "India's 1st Premium Dampproof Plaster",
+    name: "DALLAS Ready Plaster",
+    tagline: "Next-Gen Wallcare. Global Quality.",
     image: DallasReadyPlaster,
     icon: "🏗️",
     price: "For bulk order discount upto 40 %",
     originalPrice: "₹520/bag",
     savings: "₹70 per bag",
     mainProducts: ["Ready Plast Waterproof Formula", "Self-curing Technology"],
+    features: ["Ready Plast Waterproof Formula", "Self-curing Technology", "3X Waterproof & Weather-Proof"], // Added features
     packageContents: [
       "Waterproof Wall Plaster Bag (30 KG)",
       "Waterproof 2X Plaster Bag (50 KG) for bathroom & other highly dampen areas",
@@ -167,20 +227,21 @@ export const dallasProducts = [
     techData: wallPlasterTechData,
     warranty: "Lifetime Guarantee",
     deliveryTime: "2-3 days",
-    flexibleServiceOptions: flexibleServiceOptions, // Added
-    nextGenFeatures: nextGenFeatures_WallPlaster, // Added
+    flexibleServiceOptions: flexibleServiceOptions,
+    nextGenFeatures: nextGenFeatures_WallPlaster,
+    brochures: defaultBrochures,
   },
   {
     id: "wall-putty",
     name: "DALLAS Wall Putty",
-    tagline: "Supreme White Dampproof Wallputty",
+ tagline: "Next-Gen Wallcare. Global Quality.",
     image: DallasWallutty,
     icon: "🎨",
     price: "For bulk order discount upto 40 %",
     originalPrice: "₹640/bag",
     savings: "₹320 per bag",
     discount: "50% OFF",
-    features: ["Supreme White Finish", "Dampproof Formula"],
+    features: ["Supreme White Finish", "Dampproof Formula", "Smooth Texture"],
     packageContents: [
       "Dallas Waterproof Wallputty bag (40 KG)",
       "Dallas Watertreater (10 or 20-Litre Container)",
@@ -206,19 +267,21 @@ export const dallasProducts = [
     warranty: "5 Year Guarantee",
     deliveryTime: "1-2 days",
     hasTechData: false,
-    flexibleServiceOptions: flexibleServiceOptions, // Added
-    nextGenFeatures: nextGenFeatures_WallPutty, // Added
+    techData: [], // Explicitly set as empty array if no tech data
+    flexibleServiceOptions: flexibleServiceOptions,
+    nextGenFeatures: nextGenFeatures_WallPutty,
+    brochures: defaultBrochures,
   },
   {
     id: "m1-bond",
     name: "Dr M1 Bond",
-    tagline: "DampResist Wall Primer Solutions",
+  tagline: "Next-Gen Wallcare. Global Quality.",
     image: DallasDrM1Bond,
     icon: "🖌️",
     price: "For bulk order discount upto 40 %",
     originalPrice: "₹220/L",
     savings: "₹40 per litre",
-    features: ["Water-based Formula", "Excellent Penetration"],
+    features: ["Water-based Formula", "Excellent Penetration", "Damp-proof Primer"],
     benefits: [
       "Resists efflorescence",
       "Breathable film",
@@ -232,21 +295,37 @@ export const dallasProducts = [
       "Application brush included (for 4L+ packs)",
       "Detailed instruction manual",
     ],
+    applicationSteps: [ // Added placeholder
+      "Clean the surface thoroughly.",
+      "Dilute the primer as per instructions (if needed).",
+      "Apply 1-2 coats evenly with a brush or roller.",
+      "Allow sufficient drying time between coats.",
+      "Ensure proper ventilation during application."
+    ],
+    specialFeatures: [ // Added placeholder
+      "Deep penetrating formula",
+      "Excellent alkali resistance",
+      "Reduces paint consumption",
+      "Fungal and algal resistant"
+    ],
     warranty: "3 Year Guarantee",
     deliveryTime: "Same day",
     hasTechData: false,
-    flexibleServiceOptions: flexibleServiceOptions, // Added
+    techData: [], // Explicitly set as empty array if no tech data
+    flexibleServiceOptions: flexibleServiceOptions,
+    nextGenFeatures: nextGenFeatures_PrimerWaterproofing, // Used specific next-gen features
+    brochures: defaultBrochures,
   },
   {
     id: "gypsum-plaster",
     name: "DALLAS Gypsum Plaster",
-    tagline: "Professional Grade Gypsum Solutions",
+ tagline: "Next-Gen Wallcare. Global Quality.",
     image: DallasGypsumPlasty,
     icon: "🔧",
     price: "For bulk order discount upto 40 %",
     originalPrice: "₹450/bag",
     savings: "₹70 per bag",
-    features: ["High-quality Gypsum", "Superior Adhesion"],
+    features: ["High-quality Gypsum", "Superior Adhesion", "Smooth Finish"],
     benefits: [
       "Excellent adhesion",
       "Professional finish",
@@ -260,80 +339,123 @@ export const dallasProducts = [
       "Mixing guide and ratio chart",
       "Quality assurance certificate",
     ],
+    applicationSteps: [ // Added placeholder
+      "Ensure surface is clean and free from loose particles.",
+      "Mix plaster with recommended water ratio to form a smooth paste.",
+      "Apply evenly using a trowel.",
+      "Finish to desired smoothness.",
+      "Allow to dry completely (no curing required)."
+    ],
+    specialFeatures: [ // Added placeholder
+      "Lightweight formulation",
+      "Crack-resistant",
+      "Fire-resistant properties",
+      "Sound insulation benefits"
+    ],
     warranty: "2 Year Guarantee",
     deliveryTime: "2-3 days",
     hasTechData: false,
-    flexibleServiceOptions: flexibleServiceOptions, // Added
-    nextGenFeatures: nextGenFeatures_GypsumPlaster, // Added
+    techData: [], // Explicitly set as empty array if no tech data
+    flexibleServiceOptions: flexibleServiceOptions,
+    nextGenFeatures: nextGenFeatures_GypsumPlaster,
+    brochures: defaultBrochures,
   },
-  {
-    id: "supreme-gyplast",
-    name: "DALLAS Supreme Gyplast",
-    tagline: "Premium Gypsum Plaster Solution",
-    image: SupremeGplast,
-    icon: "⭐",
-    price: "For bulk order discount upto 40 %",
-    originalPrice: "₹490/bag",
-    savings: "₹70 per bag",
-    features: ["Premium Gypsum Formula", "Superior Finish Quality"],
-    benefits: [
-      "Excellent finish",
-      "Time saving",
-      "Cost effective",
-      "Easy application",
-      "Durable results",
-      "Professional quality",
-    ],
-    packageContents: [
-      "Supreme Gypsum Plaster (25 KG bag)",
-      "Premium mixing guide",
-      "Quality certificate",
-    ],
-    warranty: "3 Year Guarantee",
-    deliveryTime: "2-3 days",
-    hasTechData: false,
-    flexibleServiceOptions: flexibleServiceOptions, // Added
-    nextGenFeatures: nextGenFeatures_SupremeGyplast, // Added
-  },
-  {
-    id: "wall-putty", // This ID is duplicated, but the product name is "DALLAS Supreme Gyplast".
-                  // Assuming this is a different product but shares an ID, or a typo.
-                  // If it's a distinct product, consider giving it a unique ID like "supreme-gyplast-white".
-    name: "DALLAS Supreme Gyplast", // Changed to match "Ultra-White Gypsum Plaster Solution" provided
-    tagline: "Ultra-White Gypsum Plaster Solution",
-    image: DallasSupremeGyplast,
-    icon: "✨",
-    price: "For bulk order discount upto 40 %",
-    originalPrice: "₹420/bag",
-    savings: "₹70 per bag",
-    features: ["Ultra-White Finish", "Smooth Application"],
-    benefits: [
-      "Brilliant white finish",
-      "Enhances paint aesthetics",
-      "Easy to apply",
-      "Durable and strong",
-      "Reduces paint consumption",
-    ],
-    packageContents: [
-      "Supreme Gypsum Plaster White (25 KG bag)",
-      "Application guide",
-    ],
-    warranty: "3 Year Guarantee",
-    deliveryTime: "2-3 days",
-    hasTechData: false,
-    flexibleServiceOptions: flexibleServiceOptions, // Added
-    nextGenFeatures: nextGenFeatures_SupremeGyplast, // Assuming similar to other Supreme Gyplast
-  },
+  // {
+  //   id: "supreme-gyplast",
+  //   name: "DALLAS Supreme Gyplast",
+  //   tagline: "Premium Gypsum Plaster Solution",
+  //   image: SupremeGplast,
+  //   icon: "⭐",
+  //   price: "For bulk order discount upto 40 %",
+  //   originalPrice: "₹490/bag",
+  //   savings: "₹70 per bag",
+  //   features: ["Premium Gypsum Formula", "Superior Finish Quality", "Quick Application"],
+  //   benefits: [
+  //     "Excellent finish",
+  //     "Time saving",
+  //     "Cost effective",
+  //     "Easy application",
+  //     "Durable results",
+  //     "Professional quality",
+  //   ],
+  //   packageContents: [
+  //     "Supreme Gypsum Plaster (25 KG bag)",
+  //     "Premium mixing guide",
+  //     "Quality certificate",
+  //   ],
+  //   applicationSteps: [
+  //     "Ensure surface is clean and free from loose particles.",
+  //     "Mix plaster with recommended water ratio to form a smooth paste.",
+  //     "Apply evenly using a trowel.",
+  //     "Finish to desired smoothness.",
+  //     "Allow to dry completely (no curing required)."
+  //   ],
+  //   specialFeatures: [
+  //     "International Standard quality",
+  //     "3X Waterproof & Weather-Proof",
+  //     "No special tools or skilled labor required",
+  //     "Saves time and labor costs"
+  //   ],
+  //   warranty: "3 Year Guarantee",
+  //   deliveryTime: "2-3 days",
+  //   hasTechData: false,
+  //   techData: [],
+  //   flexibleServiceOptions: flexibleServiceOptions,
+  //   nextGenFeatures: nextGenFeatures_SupremeGyplast,
+  //   brochures: defaultBrochures,
+  // },
+  // {
+  //   id: "supreme-gyplast-white",
+  //   name: "DALLAS Supreme Gyplast (White)",
+  //   tagline: "Ultra-White Gypsum Plaster Solution",
+  //   image: DallasSupremeGyplast,
+  //   icon: "✨",
+  //   price: "For bulk order discount upto 40 %",
+  //   originalPrice: "₹420/bag",
+  //   savings: "₹70 per bag",
+  //   features: ["Ultra-White Finish", "Smooth Application", "High Coverage"],
+  //   benefits: [
+  //     "Brilliant white finish",
+  //     "Enhances paint aesthetics",
+  //     "Easy to apply",
+  //     "Durable and strong",
+  //     "Reduces paint consumption",
+  //   ],
+  //   packageContents: [
+  //     "Supreme Gypsum Plaster White (25 KG bag)",
+  //     "Application guide",
+  //   ],
+  //   applicationSteps: [
+  //     "Prepare surface: clean, dry, and free of dust.",
+  //     "Mix with water to a lump-free consistency.",
+  //     "Apply first coat evenly.",
+  //     "Allow to dry before applying second coat.",
+  //     "Achieve desired smooth finish."
+  //   ],
+  //   specialFeatures: [
+  //     "Superior whiteness for brighter interiors",
+  //     "Excellent crack resistance",
+  //     "Reduces need for extra paint coats",
+  //     "Provides a perfect base for all types of paints"
+  //   ],
+  //   warranty: "3 Year Guarantee",
+  //   deliveryTime: "2-3 days",
+  //   hasTechData: false,
+  //   techData: [],
+  //   flexibleServiceOptions: flexibleServiceOptions,
+  //   nextGenFeatures: nextGenFeatures_SupremeGyplast, // Assuming similar to other Supreme Gyplast
+  //   brochures: defaultBrochures,
+  // },
   {
     id: "grout-plus",
     name: "DALLAS Grout Plus",
-    tagline: "Advanced Tile Grouting Solution",
+ tagline: "Next-Gen Wallcare. Global Quality.",
     image: DallasGroutPlus,
     icon: "🔲",
     price: "For bulk order discount upto 40 %",
     originalPrice: "₹350/bag",
     savings: "₹70 per bag",
-    features: ["Waterproof Grout Formula", "Stain Resistant"],
+    features: ["Waterproof Grout Formula", "Stain Resistant", "Color Consistency"],
     benefits: [
       "Long-lasting color",
       "Easy maintenance",
@@ -347,21 +469,37 @@ export const dallasProducts = [
       "Color consistency guide",
       "Application tools",
     ],
+    applicationSteps: [ // Added placeholder
+      "Ensure tile joints are clean and dry.",
+      "Mix grout powder with water to a smooth, workable paste.",
+      "Apply grout into joints using a rubber float.",
+      "Remove excess grout with a damp sponge.",
+      "Allow to cure as per instructions before foot traffic."
+    ],
+    specialFeatures: [ // Added placeholder
+      "Anti-fungal and anti-bacterial properties",
+      "Shrinkage-compensated formula",
+      "Wide range of color options",
+      "Suitable for interior and exterior use"
+    ],
     warranty: "5 Year Guarantee",
     deliveryTime: "1-2 days",
     hasTechData: false,
-    flexibleServiceOptions: flexibleServiceOptions, // Added
+    techData: [], // Explicitly set as empty array if no tech data
+    flexibleServiceOptions: flexibleServiceOptions,
+    nextGenFeatures: nextGenFeatures_Grout, // Used specific next-gen features
+    brochures: defaultBrochures,
   },
   {
     id: "tile-adhesive",
     name: "DALLAS Tile Adhesive",
-    tagline: "Superior Bonding Solutions",
+ tagline: "Next-Gen Wallcare. Global Quality.",
     image: DallasTileAdhensive,
     icon: "🔧",
     price: "For bulk order discount upto 40 %",
     originalPrice: "₹480/bag",
     savings: "₹60 per bag",
-    features: ["High Bond Strength", "Water Resistant"],
+    features: ["High Bond Strength", "Water Resistant", "Anti-Slip Formula"],
     benefits: [
       "Superior adhesion",
       "Crack resistance",
@@ -375,20 +513,38 @@ export const dallasProducts = [
       "Mixing ratio guide",
       "Application notched trowel",
     ],
+    applicationSteps: [
+      "Prepare surface: clean, level, and dry.",
+      "Mix adhesive powder with water to a consistent paste.",
+      "Apply adhesive using a notched trowel.",
+      "Press tiles firmly into the adhesive.",
+      "Allow to set before grouting."
+    ],
+    specialFeatures: [
+      "Suitable for various tile types (ceramic, porcelain, vitrified)",
+      "Ideal for both floor and wall applications",
+      "Long open time for easier adjustments",
+      "High shear strength for secure bonding"
+    ],
     warranty: "3 Year Guarantee",
     deliveryTime: "2-3 days",
     hasTechData: false,
-    flexibleServiceOptions: flexibleServiceOptions, // Added
-    nextGenFeatures: nextGenFeatures_TileAdhesive, // Added
+    techData: [],
+    flexibleServiceOptions: flexibleServiceOptions,
+    nextGenFeatures: nextGenFeatures_TileAdhesive,
+    brochures: defaultBrochures,
   },
   {
     id: "water-treater",
     name: "DALLAS Watertreater",
-    tagline: "Water Treatment Solutions",
+ tagline: "Next-Gen Wallcare. Global Quality.",
     image: Aafee,
     icon: "🌊",
     price: "For bulk order discount upto 40 %",
-    features: ["Water Modification System", "Enhanced Workability"],
+    originalPrice: "₹850/10L", // Added placeholder
+    savings: "₹150/10L", // Added placeholder
+    discount: "Custom discounts available", // Added placeholder
+    features: ["Water Modification System", "Enhanced Workability", "Improved Mix Quality"],
     benefits: [
       "Improves bonding",
       "Better material flow",
@@ -402,10 +558,26 @@ export const dallasProducts = [
       "Measuring cup included",
       "Usage instructions",
     ],
+    applicationSteps: [ // Added placeholder
+      "Dilute Watertreater with water as per specific product instructions.",
+      "Use the treated water for mixing with Dallas products (e.g., plaster, putty, grout).",
+      "Ensure consistent mixing ratios for optimal results.",
+      "Store unused Watertreater in a cool, dry place.",
+      "Follow safety guidelines during handling."
+    ],
+    specialFeatures: [ // Added placeholder
+      "Optimizes hydration of cementitious materials",
+      "Reduces efflorescence",
+      "Enhances durability of finished surface",
+      "Non-toxic and environmentally safe"
+    ],
     warranty: "1 Year Quality Guarantee",
     deliveryTime: "Same day",
     hasTechData: false,
-    flexibleServiceOptions: flexibleServiceOptions, // Added
+    techData: [], // Explicitly set as empty array if no tech data
+    flexibleServiceOptions: flexibleServiceOptions,
+    nextGenFeatures: nextGenFeatures_WaterTreater, // Used specific next-gen features
+    brochures: defaultBrochures,
   },
 ];
 
@@ -413,11 +585,14 @@ export const drProofProducts = [
   {
     id: "dr-proof-m1-bond",
     name: "Dr. M1 Bond",
-    tagline: "Advanced Waterproofing Solutions",
+ tagline: "Next-Gen Wallcare. Global Quality.",
     image: DallasDrM1Bond,
     icon: "💧",
     price: "For bulk order discount upto 40 %",
-    features: ["Liquid Membranes", "Protective Coatings"],
+    originalPrice: "₹250/L", // Added placeholder
+    savings: "₹50 per litre", // Added placeholder
+    discount: "Bulk Order Benefits", // Added placeholder
+    features: ["Liquid Membranes", "Protective Coatings", "Crack Bridging"],
     benefits: [
       "Seamless protection",
       "UV resistance",
@@ -440,10 +615,20 @@ export const drProofProducts = [
       "Technical consultation",
       "Installation guide",
     ],
+    applicationSteps: [ // Added placeholder
+      "Clean and prepare the surface, ensuring it's dry and free of contaminants.",
+      "Apply the first coat of Dr. M1 Bond evenly with a brush or roller.",
+      "Allow to dry as per instructions, then apply a second coat if required.",
+      "Ensure proper ventilation during application.",
+      "Conduct a water ponding test for final verification (if applicable)."
+    ],
     warranty: "10 Year Guarantee",
     deliveryTime: "3-5 days",
     hasTechData: false,
-    flexibleServiceOptions: flexibleServiceOptions, // Added
+    techData: [], // Explicitly set as empty array if no tech data
+    flexibleServiceOptions: flexibleServiceOptions,
+    nextGenFeatures: nextGenFeatures_PrimerWaterproofing, // Used specific next-gen features
+    brochures: defaultBrochures,
   },
 ];
 
@@ -451,11 +636,14 @@ export const ceramikhaProducts = [
   {
     id: "ceramikha-gypsum-plaster",
     name: "Ceramikha Gypsum Plaster",
-    tagline: "Advanced Ceramic Solutions",
+ tagline: "Next-Gen Wallcare. Global Quality.",
     image: Ceramikha,
     icon: "🏺",
     price: "For bulk order discount upto 40 %",
-    features: ["Ceramic Technology", "High Durability"],
+    originalPrice: "₹550/bag", // Added placeholder
+    savings: "₹80 per bag", // Added placeholder
+    discount: "Custom Discounts", // Added placeholder
+    features: ["Ceramic Technology", "High Durability", "Smooth Finish"],
     benefits: [
       "Premium quality",
       "Low maintenance",
@@ -476,10 +664,20 @@ export const ceramikhaProducts = [
       "Color guide",
       "Maintenance instructions",
     ],
+    applicationSteps: [ // Added placeholder
+      "Prepare surface by cleaning and leveling.",
+      "Mix Ceramikha Gypsum Plaster with water to a consistent paste.",
+      "Apply uniformly using appropriate tools.",
+      "Ensure proper drying and finishing for optimal results.",
+      "Follow product specific guidelines for best performance."
+    ],
     warranty: "5 Year Guarantee",
     deliveryTime: "3-5 days",
     hasTechData: false,
-    flexibleServiceOptions: flexibleServiceOptions, // Added
+    techData: [], // Explicitly set as empty array if no tech data
+    flexibleServiceOptions: flexibleServiceOptions,
+    nextGenFeatures: nextGenFeatures_Ceramic, // Used specific next-gen features
+    brochures: defaultBrochures,
   },
 ];
 
@@ -513,21 +711,21 @@ export const brandCategories = [
   {
     id: "dallas",
     name: "Dallas",
-    tagline: "Premium Construction Solutions",
+ tagline: "Next-Gen Wallcare. Global Quality.",
     image: Banner,
     description: "India's leading waterproof construction materials",
   },
   {
     id: "Ceramikha",
     name: "Ceramikha",
-    tagline: "Advanced Ceramic Solutions",
+ tagline: "Next-Gen Wallcare. Global Quality.",
     image: Ceramikha,
     description: "High-quality ceramic and finishing products",
   },
   {
     id: "drproof",
     name: "Dr. Proof",
-    tagline: "Waterproofing Specialists",
+ tagline: "Next-Gen Wallcare. Global Quality.",
     image: DallasDrM1Bond,
     description: "Professional waterproofing solutions",
   },

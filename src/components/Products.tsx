@@ -12,6 +12,7 @@ import {
   MapPin,
   ChevronDown, // Add this
   ChevronUp, // Add this
+  ArrowRight, // Import ArrowRight icon
 } from "lucide-react";
 import {
   dallasProducts,
@@ -59,8 +60,22 @@ const ProductsPage = () => {
             className="w-full h-48 object-contain"
           />
         </div>
-        <div className="p-6 flex flex-col flex-grow">
-          <h3 className="text-xl font-bold mb-2 text-center">{product.name}</h3>
+        <div className="p-6 flex flex-col flex-grow justify-between">
+          {" "}
+          {/* Added justify-between */}
+          <h3 className="text-xl font-bold mb-4 text-center">
+            {product.name}
+          </h3>{" "}
+          {/* Added mb-4 for spacing */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation(); // Prevent card's onClick from firing
+              navigate(`/products/${product.id}`);
+            }}
+            className="mt-auto inline-flex items-center justify-center bg-red-600 text-white text-md font-semibold px-4 py-2 rounded-full shadow-md hover:bg-red-700 hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-0.5 self-center" // Centered button
+          >
+            Know More <ArrowRight className="ml-2 w-4 h-4" />
+          </button>
         </div>
       </div>
     </div>
@@ -163,7 +178,7 @@ const ProductsPage = () => {
               <div className="flex items-center mb-8">
                 <div className="flex-grow h-px bg-gradient-to-r from-transparent via-red-500 to-transparent"></div>
                 <h3 className="mx-6 text-2xl md:text-3xl font-bold text-[#E63946] bg-white px-4 py-2 rounded-full shadow-lg">
-                  Dallas Products
+                  Our Products
                 </h3>
                 <div className="flex-grow h-px bg-gradient-to-r from-transparent via-red-500 to-transparent"></div>
               </div>
@@ -383,10 +398,10 @@ const ProductsPage = () => {
                 to your location!
               </p>
               <a
-                href="tel:+919342216880"
+                href="/products" // Changed href from tel: to /products
                 className="inline-flex items-center bg-red-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-red-700 transition-colors shadow-lg"
               >
-                Call us
+                Know more
               </a>
             </div>
           </div>

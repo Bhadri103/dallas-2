@@ -42,49 +42,44 @@ const ProductsPage = () => {
     },
   ];
   const dallasProducts = [
+      {
+      id: "wall-plaster", // Consistent ID, assuming this is "Ready Plaster"
+      name: "Wall-Plaster",
+      image: DallasReadyPlaster,
+      price: "₹450/bag",
+    },
     {
       id: "wall-putty",  
-      name: "Wall Putty",
+      name: "Wall-Putty",
       image: SupremeGplastWhite,
       price: "₹350/bag",
     },
     {
       id: "gypsum-plaster",
-      name: " Gypsum Plaster",
+      name: " Gypsum-Plaster",
       image: DallasGypsumPlasty,
       price: "₹380/bag",
     },
     {
     id: "tile-adhesive",
-      name: " Tile Adhesive",
+      name: " Tile-Adhesive",
       image: DallasTileAdhensive,
       price: "₹350/bag",
     },
     {
     id: "grout-plus",
-      name: " Grout Plus",
+      name: " Grout-Plus",
       image: DallasGroutPlus,
       price: "₹280/bag",
     },
-    {
-      id: "wall-plaster", // Consistent ID, assuming this is "Ready Plaster"
-      name: "Wall Plaster",
-      image: DallasReadyPlaster,
-      price: "₹450/bag",
-    },
-    {
-    id: "supreme-gyplast",
-      name: " Supreme Gyplast",
-      image: DallasSupremeGyplast,
-      price: "₹420/bag",
-    },
+  
   ];
 
   // Ceramica Products - Added click handler
   const ceramicaProducts = [
     {
       id: "ceramica-gypsum-plaster",
-      name: "Ceramica Gypsum Plaster",
+      name: "Ceramikha",
       image: Ceramikha,
       price: "₹420/bag",
     },
@@ -150,7 +145,7 @@ const ProductsPage = () => {
               {dallasProducts.map((product) => (
                 <div
                   key={product.id}
-                  className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer" // Added cursor-pointer and onClick
+                  className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer flex flex-col" // Added flex flex-col for button positioning
                   onClick={() => navigate(`/products/${product.id}`)}
                 >
                   <div className="relative">
@@ -160,10 +155,19 @@ const ProductsPage = () => {
                       className="w-full h-48 object-contain"
                     />
                   </div>
-                  <div className="p-4">
-                    <h4 className="font-semibold text-center text-gray-800 text-lg">
+                  <div className="p-4 flex flex-col flex-grow justify-between"> {/* Added flex-grow and justify-between */}
+                    <h4 className="font-semibold text-center text-gray-800 text-lg mb-4">
                       {product.name}
                     </h4>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation(); // Prevent card's onClick from firing
+                        navigate(`/products/${product.id}`);
+                      }}
+                      className="mt-auto inline-flex items-center justify-center bg-red-600 text-white text-md font-semibold px-4 py-2 rounded-full shadow-md hover:bg-red-700 hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-0.5 self-center" // Centered button
+                    >
+                      Know More <ArrowRight className="ml-2 w-4 h-4" />
+                    </button>
                   </div>
                 </div>
               ))}
@@ -184,7 +188,7 @@ const ProductsPage = () => {
               {ceramicaProducts.map((product) => (
                 <div
                   key={product.id}
-                  className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer" // Added cursor-pointer and onClick
+                  className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer flex flex-col"
                   onClick={() => navigate(`/products/${product.id}`)}
                 >
                   <div className="relative">
@@ -193,14 +197,20 @@ const ProductsPage = () => {
                       alt={product.name}
                       className="w-full h-48 object-contain"
                     />
-                    {/* <div className="absolute top-2 right-2 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      {product.price}
-                    </div> */}
                   </div>
-                  <div className="p-4">
-                    <h4 className="font-semibold text-center text-gray-800 text-lg">
+                  <div className="p-4 flex flex-col flex-grow justify-between">
+                    <h4 className="font-semibold text-center text-gray-800 text-lg mb-4">
                       {product.name}
                     </h4>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        navigate(`/products/${product.id}`);
+                      }}
+                      className="mt-auto inline-flex items-center justify-center bg-red-600 text-white text-md font-semibold px-4 py-2 rounded-full shadow-md hover:bg-red-700 hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-0.5 self-center"
+                    >
+                      Know More <ArrowRight className="ml-2 w-4 h-4" />
+                    </button>
                   </div>
                 </div>
               ))}
@@ -221,7 +231,7 @@ const ProductsPage = () => {
               {drProofProducts.map((product) => (
                 <div
                   key={product.id}
-                  className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer" // Added cursor-pointer and onClick
+                  className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer flex flex-col"
                   onClick={() => navigate(`/products/${product.id}`)}
                 >
                   <div className="relative">
@@ -230,21 +240,26 @@ const ProductsPage = () => {
                       alt={product.name}
                       className="w-full h-48 object-contain"
                     />
-                    {/* <div className="absolute top-2 right-2 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      {product.price}
-                    </div> */}
                   </div>
-                  <div className="p-4">
-                    <h4 className="font-semibold text-center text-gray-800 text-lg">
+                  <div className="p-4 flex flex-col flex-grow justify-between">
+                    <h4 className="font-semibold text-center text-gray-800 text-lg mb-4">
                       {product.name}
                     </h4>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        navigate(`/products/${product.id}`);
+                      }}
+                      className="mt-auto inline-flex items-center justify-center bg-red-600 text-white text-md font-semibold px-4 py-2 rounded-full shadow-md hover:bg-red-700 hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-0.5 self-center"
+                    >
+                      Know More <ArrowRight className="ml-2 w-4 h-4" />
+                    </button>
                   </div>
                 </div>
               ))}
             </div>
           </div>
           <div className="w-full flex justify-center">
-            {/* Changed to button with onClick for React Router navigation */}
             <button
               onClick={() => navigate("/products")}
               className="inline-flex items-center justify-center bg-red-600 text-white text-lg font-semibold px-10 py-4 rounded-full shadow-lg hover:bg-red-700 hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1"

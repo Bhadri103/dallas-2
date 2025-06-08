@@ -3,30 +3,33 @@ import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import {
   Shield,
-  Award, // Assuming Award might be used elsewhere or planned for future use, otherwise remove
-  Droplets, // Assuming Droplets might be used elsewhere or planned for future use, otherwise remove
-  Zap, // Assuming Zap might be used elsewhere or planned for future use, otherwise remove
-  Leaf, // Assuming Leaf might be used elsewhere or planned for future use, otherwise remove
-  Settings, // Assuming Settings might be used elsewhere or planned for future use, otherwise remove
+  Award,
+  Droplets,
+  Zap,
+  Leaf,
+  Settings,
   Star,
   Brush,
   Package,
   IndianRupee,
-  Phone, // Added for call option
-  MessageSquare, // Added for WhatsApp option
+  Phone,
+  MessageSquare,
   ArrowLeft,
   Truck,
   HeartHandshake,
-  Lightbulb, // New import for Next-Gen section
-  Layers, // New import for Flexible Service Options
-  BadgeCheck, // New import for checkmarks in Next-Gen features
-  CheckCircle, // Used for existing benefits and new flexible service options
+  Lightbulb,
+  Layers,
+  BadgeCheck,
+  CheckCircle,
+  Download, // Ensure Download icon is imported
 } from "lucide-react";
-import { allProducts } from "../data/productsData";
+import { allProducts } from "../data/productsData"; // Ensure productsData is correctly imported
+
 // Define contact number for WhatsApp and Call
 const contactNumber = "+9199942 55808"; // Replace with your actual phone number
 const whatsappLink = `https://wa.me/${contactNumber.replace(/\D/g, "")}`; // Removes non-digits for WhatsApp URL
 const callLink = `tel:${contactNumber}`;
+
 // Component for displaying technical data table
 const TechnicalDataTable = ({ data }: { data: any[] }) => (
   <div className="overflow-x-auto">
@@ -58,8 +61,10 @@ const ProductDetailsPage = () => {
   const { productId } = useParams();
   const navigate = useNavigate();
 
+  // Find the selected product based on the productId from the URL
   const selectedProduct = allProducts.find((p) => p.id === productId);
 
+  // Scroll to the top of the page when productId changes
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -67,6 +72,7 @@ const ProductDetailsPage = () => {
     });
   }, [productId]);
 
+  // If no product is found, display a "Product Not Found" message
   if (!selectedProduct) {
     return (
       <div className="text-center py-20 bg-gray-50 min-h-screen">
@@ -98,18 +104,26 @@ const ProductDetailsPage = () => {
       </button>
 
       <div className="bg-white rounded-2xl shadow-xl overflow-hidden p-8 mb-8">
-        <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-          <div className="md:w-1/3">
+        {/* Product name moved to the top, above the image section, and now left-aligned and responsive font size */}
+        <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 text-left mb-6">
+          {selectedProduct.name}
+        </h2>
+
+        <div className="flex flex-col md:flex-row items-center md:items-stretch gap-8">
+          <div className="md:w-1/3 h-full flex items-center justify-center">
             <img
               src={selectedProduct.image}
               alt={selectedProduct.name}
-              className="w-full h-auto object-contain rounded-lg shadow-md"
+              className="w-full h-full object-contain rounded-lg"
             />
           </div>
-          <div className="md:w-2/3">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">
+
+          <div className="md:w-2/3 p-6 bg-white rounded-lg h-full flex flex-col">
+            {/* Product name as a title below the image on the right content area, with responsive font size */}
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2">
               {selectedProduct.name}
-            </h2>
+            </h3>
+            {/* Tagline remains below the new heading */}
             <p className="text-xl text-gray-600 mb-6">
               {selectedProduct.tagline}
             </p>
@@ -122,137 +136,89 @@ const ProductDetailsPage = () => {
               )}
 
               {selectedProduct.discount && <div></div>}
-              {/* {selectedProduct.warranty && (
-                <div className="bg-white p-2 rounded text-center flex items-center justify-center">
-                  <Shield className="w-5 h-5 mr-2 text-blue-600" />
-                  <div className="text-sm font-semibold">
-                    {selectedProduct.warranty}
-                  </div>
-                </div>
-              )}
-              {selectedProduct.deliveryTime && (
-                <div className="bg-green-50 p-2 rounded text-center flex items-center justify-center">
-                  <Truck className="w-5 h-5 mr-2 text-green-600" />
-                  <div className="text-sm font-semibold">
-                    {selectedProduct.deliveryTime}
-                  </div>
-                </div>
-              )}*/}
             </div>
 
-            {selectedProduct.benefits && (
-              <div className="mb-6">
-                {/* <h4 className="font-semibold text-xl text-gray-800 mb-3 flex items-center">
-                  <HeartHandshake className="w-5 h-5 mr-2 text-purple-700" />
-                  Key Benefits
-                </h4> */}
-                {/* <ul className="list-disc list-inside text-gray-700 space-y-2">
-                  {selectedProduct.benefits.map((benefit, idx) => (
-                    <li key={idx} className="flex items-start">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-1" />
-                      {benefit}
-                    </li>
-                  ))}
-                </ul> */}
-
+            {selectedProduct.flexibleServiceOptions && (
+              <>
                 <h5 className="font-semibold text-xl mb-4 flex items-center">
-                  <Lightbulb className="w-5 h-5 mr-2 text-purple-700" />
-                  Next-Gen Wallcare. Global Quality.
+                  <Layers className="w-5 h-5 mr-2 text-indigo-700" />
+                  Flexible Service Options to Suit Your Needs
                 </h5>
-                <ul className="list-disc list-inside text-gray-700 space-y-2">
-                  {selectedProduct.nextGenFeatures.map((feature, idx) => (
-                    <li key={idx} className="flex items-start">
-                      <BadgeCheck className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-1" />
-                      {feature}
-                    </li>
+                <div className="space-y-6 flex-grow">
+                  {selectedProduct.flexibleServiceOptions.map((option, idx) => (
+                    <div key={idx} className="border-b pb-4 last:border-b-0">
+                      <h6 className="font-semibold text-lg text-gray-800 mb-2">
+                        {option.title}
+                      </h6>
+                      <p className="text-gray-700 mb-2">{option.description}</p>
+                      <ul className="list-none text-gray-700 space-y-1 mb-4">
+                        {option.points.map((point, pointIdx) => (
+                          <li key={pointIdx} className="flex items-start">
+                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-1" />
+                            {point}
+                          </li>
+                        ))}
+                      </ul>
+                      <p className="text-gray-600 text-sm font-medium mb-4">
+                        For enquiries or orders, feel free to get in touch.
+                      </p>
+                      <div className="flex space-x-4">
+                        <a
+                          href={callLink}
+                          className="flex items-center px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors font-semibold"
+                        >
+                          <Phone className="w-5 h-5 mr-2" />
+                          Call Us
+                        </a>
+                        <a
+                          href={whatsappLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center px-4 py-2 bg-green-500 text-white rounded-full hover:bg-green-600 transition-colors font-semibold"
+                        >
+                          <MessageSquare className="w-5 h-5 mr-2" />
+                          WhatsApp
+                        </a>
+                      </div>
+                    </div>
                   ))}
-                </ul>
-              </div>
-            )}
-
-            {selectedProduct.features && (
-              <div className="mb-6">
-                <h4 className="font-semibold text-xl text-gray-800 mb-3 flex items-center">
-                  <Star className="w-5 h-5 mr-2 text-yellow-700" />
-                  Features
-                </h4>
-                <ul className="list-disc list-inside text-gray-700 space-y-2">
-                  {selectedProduct.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-1" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                </div>
+              </>
             )}
           </div>
         </div>
       </div>
-      <div className="space-y-8">
-        {selectedProduct.flexibleServiceOptions && (
-          <div className="p-6 bg-white rounded-lg shadow-md">
-            <h5 className="font-semibold text-xl mb-4 flex items-center">
-              <Layers className="w-5 h-5 mr-2 text-indigo-700" />
-              Flexible Service Options to Suit Your Needs
-            </h5>
-            <div className="space-y-6">
-              {selectedProduct.flexibleServiceOptions.map((option, idx) => (
-                <div key={idx} className="border-b pb-4 last:border-b-0">
-                  <h6 className="font-semibold text-lg text-gray-800 mb-2">
-                    {option.title}
-                  </h6>
-                  <p className="text-gray-700 mb-2">{option.description}</p>
-                  <ul className="list-none text-gray-700 space-y-1">
-                    {option.points.map((point, pointIdx) => (
-                      <li key={pointIdx} className="flex items-start">
-                        <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-1" />
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-            <p className="mt-4 text-gray-600 text-sm font-medium">
-              For enquiries or orders, feel free to get in touch.
-            </p>
 
-            <div className="flex space-x-4 mt-4">
-              <a
-                href={callLink}
-                className="flex items-center px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors font-semibold"
-              >
-                <Phone className="w-5 h-5 mr-2" />
-                Call Us
-              </a>
-              <a
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center px-4 py-2 bg-green-500 text-white rounded-full hover:bg-green-600 transition-colors font-semibold"
-              >
-                <MessageSquare className="w-5 h-5 mr-2" />
-                WhatsApp
-              </a>
-            </div>
-          </div>
-        )}
-      </div>
       <div className="space-y-8">
-        {selectedProduct.packageContents && (
+        {selectedProduct.benefits && (
           <div className="p-6 bg-white rounded-lg shadow-md">
-            <h5 className="font-semibold text-xl mb-4 flex items-center">
-              <Package className="w-5 h-5 mr-2 text-blue-700" />
-              Package Contents
-            </h5>
+            <h4 className="font-semibold text-xl text-gray-800 mb-3 flex items-center">
+              <Star className="w-5 h-5 mr-2 text-yellow-700" />
+              Key Features
+            </h4>
             <ul className="list-disc list-inside text-gray-700 space-y-2">
-              {selectedProduct.packageContents.map((item, idx) => (
-                <li key={idx}>{item}</li>
+              {selectedProduct.nextGenFeatures.map((feature, idx) => (
+                <li key={idx} className="flex items-start">
+                  <BadgeCheck className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-1" />
+                  {feature}
+                </li>
               ))}
             </ul>
           </div>
         )}
+
+        {/* {selectedProduct.features && (
+          <div className="p-6 bg-white rounded-lg shadow-md">
+            <ul className="list-disc list-inside text-gray-700 space-y-2">
+              {selectedProduct.features.map((feature, idx) => (
+                <li key={idx} className="flex items-start">
+                  <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-1" />
+                  {feature}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )} */}
 
         {selectedProduct.applicationSteps && (
           <div className="p-6 bg-white rounded-lg shadow-md">
@@ -285,6 +251,34 @@ const ProductDetailsPage = () => {
         {selectedProduct.specialOffer && (
           <div className="p-6 bg-red-100 rounded-lg text-red-800 font-medium text-lg flex items-center shadow-md">
             {selectedProduct.specialOffer}
+          </div>
+        )}
+
+        {/* Section for Download Brochures */}
+        {/* This section will only render if selectedProduct.brochures exists and has at least one item */}
+        {selectedProduct.brochures && selectedProduct.brochures.length > 0 && (
+          <div className="p-6 bg-white rounded-lg shadow-md">
+            <h5 className="font-semibold text-xl mb-4 flex items-center">
+              <Download className="w-5 h-5 mr-2 text-blue-700" />
+              Download Product Brochure
+            </h5>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {selectedProduct.brochures.map((brochure, idx) => (
+                <a
+                  key={idx}
+                  href={brochure.url}
+                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  // --- UPDATED CLASS NAMES FOR SMALLER BUTTONS AND FULL WIDTH ---
+                  className="flex items-center justify-center w-full px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-medium text-center shadow-md text-sm"
+                >
+                  <Download className="w-4 h-4 mr-1 text-white" />{" "}
+                  {/* Smaller icon */}
+                  {brochure.language} Brochure
+                </a>
+              ))}
+            </div>
           </div>
         )}
 
