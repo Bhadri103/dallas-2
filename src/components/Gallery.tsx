@@ -519,20 +519,7 @@ const Gallery = () => {
         </div>
       )}
 
-      {/* Project Statistics Footer */}
-      <div className="mt-16 text-center">
-        <div className="bg-gradient-to-r from-red-600 to-red-700 text-white rounded-2xl p-8 md-12  mx-auto">
-          <h3 className="text-2xl font-bold mb-4">
-            Dallas Wallcare Excellence
-          </h3>
-          <p className="text-lg opacity-90">
-            Transforming South India's infrastructure with research-backed
-            waterproofing solutions. From Thiruvananthapuram to Bangalore, our
-            legacy spans across three states with unmatched quality and
-            reliability.
-          </p>
-        </div>
-      </div>
+     
     </div>
   );
 };

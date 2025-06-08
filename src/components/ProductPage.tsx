@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
-const Aafee = "./images/Aafee.jpeg";
-const Banner = "./images/Banner.jpeg";
+const Aafee = "./images/Aafee.png";
+const Banner = "./images/Banner.png";
 const Ceramikha = "./images/Ceramikha.png";
-const DallasGroutPlus = "./images/DallasGroutPlus.jpeg";
-const DallasWallutty = "./images/DallasWallutty.jpeg";
+const DallasGroutPlus = "./images/GroutPlus.png";
+const DallasWallutty = "./images/DallasWallutty.png";
 const DallasDrM1Bond = "./images/DallasDrM1Bond.jpeg";
-const DallasGypsumPlasty = "./images/DallasGypsmPlasty.jpeg";
-const DallasReadyPlaster = "./images/DallasReadyPlasty.jpeg";
+const DallasGypsumPlasty = "./images/DallasGypsmPlasty.png";
+const DallasReadyPlaster = "./images/DallasReadyPlasty.png";
 const DallasSupremeGyplast = "./images/DallasSupremeGyplast.jpeg";
-const DallasTileAdhensive = "./images/DallasTileAdhensive.jpeg";
+const DallasTileAdhensive = "./images/DallasTileAdhensive.png";
 
 const ProductsPage = () => {
   // Brand Categories
@@ -19,7 +19,7 @@ const ProductsPage = () => {
       name: "Dallas",
       tagline: "Premium Construction Solutions",
       image: Banner,
-      description: "India's leading waterproof construction materials",
+      description: "India's leading waterPROOFconstruction materials",
     },
     {
       id: "ceramica",
@@ -77,17 +77,17 @@ const ProductsPage = () => {
     },
   ];
 
-  // Ceramica Products
+  // Ceramikha Products
   const ceramicaProducts = [
     {
       id: "ceramica-gypsum-plaster",
-      name: "Ceramica Gypsum Plaster",
+      name: "Ceramikha Gypsum Plaster",
       image: Ceramikha,
       price: "₹420/bag",
     },
   ];
 
-  // Dr. Proof Products
+  // Dr. PROOFProducts
   const drProofProducts = [
     {
       id: "drproof-m1-bond",
@@ -153,7 +153,7 @@ const ProductsPage = () => {
                 <span className="text-red-600">Dallas</span> Products
               </h3>
               <p className="text-gray-600">
-                Premium waterproof construction solutions
+                Premium waterPROOFconstruction solutions
               </p>
             </div>
 
@@ -183,7 +183,7 @@ const ProductsPage = () => {
             </div>
           </div>
 
-          {/* Ceramica Products Section */}
+          {/* Ceramikha Products Section */}
           <div className="mb-16">
             <div className="text-center mb-8">
               <h3 className="text-2xl md:text-3xl font-bold mb-4">
@@ -220,7 +220,7 @@ const ProductsPage = () => {
             </div>
           </div>
 
-          {/* Dr. Proof Products Section */}
+          {/* Dr. PROOFProducts Section */}
           <div className="mb-16">
             <div className="text-center mb-8">
               <h3 className="text-2xl md:text-3xl font-bold mb-4">

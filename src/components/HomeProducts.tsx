@@ -1,19 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
-  const Aafee = "./images/Aafee.png";
-  const Banner = "./images/Banner.jpeg";
-  const Ceramikha = "./images/Ceramikha.png";
-  const DallasGroutPlus = "./images/DallasGroutPlus.jpeg";
-  const DallasWallutty = "./images/DallasWallutty.jpeg";
-  const DallasDrM1Bond = "./images/DallasDrM1Bond.jpeg";
-  const DallasGypsumPlasty = "./images/DallasGypsmPlasty.jpeg";
-  const DallasReadyPlaster = "./images/DallasReadyPlasty.jpeg";
-  const DallasSupremeGyplast = "./images/DallasSupremeGyplast.jpeg";
-  const DallasTileAdhensive = "./images/DallasTileAdhensive.jpeg";
+const Aafee = "./images/Aafee.png";
+const Banner = "./images/Banner.jpeg";
+const Ceramikha = "./images/Ceramikha.png";
+const DallasGroutPlus = "./images/GroutPlus.png";
+const DallasWallutty = "./images/DallasWallutty.png";
+const DallasDrM1Bond = "./images/DallasDrM1Bond.jpeg";
+const DallasGypsumPlasty = "./images/DallasGypsmPlasty.png";
+const DallasReadyPlaster = "./images/DallasReadyPlasty.png";
+const DallasSupremeGyplast = "./images/SupremeGplastSingle.png";
+const DallasTileAdhensive = "./images/DallasTileAdhensive.png";
+const SupremeGplastWhite = "./images/SupremeGplastWhite.png";
 
 const ProductsPage = () => {
-  // Brand Categories
+  const navigate = useNavigate(); // Initialize the navigate hook
+
+  // Brand Categories (no changes as per request)
   const brandCategories = [
     {
       id: "dallas",
@@ -37,48 +41,46 @@ const ProductsPage = () => {
       description: "Professional waterproofing solutions",
     },
   ];
-
-  // Dallas Products
   const dallasProducts = [
     {
-      id: "dallas-wall-plaster",
-      name: "Dallas Ready Plaster",
-      image: DallasReadyPlaster,
-      price: "₹450/bag",
+      id: "wall-putty",  
+      name: "Wall Putty",
+      image: SupremeGplastWhite,
+      price: "₹350/bag",
     },
     {
-      id: "dallas-wall-putty",
-      name: "Dallas Wall Putty",
-      image: DallasWallutty,
-      price: "₹320/bag",
-    },
-    {
-      id: "dallas-gypsum-plaster",
-      name: "Dallas Gypsum Plaster",
-      image: DallasGypsumPlasty, // Changed to match the import variable name
+      id: "gypsum-plaster",
+      name: " Gypsum Plaster",
+      image: DallasGypsumPlasty,
       price: "₹380/bag",
     },
     {
-      id: "dallas-supreme-gyplast",
-      name: "Dallas Supreme Gyplast",
-      image: DallasSupremeGyplast,
-      price: "₹420/bag",
+    id: "tile-adhesive",
+      name: " Tile Adhesive",
+      image: DallasTileAdhensive,
+      price: "₹350/bag",
     },
     {
-      id: "dallas-grout-plus",
-      name: "Dallas Grout Plus",
+    id: "grout-plus",
+      name: " Grout Plus",
       image: DallasGroutPlus,
       price: "₹280/bag",
     },
     {
-      id: "dallas-tile-adhesive",
-      name: "Dallas Tile Adhesive",
-      image: DallasTileAdhensive,
-      price: "₹350/bag",
+      id: "wall-plaster", // Consistent ID, assuming this is "Ready Plaster"
+      name: "Wall Plaster",
+      image: DallasReadyPlaster,
+      price: "₹450/bag",
+    },
+    {
+    id: "supreme-gyplast",
+      name: " Supreme Gyplast",
+      image: DallasSupremeGyplast,
+      price: "₹420/bag",
     },
   ];
 
-  // Ceramica Products
+  // Ceramica Products - Added click handler
   const ceramicaProducts = [
     {
       id: "ceramica-gypsum-plaster",
@@ -88,25 +90,18 @@ const ProductsPage = () => {
     },
   ];
 
-  // Dr. Proof Products
+  // DrProof Products - Added click handler
   const drProofProducts = [
     {
-      id: "drproof-m1-bond",
+      id: "m1-bond",
       name: "Dr. M1 Bond",
       image: DallasDrM1Bond,
       price: "₹580/bag",
     },
-    // {
-    //   id: "drproof-protective-coating",
-    //   name: "Protective Coating",
-    //   image: Aafee,
-    //   price: "Custom Pricing",
-    // },
   ];
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
       <section className="pt-16 pb-12">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
@@ -118,7 +113,6 @@ const ProductsPage = () => {
             </p>
           </div>
 
-          {/* Brand Categories */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {brandCategories.map((brand) => (
               <div
@@ -138,16 +132,10 @@ const ProductsPage = () => {
                     </div>
                   </div>
                 </div>
-                {/* <div className="p-6">
-                  <p className="text-gray-600 text-center">
-                    {brand.description}
-                  </p>
-                </div> */}
               </div>
             ))}
           </div>
 
-          {/* Dallas Products Section */}
           <div className="mb-16">
             <div className="text-center mb-8">
               <h3 className="text-2xl md:text-3xl font-bold mb-4">
@@ -162,7 +150,8 @@ const ProductsPage = () => {
               {dallasProducts.map((product) => (
                 <div
                   key={product.id}
-                  className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                  className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer" // Added cursor-pointer and onClick
+                  onClick={() => navigate(`/products/${product.id}`)}
                 >
                   <div className="relative">
                     <img
@@ -170,9 +159,6 @@ const ProductsPage = () => {
                       alt={product.name}
                       className="w-full h-48 object-contain"
                     />
-                    <div className="absolute top-2 right-2 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      {product.price}
-                    </div>
                   </div>
                   <div className="p-4">
                     <h4 className="font-semibold text-center text-gray-800 text-lg">
@@ -184,7 +170,6 @@ const ProductsPage = () => {
             </div>
           </div>
 
-          {/* Ceramica Products Section */}
           <div className="mb-16">
             <div className="text-center mb-8">
               <h3 className="text-2xl md:text-3xl font-bold mb-4">
@@ -199,7 +184,8 @@ const ProductsPage = () => {
               {ceramicaProducts.map((product) => (
                 <div
                   key={product.id}
-                  className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                  className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer" // Added cursor-pointer and onClick
+                  onClick={() => navigate(`/products/${product.id}`)}
                 >
                   <div className="relative">
                     <img
@@ -207,9 +193,9 @@ const ProductsPage = () => {
                       alt={product.name}
                       className="w-full h-48 object-contain"
                     />
-                    <div className="absolute top-2 right-2 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    {/* <div className="absolute top-2 right-2 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
                       {product.price}
-                    </div>
+                    </div> */}
                   </div>
                   <div className="p-4">
                     <h4 className="font-semibold text-center text-gray-800 text-lg">
@@ -221,7 +207,6 @@ const ProductsPage = () => {
             </div>
           </div>
 
-          {/* Dr. Proof Products Section */}
           <div className="mb-16">
             <div className="text-center mb-8">
               <h3 className="text-2xl md:text-3xl font-bold mb-4">
@@ -236,7 +221,8 @@ const ProductsPage = () => {
               {drProofProducts.map((product) => (
                 <div
                   key={product.id}
-                  className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                  className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer" // Added cursor-pointer and onClick
+                  onClick={() => navigate(`/products/${product.id}`)}
                 >
                   <div className="relative">
                     <img
@@ -244,9 +230,9 @@ const ProductsPage = () => {
                       alt={product.name}
                       className="w-full h-48 object-contain"
                     />
-                    <div className="absolute top-2 right-2 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    {/* <div className="absolute top-2 right-2 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
                       {product.price}
-                    </div>
+                    </div> */}
                   </div>
                   <div className="p-4">
                     <h4 className="font-semibold text-center text-gray-800 text-lg">
@@ -257,16 +243,15 @@ const ProductsPage = () => {
               ))}
             </div>
           </div>
-
-          {/* CTA Button */}
           <div className="w-full flex justify-center">
-            <a
-              href="/dallas-2/products"
+            {/* Changed to button with onClick for React Router navigation */}
+            <button
+              onClick={() => navigate("/products")}
               className="inline-flex items-center justify-center bg-red-600 text-white text-lg font-semibold px-10 py-4 rounded-full shadow-lg hover:bg-red-700 hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1"
             >
               Explore All Products
               <ArrowRight className="ml-3 w-6 h-6" />
-            </a>
+            </button>
           </div>
         </div>
       </section>

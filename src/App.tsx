@@ -4,7 +4,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
-import Products from './pages/Products';
+import Products from './pages/Products'; // Your ProductsPage component (list view)
+import ProductDetailsPage from './pages/ProductDetailsPage'; // Import the new details page
 import Services from './pages/Services';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
@@ -20,7 +21,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            {/* Route for the main products list */}
             <Route path="/products" element={<Products />} />
+            {/* Route for individual product details, rendering the new component */}
+            <Route path="/products/:productId" element={<ProductDetailsPage />} />
             <Route path="/services" element={<Services />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
