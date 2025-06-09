@@ -50,7 +50,7 @@ const ProductsPage = () => {
   const ProductCard = ({ product }) => (
     <div className="relative">
       <div
-        className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col h-full cursor-pointer"
+        className="bg-white rounded-2xl p-4 shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col h-full cursor-pointer"
         onClick={() => navigate(`/products/${product.id}`)} // Navigate to separate details page
       >
         <div className="relative">

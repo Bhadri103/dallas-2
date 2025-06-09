@@ -21,7 +21,7 @@ import {
   Layers,
   BadgeCheck,
   CheckCircle,
-  Download, // Ensure Download icon is imported
+  Download,
 } from "lucide-react";
 import { allProducts } from "../data/productsData"; // Ensure productsData is correctly imported
 
@@ -104,40 +104,44 @@ const ProductDetailsPage = () => {
       </button>
 
       <div className="bg-white rounded-2xl shadow-xl overflow-hidden p-8 mb-8">
-        {/* Product name moved to the top, above the image section, and now left-aligned and responsive font size */}
-        <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 text-left mb-6">
-          {selectedProduct.name}
-        </h2>
-
-        <div className="flex flex-col md:flex-row items-center md:items-stretch gap-8">
-          <div className="md:w-1/3 h-full flex items-center justify-center">
-            <img
-              src={selectedProduct.image}
-              alt={selectedProduct.name}
-              className="w-full h-full object-contain rounded-lg"
-            />
-          </div>
-
-          <div className="md:w-2/3 p-6 bg-white rounded-lg h-full flex flex-col">
-            {/* Product name as a title below the image on the right content area, with responsive font size */}
-            <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2">
-              {selectedProduct.name}
-            </h3>
-            {/* Tagline remains below the new heading */}
-            <p className="text-xl text-gray-600 mb-6">
+        {selectedProduct.category && (
+          <div className="mb-4">
+            <h1 className="text-4xl font-extrabold text-red-600 underline text-center mb-2 tracking-wide">
+              {selectedProduct.category.toUpperCase()}{" "}
+            </h1>
+            <p className="text-xl text-gray-600 mt-2 text-center">
               {selectedProduct.tagline}
             </p>
+          </div>
+        )}
+        <hr className="mb-5" />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-              {selectedProduct.price && (
-                <div className="flex items-center text-lg font-bold text-red-600">
-                  {selectedProduct.price}
-                </div>
-              )}
-
-              {selectedProduct.discount && <div></div>}
+        <div className="flex flex-col md:flex-row items-start md:items-stretch gap-8">
+          {/* Left Column: Image, Title, Tagline */}
+          <div className="md:w-1/3 flex flex-col items-center text-center">
+            {/* Removed `my-4` directly from here and added to the content inside */}
+            <div className="flex-grow flex flex-col justify-center items-center p-4">
+              {" "}
+              {/* Added flex-grow, justify-center, items-center, and padding */}
+              <h2 className="text-3xl sm:text-2xl font-bold text-center text-gray-800 mb-2">
+                {" "}
+                {selectedProduct.name}
+              </h2>
+              {/* The image container should also stretch to fill available space */}
+              <div className="w-full h-full flex items-center justify-center">
+                {" "}
+                {/* Changed h-auto to h-full, added flex for centering image */}
+                <img
+                  src={selectedProduct.image}
+                  alt={selectedProduct.name}
+                  className="max-h-full max-w-full object-contain rounded-lg" // Used max-h-full and max-w-full
+                />
+              </div>
             </div>
+          </div>
 
+          {/* Right Column: Details (Your existing right column content) */}
+          <div className="md:w-2/3 p-6 bg-white rounded-lg h-full flex flex-col">
             {selectedProduct.flexibleServiceOptions && (
               <>
                 <h5 className="font-semibold text-xl mb-4 flex items-center">
@@ -162,10 +166,10 @@ const ProductDetailsPage = () => {
                       <p className="text-gray-600 text-sm font-medium mb-4">
                         For enquiries or orders, feel free to get in touch.
                       </p>
-                      <div className="flex space-x-4">
+                      <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                         <a
                           href={callLink}
-                          className="flex items-center px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors font-semibold"
+                          className="flex items-center justify-center w-full sm:w-auto px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors font-semibold"
                         >
                           <Phone className="w-5 h-5 mr-2" />
                           Call Us
@@ -174,7 +178,7 @@ const ProductDetailsPage = () => {
                           href={whatsappLink}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center px-4 py-2 bg-green-500 text-white rounded-full hover:bg-green-600 transition-colors font-semibold"
+                          className="flex items-center justify-center w-full sm:w-auto px-4 py-2 bg-green-500 text-white rounded-full hover:bg-green-600 transition-colors font-semibold"
                         >
                           <MessageSquare className="w-5 h-5 mr-2" />
                           WhatsApp
@@ -234,7 +238,7 @@ const ProductDetailsPage = () => {
           </div>
         )}
 
-        {selectedProduct.specialFeatures && (
+        {/* {selectedProduct.specialFeatures && (
           <div className="p-6 bg-white rounded-lg shadow-md">
             <h5 className="font-semibold text-xl mb-4 flex items-center">
               <Star className="w-5 h-5 mr-2 text-yellow-700" />
@@ -246,23 +250,25 @@ const ProductDetailsPage = () => {
               ))}
             </ul>
           </div>
-        )}
+        )} */}
 
-        {selectedProduct.specialOffer && (
+        {/* {selectedProduct.specialOffer && (
           <div className="p-6 bg-red-100 rounded-lg text-red-800 font-medium text-lg flex items-center shadow-md">
             {selectedProduct.specialOffer}
           </div>
+        )} */}
+        {selectedProduct.hasTechData && (
+          <div className="p-6 bg-white rounded-lg shadow-md">
+            <TechnicalDataTable data={selectedProduct.techData} />
+          </div>
         )}
-
-        {/* Section for Download Brochures */}
-        {/* This section will only render if selectedProduct.brochures exists and has at least one item */}
         {selectedProduct.brochures && selectedProduct.brochures.length > 0 && (
           <div className="p-6 bg-white rounded-lg shadow-md">
             <h5 className="font-semibold text-xl mb-4 flex items-center">
               <Download className="w-5 h-5 mr-2 text-blue-700" />
               Download Product Brochure
             </h5>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {selectedProduct.brochures.map((brochure, idx) => (
                 <a
                   key={idx}
@@ -270,21 +276,13 @@ const ProductDetailsPage = () => {
                   download
                   target="_blank"
                   rel="noopener noreferrer"
-                  // --- UPDATED CLASS NAMES FOR SMALLER BUTTONS AND FULL WIDTH ---
-                  className="flex items-center justify-center w-full px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-medium text-center shadow-md text-sm"
+                  className="flex items-center justify-center px-2 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-medium text-center shadow-md text-sm"
                 >
-                  <Download className="w-4 h-4 mr-1 text-white" />{" "}
-                  {/* Smaller icon */}
+                  <Download className="w-3 h-3 mr-1 text-white" />{" "}
                   {brochure.language} Brochure
                 </a>
               ))}
             </div>
-          </div>
-        )}
-
-        {selectedProduct.hasTechData && (
-          <div className="p-6 bg-white rounded-lg shadow-md">
-            <TechnicalDataTable data={selectedProduct.techData} />
           </div>
         )}
       </div>

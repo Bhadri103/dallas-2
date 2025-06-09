@@ -1,20 +1,13 @@
-// productsData.ts
-
-// Correct Image Imports: Make sure to import images from src/assets/images
 import Aafee from "../images/Aafee.png";
 import Banner from "../images/Banner.jpeg";
 import Ceramikha from "../images/Ceramikha.png";
 import DallasGroutPlus from "../images/GroutPlus.png";
-import DallasWallutty from "../images/DallasWallutty.png";
+import DallasWallutty from "../images/CombainedProduct/DallasWallutty.png";
 import DallasDrM1Bond from "../images/DallasDrM1Bond.jpeg";
 import DallasGypsumPlasty from "../images/DallasGypsmPlasty.png";
-import DallasReadyPlaster from "../images/DallasReadyPlasty.png";
-import DallasSupremeGyplast from "../images/SupremeGplastSingle.png";
+import DallasReadyPlaster from "../images/CombainedProduct/DallasReadyPlasty.png";
 import DallasTileAdhensive from "../images/DallasTileAdhensive.png";
-import SupremeGplast from "../images/SupremeGplastWhite.png";
 
-
-// Define Flexible Service Options
 const flexibleServiceOptions = [
   {
     title: "Option 1: Full Service (Material + Labour)",
@@ -34,7 +27,6 @@ const flexibleServiceOptions = [
   }
 ];
 
-// Define common Next-Gen features for various products
 const nextGenFeatures_GypsumPlaster = [
   "3X Waterproof & Weather-Resistant",
   "Supreme White, Smooth Finish",
@@ -61,6 +53,7 @@ const nextGenFeatures_TileAdhesive = [
 ];
 
 const nextGenFeatures_WallPlaster = [
+  "Next Gen / International Standards",
   "3X Waterproof & Weather-Proof",
   "Ready to Use – Just Add Water",
   "No Special Tools or Labour",
@@ -68,35 +61,35 @@ const nextGenFeatures_WallPlaster = [
   "Crack-Free, Shrink-Free Finish",
   "Factory Direct – No Middlemen",
   "Lifetime Warranty & Support",
-  "Strong Scientific background",
+  "Strong Scientific backround",
   "Made with River Sand, Quartz & Clinker",
   "Reduces Heat & Fungal Growth"
 ];
 
 const nextGenFeatures_SupremeGyplast = [
-    "International Standard",
-    "3X Waterproof & Weather-Proof",
-    "No Special Tools or Labour",
-    "Cuts Time & Costs",
-    "Lifetime Warranty",
-    "After-Sales Support",
-    "Factory Direct – No Middlemen",
-    "Strong Scientific Backroud",
-    "Supreme White",
-    "Uses Imported raw-materials , Modern Green Binders etc."
+  "International Standard",
+  "3X Waterproof & Weather-Proof",
+  "No Special Tools or Labour",
+  "Cuts Time & Costs",
+  "Lifetime Warranty",
+  "After-Sales Support",
+  "Factory Direct – No Middlemen",
+  "Strong Scientific Backroud",
+  "Supreme White",
+  "Uses Imported raw-materials , Modern Green Binders etc."
 ];
 
 const nextGenFeatures_WallPutty = [
-    "International Standard",
-    "3X Waterproof & Weather-Proof",
-    "No Special Tools or Labour",
-    "Cuts Time & Costs",
-    "Lifetime Warranty",
-    "After-Sales Support",
-    "Factory Direct – No Middlemen",
-    "Strong Scientific Backroud",
-    "Supreme White",
-    "Uses Imported raw-material , white Clinker , Binders etc"
+  "International Standard",
+  "3X Waterproof & Weather-Proof",
+  "No Special Tools or Labour",
+  "Cuts Time & Costs",
+  "Lifetime Warranty",
+  "After-Sales Support",
+  "Factory Direct – No Middlemen",
+  "Strong Scientific Backroud",
+  "Supreme White",
+  "Uses Imported raw-material , white Clinker , Binders etc"
 ];
 
 // Generic next-gen features for products where specific ones aren't defined
@@ -149,18 +142,16 @@ const nextGenFeatures_Ceramic = [
   "Weatherproof for All Climates"
 ];
 
-
 // Default brochure data to apply to products
 const defaultBrochures = [
-  { language: "English", url: "/brochures/default_english.pdf" },
+  { language: "Tamil", url: "/brochures/tamil.pdf" },
   { language: "Malayalam", url: "/brochures/default_malayalam.pdf" },
   { language: "Telugu", url: "/brochures/default_telugu.pdf" },
   { language: "Kannada", url: "/brochures/default_kannada.pdf" },
 ];
 
-
 export const wallPlasterTechData = [
-  { property: "Product Name", value: "Ready Plaster (Waterproof Wall Plaster)", isCode: "" },
+  { property: "Product Name", value: "Ready Wall Plaster (Waterproof Wall Plaster)", isCode: "" },
   { property: "Manufacturer", value: "Dallas WellCare Pvt Ltd.", isCode: "" },
   { property: "Product Code", value: "1001", isCode: "" },
   { property: "Appearance", value: "Smooth, off-grey paste", isCode: "" },
@@ -180,11 +171,114 @@ export const wallPlasterTechData = [
   { property: "Working Temperature", value: "5°C to 40°C", isCode: "" },
 ];
 
+// --- START: NEW TECHNICAL DATA TABLES FOR OTHER PRODUCTS ---
+
+export const wallPuttyTechData = [
+  { property: "Product Name", value: "Dallas Wall Putty", isCode: "" },
+  { property: "Manufacturer", value: "Dallas WellCare Pvt Ltd.", isCode: "" },
+  { property: "Product Code", value: "1002", isCode: "" },
+  { property: "Appearance", value: "Fine white powder", isCode: "" },
+  { property: "Pot Life", value: "2-3 hours", isCode: "" },
+  { property: "Drying Time (per coat)", value: "4-6 hours", isCode: "" },
+  { property: "Coverage", value: "1.0 - 1.2 m²/kg per coat (at 1.5 mm thickness)", isCode: "" },
+  { property: "Adhesion Strength", value: "> 1.0 MPa", isCode: "IS 15477:2019" },
+  { property: "Water Resistance", value: "Excellent", isCode: "" },
+  { property: "Shelf Life", value: "12 months", isCode: "" },
+  { property: "VOC Content", value: "Very low", isCode: "" },
+];
+
+export const gypsumPlasterTechData = [
+  { property: "Product Name", value: "Dallas Gypsum Plaster", isCode: "" },
+  { property: "Manufacturer", value: "Dallas WellCare Pvt Ltd.", isCode: "" },
+  { property: "Product Code", value: "1003", isCode: "" },
+  { property: "Appearance", value: "White powder", isCode: "" },
+  { property: "Setting Time (Initial)", value: "10-15 minutes", isCode: "IS 2542 (Part 1/Sec 1)" },
+  { property: "Setting Time (Final)", value: "25-30 minutes", isCode: "IS 2542 (Part 1/Sec 1)" },
+  { property: "Compressive Strength", value: "> 4.0 MPa (after 7 days)", isCode: "IS 2542 (Part 1/Sec 1)" },
+  { property: "Flexural Strength", value: "> 2.0 MPa", isCode: "IS 2542 (Part 1/Sec 1)" },
+  { property: "Density (Dry)", value: "900 - 1000 kg/m³", isCode: "IS 2542 (Part 1/Sec 1)" },
+  { property: "Coverage", value: "2.5 - 3.0 kg/m² per 10mm thickness", isCode: "" },
+  { property: "Shelf Life", value: "6 months", isCode: "" },
+];
+
+export const groutPlusTechData = [
+  { property: "Product Name", value: "Dallas Grout Plus", isCode: "" },
+  { property: "Manufacturer", value: "Dallas WellCare Pvt Ltd.", isCode: "" },
+  { property: "Product Code", value: "1004", isCode: "" },
+  { property: "Appearance", value: "Colored powder", isCode: "" },
+  { property: "Pot Life", value: "30-45 minutes", isCode: "" },
+  { property: "Setting Time", value: "24 hours", isCode: "" },
+  { property: "Compressive Strength", value: "> 20 MPa (after 28 days)", isCode: "IS 4031" },
+  { property: "Flexural Strength", value: "> 5 MPa (after 28 days)", isCode: "IS 4031" },
+  { property: "Water Absorption", value: "< 0.5%", isCode: "IS 15477:2019" },
+  { property: "Shrinkage", value: "Negligible", isCode: "" },
+  { property: "pH Level", value: "8-10", isCode: "" },
+  { property: "Shelf Life", value: "12 months", isCode: "" },
+];
+
+export const tileAdhesiveTechData = [
+  { property: "Product Name", value: "Dallas Tile Adhesive", isCode: "" },
+  { property: "Manufacturer", value: "Dallas WellCare Pvt Ltd.", isCode: "" },
+  { property: "Product Code", value: "1005", isCode: "" },
+  { property: "Appearance", value: "Grey powder", isCode: "" },
+  { property: "Pot Life", value: "2-3 hours", isCode: "" },
+  { property: "Open Time", value: "20-30 minutes", isCode: "IS 15477:2019" },
+  { property: "Adjustability Time", value: "15-20 minutes", isCode: "" },
+  { property: "Tensile Adhesion Strength", value: "> 1.5 MPa (after 28 days)", isCode: "IS 15477:2019" },
+  { property: "Slip Resistance", value: "< 0.5 mm", isCode: "IS 15477:2019" },
+  { property: "Coverage", value: "5-6 kg/m² (for 3mm bed thickness)", isCode: "" },
+  { property: "Shelf Life", value: "6 months", isCode: "" },
+];
+
+export const waterTreaterTechData = [
+  { property: "Product Name", value: "Dallas Watertreater", isCode: "" },
+  { property: "Manufacturer", value: "Dallas WellCare Pvt Ltd.", isCode: "" },
+  { property: "Product Code", value: "1006", isCode: "" },
+  { property: "Appearance", value: "Clear to pale yellow liquid", isCode: "" },
+  { property: "pH Level", value: "7.0 - 8.5", isCode: "" },
+  { property: "Specific Gravity", value: "1.0 - 1.05", isCode: "" },
+  { property: "Dosage (typical)", value: "1-2% by weight of cement", isCode: "" },
+  { property: "Chlorine Content", value: "Nil", isCode: "IS 456" },
+  { property: "Shelf Life", value: "24 months", isCode: "" },
+  { property: "VOC Content", value: "Zero", isCode: "" },
+];
+
+export const drM1BondTechData = [
+  { property: "Product Name", value: "Dr. M1 Bond", isCode: "" },
+  { property: "Manufacturer", value: "Dr. Proof / Dallas WellCare Pvt Ltd.", isCode: "" },
+  { property: "Product Code", value: "2001", isCode: "" },
+  { property: "Appearance", value: "Viscous liquid", isCode: "" },
+  { property: "Elongation at Break", value: "> 200%", isCode: "ASTM D412" },
+  { property: "Tensile Strength", value: "> 1.0 MPa", isCode: "ASTM D412" },
+  { property: "Water Immersion Adhesion", value: "Excellent", isCode: "ASTM D7234" },
+  { property: "Drying Time (per coat)", value: "4-6 hours", isCode: "" },
+  { property: "Coverage", value: "0.5 - 0.75 kg/m² per coat", isCode: "" },
+  { property: "VOC Content", value: "Low", isCode: "" },
+  { property: "Shelf Life", value: "12 months", isCode: "" },
+];
+
+export const ceramikhaGypsumPlasterTechData = [
+  { property: "Product Name", value: "Ceramikha Gypsum Plaster", isCode: "" },
+  { property: "Manufacturer", value: "Ceramikha / Dallas WellCare Pvt Ltd.", isCode: "" },
+  { property: "Product Code", value: "3001", isCode: "" },
+  { property: "Appearance", value: "White powder", isCode: "" },
+  { property: "Setting Time (Initial)", value: "15-20 minutes", isCode: "IS 2542 (Part 1/Sec 1)" },
+  { property: "Compressive Strength", value: "> 4.5 MPa (after 7 days)", isCode: "IS 2542 (Part 1/Sec 1)" },
+  { property: "Hardness", value: "High", isCode: "" },
+  { property: "Coverage", value: "2.3 - 2.8 kg/m² per 10mm thickness", isCode: "" },
+  { property: "Fire Resistance", value: "Non-combustible", isCode: "IS 3808" },
+  { property: "Shelf Life", value: "6 months", isCode: "" },
+];
+
+// --- END: NEW TECHNICAL DATA TABLES FOR OTHER PRODUCTS ---
+
+
 export const dallasProducts = [
   {
     id: "wall-plaster",
-    name: "DALLAS Ready Plaster",
-    tagline: "Next-Gen Wallcare. Global Quality.",
+    category: "Dallas",
+    name: "Dallas Ready Wall Plaster",
+    tagline: "India's 1st Next-Gen DampProof Ready Wall-Plaster.",
     image: DallasReadyPlaster,
     icon: "🏗️",
     price: "For bulk order discount upto 40 %",
@@ -202,7 +296,7 @@ export const dallasProducts = [
     applicationSteps: [
       "Fill a 200-litre drum with clean water",
       "Add 2 litres of Dallas Watertreater to the water and mix gently",
-      "Measure the required amount of Dallas Ready Plaster and gradually add 16–20% of the prepared water mixture",
+      "Measure the required amount of Dallas Ready Wall Plaster and gradually add 16–20% of the prepared water mixture",
       "Mix thoroughly until a uniform consistency is achieved",
       "Apply using standard plastering techniques",
       "Allow to cure for 24-48 hours for optimal strength",
@@ -224,7 +318,7 @@ export const dallasProducts = [
       "Crack-resistant formula",
     ],
     hasTechData: true,
-    techData: wallPlasterTechData,
+    techData: wallPlasterTechData, // Already correctly assigned
     warranty: "Lifetime Guarantee",
     deliveryTime: "2-3 days",
     flexibleServiceOptions: flexibleServiceOptions,
@@ -233,8 +327,9 @@ export const dallasProducts = [
   },
   {
     id: "wall-putty",
-    name: "DALLAS Wall Putty",
- tagline: "Next-Gen Wallcare. Global Quality.",
+    name: "Dallas Wall Putty",
+    category: "Dallas",
+    tagline: "India's 1st Next-Gen DampProof Wall-Putty.",
     image: DallasWallutty,
     icon: "🎨",
     price: "For bulk order discount upto 40 %",
@@ -266,60 +361,18 @@ export const dallasProducts = [
     specialOffer: "Dallas offers its waterproof wall putty at a 50% discount off the Maximum Retail Price (MRP)",
     warranty: "5 Year Guarantee",
     deliveryTime: "1-2 days",
-    hasTechData: false,
-    techData: [], // Explicitly set as empty array if no tech data
+    hasTechData: true, // Changed to true
+    techData: wallPuttyTechData, // Assigned new tech data
     flexibleServiceOptions: flexibleServiceOptions,
     nextGenFeatures: nextGenFeatures_WallPutty,
     brochures: defaultBrochures,
   },
-  {
-    id: "m1-bond",
-    name: "Dr M1 Bond",
-  tagline: "Next-Gen Wallcare. Global Quality.",
-    image: DallasDrM1Bond,
-    icon: "🖌️",
-    price: "For bulk order discount upto 40 %",
-    originalPrice: "₹220/L",
-    savings: "₹40 per litre",
-    features: ["Water-based Formula", "Excellent Penetration", "Damp-proof Primer"],
-    benefits: [
-      "Resists efflorescence",
-      "Breathable film",
-      "Improves topcoat coverage",
-      "Quick drying",
-      "Prevents peeling",
-      "Long-lasting protection",
-    ],
-    packageContents: [
-      "Wall Primer (Various sizes: 1L, 4L, 10L, 20L)",
-      "Application brush included (for 4L+ packs)",
-      "Detailed instruction manual",
-    ],
-    applicationSteps: [ // Added placeholder
-      "Clean the surface thoroughly.",
-      "Dilute the primer as per instructions (if needed).",
-      "Apply 1-2 coats evenly with a brush or roller.",
-      "Allow sufficient drying time between coats.",
-      "Ensure proper ventilation during application."
-    ],
-    specialFeatures: [ // Added placeholder
-      "Deep penetrating formula",
-      "Excellent alkali resistance",
-      "Reduces paint consumption",
-      "Fungal and algal resistant"
-    ],
-    warranty: "3 Year Guarantee",
-    deliveryTime: "Same day",
-    hasTechData: false,
-    techData: [], // Explicitly set as empty array if no tech data
-    flexibleServiceOptions: flexibleServiceOptions,
-    nextGenFeatures: nextGenFeatures_PrimerWaterproofing, // Used specific next-gen features
-    brochures: defaultBrochures,
-  },
+
   {
     id: "gypsum-plaster",
-    name: "DALLAS Gypsum Plaster",
- tagline: "Next-Gen Wallcare. Global Quality.",
+    name: "Dallas Gypsum Plaster",
+    category: "Dallas",
+    tagline: "India's 1st Next-Gen DampProof Gypsum Plaster.",
     image: DallasGypsumPlasty,
     icon: "🔧",
     price: "For bulk order discount upto 40 %",
@@ -354,102 +407,17 @@ export const dallasProducts = [
     ],
     warranty: "2 Year Guarantee",
     deliveryTime: "2-3 days",
-    hasTechData: false,
-    techData: [], // Explicitly set as empty array if no tech data
+    hasTechData: true, // Changed to true
+    techData: gypsumPlasterTechData, // Assigned new tech data
     flexibleServiceOptions: flexibleServiceOptions,
     nextGenFeatures: nextGenFeatures_GypsumPlaster,
     brochures: defaultBrochures,
   },
-  // {
-  //   id: "supreme-gyplast",
-  //   name: "DALLAS Supreme Gyplast",
-  //   tagline: "Premium Gypsum Plaster Solution",
-  //   image: SupremeGplast,
-  //   icon: "⭐",
-  //   price: "For bulk order discount upto 40 %",
-  //   originalPrice: "₹490/bag",
-  //   savings: "₹70 per bag",
-  //   features: ["Premium Gypsum Formula", "Superior Finish Quality", "Quick Application"],
-  //   benefits: [
-  //     "Excellent finish",
-  //     "Time saving",
-  //     "Cost effective",
-  //     "Easy application",
-  //     "Durable results",
-  //     "Professional quality",
-  //   ],
-  //   packageContents: [
-  //     "Supreme Gypsum Plaster (25 KG bag)",
-  //     "Premium mixing guide",
-  //     "Quality certificate",
-  //   ],
-  //   applicationSteps: [
-  //     "Ensure surface is clean and free from loose particles.",
-  //     "Mix plaster with recommended water ratio to form a smooth paste.",
-  //     "Apply evenly using a trowel.",
-  //     "Finish to desired smoothness.",
-  //     "Allow to dry completely (no curing required)."
-  //   ],
-  //   specialFeatures: [
-  //     "International Standard quality",
-  //     "3X Waterproof & Weather-Proof",
-  //     "No special tools or skilled labor required",
-  //     "Saves time and labor costs"
-  //   ],
-  //   warranty: "3 Year Guarantee",
-  //   deliveryTime: "2-3 days",
-  //   hasTechData: false,
-  //   techData: [],
-  //   flexibleServiceOptions: flexibleServiceOptions,
-  //   nextGenFeatures: nextGenFeatures_SupremeGyplast,
-  //   brochures: defaultBrochures,
-  // },
-  // {
-  //   id: "supreme-gyplast-white",
-  //   name: "DALLAS Supreme Gyplast (White)",
-  //   tagline: "Ultra-White Gypsum Plaster Solution",
-  //   image: DallasSupremeGyplast,
-  //   icon: "✨",
-  //   price: "For bulk order discount upto 40 %",
-  //   originalPrice: "₹420/bag",
-  //   savings: "₹70 per bag",
-  //   features: ["Ultra-White Finish", "Smooth Application", "High Coverage"],
-  //   benefits: [
-  //     "Brilliant white finish",
-  //     "Enhances paint aesthetics",
-  //     "Easy to apply",
-  //     "Durable and strong",
-  //     "Reduces paint consumption",
-  //   ],
-  //   packageContents: [
-  //     "Supreme Gypsum Plaster White (25 KG bag)",
-  //     "Application guide",
-  //   ],
-  //   applicationSteps: [
-  //     "Prepare surface: clean, dry, and free of dust.",
-  //     "Mix with water to a lump-free consistency.",
-  //     "Apply first coat evenly.",
-  //     "Allow to dry before applying second coat.",
-  //     "Achieve desired smooth finish."
-  //   ],
-  //   specialFeatures: [
-  //     "Superior whiteness for brighter interiors",
-  //     "Excellent crack resistance",
-  //     "Reduces need for extra paint coats",
-  //     "Provides a perfect base for all types of paints"
-  //   ],
-  //   warranty: "3 Year Guarantee",
-  //   deliveryTime: "2-3 days",
-  //   hasTechData: false,
-  //   techData: [],
-  //   flexibleServiceOptions: flexibleServiceOptions,
-  //   nextGenFeatures: nextGenFeatures_SupremeGyplast, // Assuming similar to other Supreme Gyplast
-  //   brochures: defaultBrochures,
-  // },
   {
     id: "grout-plus",
-    name: "DALLAS Grout Plus",
- tagline: "Next-Gen Wallcare. Global Quality.",
+    name: "Dallas Grout Plus",
+    category: "Dallas",
+    tagline: "India's 1st Next-Gen DampProof Grout Plus",
     image: DallasGroutPlus,
     icon: "🔲",
     price: "For bulk order discount upto 40 %",
@@ -484,16 +452,18 @@ export const dallasProducts = [
     ],
     warranty: "5 Year Guarantee",
     deliveryTime: "1-2 days",
-    hasTechData: false,
-    techData: [], // Explicitly set as empty array if no tech data
+    hasTechData: true, // Changed to true
+    techData: groutPlusTechData, // Assigned new tech data
     flexibleServiceOptions: flexibleServiceOptions,
     nextGenFeatures: nextGenFeatures_Grout, // Used specific next-gen features
     brochures: defaultBrochures,
   },
   {
     id: "tile-adhesive",
-    name: "DALLAS Tile Adhesive",
- tagline: "Next-Gen Wallcare. Global Quality.",
+    name: "Dallas Tile Adhesive",
+    category: "Dallas",
+    tagline: "India's 1st Next-Gen DampProof Tile Adhesive",
+
     image: DallasTileAdhensive,
     icon: "🔧",
     price: "For bulk order discount upto 40 %",
@@ -528,16 +498,17 @@ export const dallasProducts = [
     ],
     warranty: "3 Year Guarantee",
     deliveryTime: "2-3 days",
-    hasTechData: false,
-    techData: [],
+    hasTechData: true, // Changed to true
+    techData: tileAdhesiveTechData, // Assigned new tech data
     flexibleServiceOptions: flexibleServiceOptions,
     nextGenFeatures: nextGenFeatures_TileAdhesive,
     brochures: defaultBrochures,
   },
   {
     id: "water-treater",
-    name: "DALLAS Watertreater",
- tagline: "Next-Gen Wallcare. Global Quality.",
+    name: "Dallas Watertreater",
+    category: "Dallas",
+    tagline: "India's 1st Next-Gen DampProof Watertreater",
     image: Aafee,
     icon: "🌊",
     price: "For bulk order discount upto 40 %",
@@ -573,8 +544,8 @@ export const dallasProducts = [
     ],
     warranty: "1 Year Quality Guarantee",
     deliveryTime: "Same day",
-    hasTechData: false,
-    techData: [], // Explicitly set as empty array if no tech data
+    hasTechData: true, // Changed to true
+    techData: waterTreaterTechData, // Assigned new tech data
     flexibleServiceOptions: flexibleServiceOptions,
     nextGenFeatures: nextGenFeatures_WaterTreater, // Used specific next-gen features
     brochures: defaultBrochures,
@@ -585,7 +556,9 @@ export const drProofProducts = [
   {
     id: "dr-proof-m1-bond",
     name: "Dr. M1 Bond",
- tagline: "Next-Gen Wallcare. Global Quality.",
+    category: "Dr. Proof",
+    tagline: "India's 1st Next-Gen DampProof Dr. Proof",
+
     image: DallasDrM1Bond,
     icon: "💧",
     price: "For bulk order discount upto 40 %",
@@ -624,8 +597,8 @@ export const drProofProducts = [
     ],
     warranty: "10 Year Guarantee",
     deliveryTime: "3-5 days",
-    hasTechData: false,
-    techData: [], // Explicitly set as empty array if no tech data
+    hasTechData: true, // Changed to true
+    techData: drM1BondTechData, // Assigned new tech data
     flexibleServiceOptions: flexibleServiceOptions,
     nextGenFeatures: nextGenFeatures_PrimerWaterproofing, // Used specific next-gen features
     brochures: defaultBrochures,
@@ -636,7 +609,8 @@ export const ceramikhaProducts = [
   {
     id: "ceramikha-gypsum-plaster",
     name: "Ceramikha Gypsum Plaster",
- tagline: "Next-Gen Wallcare. Global Quality.",
+    category: "Ceramikha",
+    tagline: "India's 1st Next-Gen DampProof Gypsum Plaster",
     image: Ceramikha,
     icon: "🏺",
     price: "For bulk order discount upto 40 %",
@@ -673,8 +647,8 @@ export const ceramikhaProducts = [
     ],
     warranty: "5 Year Guarantee",
     deliveryTime: "3-5 days",
-    hasTechData: false,
-    techData: [], // Explicitly set as empty array if no tech data
+    hasTechData: true, // Changed to true
+    techData: ceramikhaGypsumPlasterTechData, // Assigned new tech data
     flexibleServiceOptions: flexibleServiceOptions,
     nextGenFeatures: nextGenFeatures_Ceramic, // Used specific next-gen features
     brochures: defaultBrochures,
@@ -711,21 +685,21 @@ export const brandCategories = [
   {
     id: "dallas",
     name: "Dallas",
- tagline: "Next-Gen Wallcare. Global Quality.",
+    tagline: "Next-Gen Wallcare. Global Quality.",
     image: Banner,
     description: "India's leading waterproof construction materials",
   },
   {
     id: "Ceramikha",
     name: "Ceramikha",
- tagline: "Next-Gen Wallcare. Global Quality.",
+    tagline: "Next-Gen Wallcare. Global Quality.",
     image: Ceramikha,
     description: "High-quality ceramic and finishing products",
   },
   {
     id: "drproof",
     name: "Dr. Proof",
- tagline: "Next-Gen Wallcare. Global Quality.",
+    tagline: "Next-Gen Wallcare. Global Quality.",
     image: DallasDrM1Bond,
     description: "Professional waterproofing solutions",
   },
