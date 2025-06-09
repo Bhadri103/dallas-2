@@ -5,6 +5,7 @@ import DallasGroutPlus from "../images/GroutPlus.png";
 import DallasWallutty from "../images/CombainedProduct/DallasWallutty.png";
 import DallasDrM1Bond from "../images/DallasDrM1Bond.jpeg";
 import DallasGypsumPlasty from "../images/DallasGypsmPlasty.png";
+// import DallasGypsumPlasty from "../images/DallasGypsmPlasty.png";
 import DallasReadyPlaster from "../images/CombainedProduct/DallasReadyPlasty.png";
 import DallasTileAdhensive from "../images/DallasTileAdhensive.png";
 
@@ -277,7 +278,7 @@ export const dallasProducts = [
   {
     id: "wall-plaster",
     category: "Dallas",
-    name: "Dallas Ready Wall Plaster",
+    name: "Ready Wall Plaster",
     tagline: "India's 1st Next-Gen DampProof Ready Wall-Plaster.",
     image: DallasReadyPlaster,
     icon: "🏗️",
@@ -327,7 +328,7 @@ export const dallasProducts = [
   },
   {
     id: "wall-putty",
-    name: "Dallas Wall Putty",
+    name: "Wall Putty",
     category: "Dallas",
     tagline: "India's 1st Next-Gen DampProof Wall-Putty.",
     image: DallasWallutty,
@@ -370,7 +371,7 @@ export const dallasProducts = [
 
   {
     id: "gypsum-plaster",
-    name: "Dallas Gypsum Plaster",
+    name: "Gypsum Plaster",
     category: "Dallas",
     tagline: "India's 1st Next-Gen DampProof Gypsum Plaster.",
     image: DallasGypsumPlasty,
@@ -415,7 +416,7 @@ export const dallasProducts = [
   },
   {
     id: "grout-plus",
-    name: "Dallas Grout Plus",
+    name: "Grout Plus",
     category: "Dallas",
     tagline: "India's 1st Next-Gen DampProof Grout Plus",
     image: DallasGroutPlus,
@@ -460,7 +461,7 @@ export const dallasProducts = [
   },
   {
     id: "tile-adhesive",
-    name: "Dallas Tile Adhesive",
+    name: "Tile Adhesive",
     category: "Dallas",
     tagline: "India's 1st Next-Gen DampProof Tile Adhesive",
 
@@ -506,7 +507,7 @@ export const dallasProducts = [
   },
   {
     id: "water-treater",
-    name: "Dallas Watertreater",
+    name: "Watertreater",
     category: "Dallas",
     tagline: "India's 1st Next-Gen DampProof Watertreater",
     image: Aafee,
@@ -555,7 +556,7 @@ export const dallasProducts = [
 export const drProofProducts = [
   {
     id: "dr-proof-m1-bond",
-    name: "Dr. M1 Bond",
+    name: "M1 Bond",
     category: "Dr. Proof",
     tagline: "India's 1st Next-Gen DampProof Dr. Proof",
 
@@ -588,7 +589,7 @@ export const drProofProducts = [
       "Technical consultation",
       "Installation guide",
     ],
-    applicationSteps: [ // Added placeholder
+    applicationSteps: [ 
       "Clean and prepare the surface, ensuring it's dry and free of contaminants.",
       "Apply the first coat of Dr. M1 Bond evenly with a brush or roller.",
       "Allow to dry as per instructions, then apply a second coat if required.",
@@ -597,8 +598,8 @@ export const drProofProducts = [
     ],
     warranty: "10 Year Guarantee",
     deliveryTime: "3-5 days",
-    hasTechData: true, // Changed to true
-    techData: drM1BondTechData, // Assigned new tech data
+    hasTechData: true, 
+    techData: drM1BondTechData, 
     flexibleServiceOptions: flexibleServiceOptions,
     nextGenFeatures: nextGenFeatures_PrimerWaterproofing, // Used specific next-gen features
     brochures: defaultBrochures,
@@ -608,7 +609,7 @@ export const drProofProducts = [
 export const ceramikhaProducts = [
   {
     id: "ceramikha-gypsum-plaster",
-    name: "Ceramikha Gypsum Plaster",
+    name: "Gypsum Plaster",
     category: "Ceramikha",
     tagline: "India's 1st Next-Gen DampProof Gypsum Plaster",
     image: Ceramikha,
