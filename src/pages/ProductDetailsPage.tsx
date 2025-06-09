@@ -140,55 +140,63 @@ const ProductDetailsPage = () => {
             </div>
           </div>
 
-          {/* Right Column: Details (Your existing right column content) */}
-          <div className="md:w-2/3 p-6 bg-white rounded-lg h-full flex flex-col">
-            {selectedProduct.flexibleServiceOptions && (
-              <>
-                <h5 className="font-semibold text-xl mb-4 flex items-center">
-                  <Layers className="w-5 h-5 mr-2 text-indigo-700" />
-                  Flexible Service Options to Suit Your Needs
-                </h5>
-                <div className="space-y-6 flex-grow">
-                  {selectedProduct.flexibleServiceOptions.map((option, idx) => (
-                    <div key={idx} className="border-b pb-4 last:border-b-0">
-                      <h6 className="font-semibold text-lg text-gray-800 mb-2">
-                        {option.title}
-                      </h6>
-                      <p className="text-gray-700 mb-2">{option.description}</p>
-                      <ul className="list-none text-gray-700 space-y-1 mb-4">
-                        {option.points.map((point, pointIdx) => (
-                          <li key={pointIdx} className="flex items-start">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-1" />
-                            {point}
-                          </li>
-                        ))}
-                      </ul>
-                      <p className="text-gray-600 text-sm font-medium mb-4">
-                        For enquiries or orders, feel free to get in touch.
-                      </p>
-                      <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                        <a
-                          href={callLink}
-                          className="flex items-center justify-center w-full sm:w-auto px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors font-semibold"
+          <div className="space-y-8">
+            <div className="md:w-2/3  bg-white rounded-lg h-full flex flex-col">
+              {selectedProduct.flexibleServiceOptions && (
+                <>
+                  <h5 className="font-semibold text-xl mb-4 flex items-center">
+                    <Layers className="w-5 h-5 mr-2 text-indigo-700" />
+                    Flexible Service Options to Suit Your Needs
+                  </h5>
+                  <div className="space-y-6 flex-grow">
+                    {selectedProduct.flexibleServiceOptions.map(
+                      (option, idx) => (
+                        <div
+                          key={idx}
+                          className="border-b pb-4 last:border-b-0"
                         >
-                          <Phone className="w-5 h-5 mr-2" />
-                          Call Us
-                        </a>
-                        <a
-                          href={whatsappLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-center w-full sm:w-auto px-4 py-2 bg-green-500 text-white rounded-full hover:bg-green-600 transition-colors font-semibold"
-                        >
-                          <MessageSquare className="w-5 h-5 mr-2" />
-                          WhatsApp
-                        </a>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </>
-            )}
+                          <h6 className="font-semibold text-lg text-gray-800 mb-2">
+                            {option.title}
+                          </h6>
+                          <p className="text-gray-700 mb-2">
+                            {option.description}
+                          </p>
+                          <ul className="list-none text-gray-700 space-y-1 mb-4">
+                            {option.points.map((point, pointIdx) => (
+                              <li key={pointIdx} className="flex items-start">
+                                <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-1" />
+                                {point}
+                              </li>
+                            ))}
+                          </ul>
+                          <p className="text-gray-600 text-sm font-medium mb-4">
+                            For enquiries or orders, feel free to get in touch.
+                          </p>
+                          <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                            <a
+                              href={callLink}
+                              className="flex items-center justify-center w-full sm:w-auto px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors font-semibold"
+                            >
+                              <Phone className="w-5 h-5 mr-2" />
+                              Call Us
+                            </a>
+                            <a
+                              href={whatsappLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center justify-center w-full sm:w-auto px-4 py-2 bg-green-500 text-white rounded-full hover:bg-green-600 transition-colors font-semibold"
+                            >
+                              <MessageSquare className="w-5 h-5 mr-2" />
+                              WhatsApp
+                            </a>
+                          </div>
+                        </div>
+                      )
+                    )}
+                  </div>
+                </>
+              )}
+            </div>
           </div>
         </div>
       </div>
