@@ -1,4 +1,4 @@
-import Aafee from "../images/CombainedProduct/Aafee.png";
+import Aafee from "../images/Aafee.png";
 import Banner from "../images/Banner.jpeg";
 import Ceramikha from "../images/Ceramikha.png";
 import DallasGroutPlus from "../images/GroutPlus.png";
@@ -92,7 +92,8 @@ const nextGenFeatures_WallPutty = [
   "Supreme White",
   "Uses Imported raw-material , white Clinker , Binders etc"
 ];
- 
+
+// Generic next-gen features for products where specific ones aren't defined
 const nextGenFeatures_Generic = [
   "High Performance Formulation",
   "Eco-Friendly Composition",
@@ -170,7 +171,9 @@ export const wallPlasterTechData = [
   { property: "Drying Time", value: "6-8 hours (surface dry)", isCode: "" },
   { property: "Working Temperature", value: "5°C to 40°C", isCode: "" },
 ];
- 
+
+// --- START: NEW TECHNICAL DATA TABLES FOR OTHER PRODUCTS ---
+
 export const wallPuttyTechData = [
   { property: "Product Name", value: "Dallas Wall Putty", isCode: "" },
   { property: "Manufacturer", value: "Dallas WellCare Pvt Ltd.", isCode: "" },
@@ -361,8 +364,8 @@ export const dallasProducts = [
     specialOffer: "Dallas offers its waterproof wall putty at a 50% discount off the Maximum Retail Price (MRP)",
     warranty: "5 Year Guarantee",
     deliveryTime: "1-2 days",
-    hasTechData: true, 
-    techData: wallPuttyTechData, 
+    hasTechData: true, // Changed to true
+    techData: wallPuttyTechData, // Assigned new tech data
     flexibleServiceOptions: flexibleServiceOptions,
     nextGenFeatures: nextGenFeatures_WallPutty,
     brochures: defaultBrochures,
@@ -393,14 +396,14 @@ export const dallasProducts = [
       "Mixing guide and ratio chart",
       "Quality assurance certificate",
     ],
-    applicationSteps: [ 
+    applicationSteps: [ // Added placeholder
       "Ensure surface is clean and free from loose particles.",
       "Mix plaster with recommended water ratio to form a smooth paste.",
       "Apply evenly using a trowel.",
       "Finish to desired smoothness.",
       "Allow to dry completely (no curing required)."
     ],
-    specialFeatures: [ 
+    specialFeatures: [ // Added placeholder
       "Lightweight formulation",
       "Crack-resistant",
       "Fire-resistant properties",
@@ -408,8 +411,8 @@ export const dallasProducts = [
     ],
     warranty: "2 Year Guarantee",
     deliveryTime: "2-3 days",
-    hasTechData: true,
-    techData: gypsumPlasterTechData, 
+    hasTechData: true, // Changed to true
+    techData: gypsumPlasterTechData, // Assigned new tech data
     flexibleServiceOptions: flexibleServiceOptions,
     nextGenFeatures: nextGenFeatures_GypsumPlaster,
     brochures: defaultBrochures,
@@ -521,43 +524,33 @@ export const dallasProducts = [
     discount: "Custom discounts available", // Added placeholder
     features: ["Water Modification System", "Enhanced Workability", "Improved Mix Quality"],
     benefits: [
-      'Ideal for home interior walls. ',
-'Three times (3X) more waterproof, strong, and durable ',
-'Green Building, healthy living. ',
-'Heat-resistant, safe, lightweight, fire proof. ',
-'Fast-setting, smooth, Eco-friendly. Speed up Project. ',
-'No curing, No shrinkage, or Cracks. ',
-
-
-      // "Improves bonding",
-      // "Better material flow",
-      // "System integration",
-      // "Quality assurance",
-      // "Extended working time",
-      // "Reduced water consumption",
+      "Improves bonding",
+      "Better material flow",
+      "System integration",
+      "Quality assurance",
+      "Extended working time",
+      "Reduced water consumption",
     ],
     packageContents: [
       "Water Treater Solution (10L or 20L)",
       "Measuring cup included",
       "Usage instructions",
     ],
-    applicationSteps: [
-      
-      "Fill clean water into an empty container (Use 2% McG watertreater by adding 2 litre McG in 200 litre water.",
+    applicationSteps: [ // Added placeholder
+      // "Dilute Watertreater with water as per specific product instructions.",
+      // "Use the treated water for mixing with Dallas products (e.g., plaster, putty, grout).",
+      // "Ensure consistent mixing ratios for optimal results.",
+      // "Store unused Watertreater in a cool, dry place.",
+      // "Follow safety guidelines during handling."
+       "   Fill clean water into an empty container ",
+"Use 2% McG watertreater by adding 2 litre McG in 200 litre water ",
 "Add Aafee Gypsum Plaster 1.5 kg with 1 Ltr of Water in the ratio 3: 2 ",
 "Mix thoroughly to achieve a thick creamy paste ",
 "Surface should be dry, stable, level and clean ",
 "Apply the mixed paste to create a surface level ",
 "Initial Setting 7-9 min ",
 "Final Setting 20 - 25 min ",
-"For application on interior surfaces only",
-
-
-      // "Dilute Watertreater with water as per specific product instructions.",
-      // "Use the treated water for mixing with Dallas products (e.g., plaster, putty, grout).",
-      // "Ensure consistent mixing ratios for optimal results.",
-      // "Store unused Watertreater in a cool, dry place.",
-      // "Follow safety guidelines during handling."
+"For application on interior surfaces only",y
     ],
     specialFeatures: [ // Added placeholder
       "Optimizes hydration of cementitious materials",
@@ -572,52 +565,7 @@ export const dallasProducts = [
     flexibleServiceOptions: flexibleServiceOptions,
     nextGenFeatures: nextGenFeatures_WaterTreater, // Used specific next-gen features
     brochures: defaultBrochures,
-
-  comparisonTable: {
-      headers: [
-        "Feature",
-        "Green Building",
-        "Reducing Heat",
-        "Direct Application",
-        "Line & Smooth Level",
-        "Finish",
-        "Time Saving",
-        "Quality Assurance",
-        "Water Curing",
-        "Shrinkage Cracks",
-      ],
-      rows: [
-        {
-          material: "Aafee Gypsum Plaster",
-          features: {
-            "Green Building": "Yes",
-            "Reducing Heat": "Yes",
-            "Direct Application": "Yes",
-            "Line & Smooth Level": "Yes",
-            "Finish": "Yes",
-            "Time Saving": "Yes",
-            "Quality Assurance": "Yes",
-            "Water Curing": "Don't Require",
-            "Shrinkage Cracks": "Don't Occur",
-          },
-        },
-        {
-          material: "Sand Cement Plaster",
-          features: {
-            "Green Building": "No",
-            "Reducing Heat": "No",
-            "Direct Application": "Yes",
-            "Line & Smooth Level": "-",
-            "Finish": "-",
-            "Time Saving": "-",
-            "Quality Assurance": "-",
-            "Water Curing": "Needed",
-            "Shrinkage Cracks": "High Risk",
-          },
-        },
-      ],
-        },
-    },
+  },
 ];
 
 export const drProofProducts = [
@@ -697,10 +645,13 @@ export const ceramikhaProducts = [
       "Cost effective",
     ],
     specialFeatures: [
-      "Advanced ceramic formulation",
-      "Superior aesthetic appeal",
-      "Long-lasting performance",
-      "Weather resistant coating",
+     " Ideal for home interior walls. ",
+"Three times (3X) more waterproof, strong, and durable ",
+"Green Building, healthy living. ",
+"Heat-resistant, safe, lightweight, fire proof. ",
+"Fast-setting, smooth, Eco-friendly. ",
+"Speed up Project. ",
+"No curing, No shrinkage, or Cracks.",  
     ],
     packageContents: [
       "Ceramic coating system",
@@ -708,7 +659,18 @@ export const ceramikhaProducts = [
       "Color guide",
       "Maintenance instructions",
     ],
-    applicationSteps: [  
+    applicationSteps: [ 
+   "   Fill clean water into an empty container ",
+"Use 2% McG watertreater by adding 2 litre McG in 200 litre water ",
+"Add Aafee Gypsum Plaster 1.5 kg with 1 Ltr of Water in the ratio 3: 2 ",
+"Mix thoroughly to achieve a thick creamy paste ",
+"Surface should be dry, stable, level and clean ",
+"Apply the mixed paste to create a surface level ",
+"Initial Setting 7-9 min ",
+"Final Setting 20 - 25 min ",
+"For application on interior surfaces only",
+
+
       "Prepare surface by cleaning and leveling.",
       "Mix Ceramikha Gypsum Plaster with water to a consistent paste.",
       "Apply uniformly using appropriate tools.",
@@ -717,24 +679,11 @@ export const ceramikhaProducts = [
     ],
     warranty: "5 Year Guarantee",
     deliveryTime: "3-5 days",
-    hasTechData: true, 
-    techData: ceramikhaGypsumPlasterTechData, 
+    hasTechData: true, // Changed to true
+    techData: ceramikhaGypsumPlasterTechData, // Assigned new tech data
     flexibleServiceOptions: flexibleServiceOptions,
-    nextGenFeatures: nextGenFeatures_Ceramic, 
+    nextGenFeatures: nextGenFeatures_Ceramic, // Used specific next-gen features
     brochures: defaultBrochures,
-     description: [
-      "Gypsum plaster is well-known for its practical benefits—cost efficiency, no curing, and no need for cement, sand, or wall putty. But its most important advantage is often overlooked",
-
-  "  It’s a core part of the Green Building concept. Its primary value lies in being 100% toxin-free and environmentally safe.",
-"    This isn’t just an alternative to cement-sand plaster—it’s a completely different class of material. Strength like rock or water resistance like plastic may sound impressive, but they don't qualify as Green Building certified.",
-"    Only scientifically enhanced, eco-friendly materials like gypsum plaster can offer 100x more protection for your home—especially when it comes to the health of your family. Everything else falls behind.",
-"    If you truly love your family, ask yourself — are you protecting them from hidden toxins and unseen long-term harm?",
-"    Health is our greatest wealth, and the well-being of our women and children is our real strength.",
-"    Choose the Green Building concept for your home’s interiors — and give your loved ones the safety they deserve.",
-"    Only international-standard Gypsum Plaster can truly offer this level of protection. That’s why we created CERAMIkha — a scientifically crafted product, developed by expert scientists with International standards.",
-"    It’s far from ordinary. This is an imported, scientifically enhanced, high-performance plaster—expertly engineered to ensure 100% safety for women and children.",
- 
-     ]
   },
 ];
 

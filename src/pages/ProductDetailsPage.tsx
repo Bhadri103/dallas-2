@@ -1,27 +1,18 @@
-// src/pages/ProductDetailsPage.tsx
 import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import {
-  Shield,
-  Award,
-  Droplets,
-  Zap,
-  Leaf,
-  Settings,
   Star,
   Brush,
-  Package,
-  IndianRupee,
   Phone,
   MessageSquare,
   ArrowLeft,
-  Truck,
-  HeartHandshake,
-  Lightbulb,
   Layers,
   BadgeCheck,
-  CheckCircle,
+  CheckCircle, // Used for 'Yes' in tables
+  XCircle,     // Used for 'No' in tables
+  MinusCircle, // Used for '-' in tables
   Download,
+  Table,       // Added for the comparison table section header
 } from "lucide-react";
 import { allProducts } from "../data/productsData"; // Ensure productsData is correctly imported
 
@@ -30,8 +21,68 @@ const contactNumber = "+9199942 55808"; // Replace with your actual phone number
 const whatsappLink = `https://wa.me/${contactNumber.replace(/\D/g, "")}`; // Removes non-digits for WhatsApp URL
 const callLink = `tel:${contactNumber}`;
 
+// Define interfaces for better type safety (optional but recommended)
+interface Brochure {
+  name: string;
+  url: string;
+  language: string;
+}
+
+interface TechDataRow {
+  property: string;
+  value: string;
+  isCode: string;
+}
+
+interface FlexibleServiceOption {
+  title: string;
+  description: string;
+  points: string[];
+}
+
+// Updated ComparisonTableRow for the "Ceramikha Gypsum Plaster" structure
+interface OldComparisonTableRow {
+  material: string;
+  features: { [key: string]: string };
+}
+
+interface ComparisonTableData {
+  headers: string[];
+  rows: OldComparisonTableRow[]; // Now expects the old structure
+}
+
+
+interface Product {
+  id: string;
+  name: string;
+  category: string;
+  productTagline?: string;
+  tagline?: string;
+  image: string;
+  icon?: string;
+  price?: string;
+  originalPrice?: string;
+  savings?: string;
+  discount?: string;
+  features?: string[];
+  benefits?: string[];
+  specialFeatures?: string[];
+  packageContents?: string[];
+  applicationSteps?: string[];
+  warranty?: string;
+  deliveryTime?: string;
+  hasTechData?: boolean;
+  techData?: TechDataRow[];
+  flexibleServiceOptions?: FlexibleServiceOption[];
+  nextGenFeatures?: string[];
+  description?: string; // Multi-line string for description
+  comparisonTable?: ComparisonTableData; // For the comparison table
+  brochures?: Brochure[];
+}
+
+
 // Component for displaying technical data table
-const TechnicalDataTable = ({ data }: { data: any[] }) => (
+const TechnicalDataTable = ({ data }: { data: TechDataRow[] }) => (
   <div className="overflow-x-auto">
     <div className="mb-4 flex items-center justify-between">
       <h6 className="font-semibold text-gray-800">Technical Specifications</h6>
@@ -62,7 +113,7 @@ const ProductDetailsPage = () => {
   const navigate = useNavigate();
 
   // Find the selected product based on the productId from the URL
-  const selectedProduct = allProducts.find((p) => p.id === productId);
+  const selectedProduct = allProducts.find((p) => p.id === productId) as Product | undefined; // Type assertion
 
   // Scroll to the top of the page when productId changes
   useEffect(() => {
@@ -93,6 +144,117 @@ const ProductDetailsPage = () => {
     );
   }
 
+  // Helper function to render the description as a list
+  const renderDescription = () => {
+    if (!selectedProduct.description) {
+      return null;
+    }
+
+    // Split the description by double newline characters to get individual paragraphs/points.
+    const descriptionPoints = selectedProduct.description
+      .split("\n\n")
+      .map((point) => point.trim()) // Trim whitespace from each point
+      .filter((point) => point.length > 0); // Remove any empty strings that might result
+
+    if (descriptionPoints.length === 0) {
+      return null;
+    }
+
+    return (
+      <div className="p-6 rounded-lg mb-6">
+        <h4 className="font-semibold text-xl text-gray-800 mb-3 flex items-center">
+          <Star className="w-5 h-5 mr-2 text-yellow-700" />
+          Product Overview
+        </h4>
+        <ul className="list-none text-gray-700 space-y-2">
+          {descriptionPoints.map((point, idx) => (
+            <li key={idx} className="flex items-start">
+              <BadgeCheck className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-1" />
+              <p>{point}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  };
+
+  // UPDATED Helper function to render the comparison table with icons
+  const renderComparisonTable = () => {
+    if (!selectedProduct.comparisonTable) {
+      return null;
+    }
+
+    const { headers, rows } = selectedProduct.comparisonTable;
+
+    // Filter out "Feature" header as it's represented by the 'material' column
+    const featureHeaders = headers.filter((header) => header !== "Feature");
+
+    return (
+      <div className="p-6 bg-white rounded-lg shadow-md">
+        <h4 className="font-semibold text-xl text-gray-800 mb-3 flex items-center">
+          <Table className="w-5 h-5 mr-2 text-blue-700" /> {/* Using Table icon */}
+          Product Comparison
+        </h4>
+        <div className="overflow-x-auto">
+          <table className="min-w-full bg-white border border-gray-200 rounded-lg shadow-sm">
+            <thead className="bg-gray-100">
+              <tr>
+                <th className="py-3 px-4 text-left text-sm font-semibold text-gray-600 border-b border-gray-200">
+                  Material
+                </th>
+                {featureHeaders.map((header, idx) => (
+                  <th
+                    key={idx}
+                    className="py-3 px-4 text-left text-sm font-semibold text-gray-600 border-b border-gray-200"
+                  >
+                    {header}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((row, rowIndex) => (
+                <tr key={rowIndex} className={rowIndex % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                  <td className="py-3 px-4 text-sm text-gray-800 border-b border-gray-200 font-medium">
+                    {row.material}
+                  </td>
+                  {featureHeaders.map((header, colIndex) => {
+                    // *** KEY CHANGE HERE: Access value from row.features ***
+                    const value = row.features[header];
+                    let displayContent;
+                    let textAlignClass = 'text-center'; // Most feature columns are centered
+
+                    // Render icons based on common text values
+                    if (value === "Yes") {
+                      displayContent = <CheckCircle className="w-5 h-5 text-green-500 mx-auto" title="Yes" />;
+                    } else if (value === "No") {
+                      displayContent = <XCircle className="w-5 h-5 text-red-500 mx-auto" title="No" />;
+                    } else if (value === "-") {
+                      displayContent = <MinusCircle className="w-5 h-5 text-gray-400 mx-auto" title="Not Applicable" />;
+                    } else if (value === "Don't Require" || value === "Don't Occur") {
+                      displayContent = <span className="text-green-600 font-medium">{value}</span>;
+                    } else if (value === "Needed" || value === "High Risk") {
+                      displayContent = <span className="text-red-600 font-medium">{value}</span>;
+                    } else {
+                      displayContent = value; // Default to text for other values
+                    }
+
+                    return (
+                      <td key={colIndex} className={`py-3 px-4 text-sm text-gray-700 border-b border-gray-200 ${textAlignClass}`}>
+                        {displayContent}
+                      </td>
+                    );
+                  })}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    );
+  };
+
+
   return (
     <div className="container mx-auto px-4 py-8 bg-gray-50 min-h-screen">
       <button
@@ -114,15 +276,16 @@ const ProductDetailsPage = () => {
             </p>
           </div>
         )}
-        <hr className="mb-5" />
+        {renderDescription()} {/* Render Product Overview (Description) */}
+        <hr className="my-8" />
 
         <div className="flex flex-col md:flex-row items-start lg:items-stretch gap-8">
-          <div className="lg:w-3/5 flex flex-col items-center text-center">
-            <div className="flex-grow flex flex-col justify-center items-center p-4">
-              <h1 className="text-5xl sm:text-2xl font-extrabold text-center text-blue-800 mb-2">
+          <div className="lg:w-2/5 flex flex-col items-start text-start">
+            <div className="flex-grow flex flex-col justify-start items-start p-4">
+              <h1 className="text-2xl sm:text-2xl font-extrabold text-start text-blue-800 mb-2">
                 {selectedProduct.category.toUpperCase()}{" "}
               </h1>
-              <h2 className="text-3xl sm:text-2xl font-bold text-center text-gray-800 mb-2">
+              <h2 className="text-3xl sm:text-2xl font-bold text-start text-gray-800 mb-2">
                 {selectedProduct.name}
               </h2>
               <div className="w-full h-full flex items-center justify-center">
@@ -135,7 +298,7 @@ const ProductDetailsPage = () => {
             </div>
           </div>
 
-          <div className="lg:w-2/5  bg-white rounded-lg h-full flex flex-col">
+          <div className="lg:w-3/5  bg-white rounded-lg h-full flex flex-col">
             {selectedProduct.flexibleServiceOptions && (
               <>
                 <h5 className="font-semibold text-xl mb-4 flex items-center">
@@ -195,7 +358,7 @@ const ProductDetailsPage = () => {
               Key Features
             </h4>
             <ul className="list-disc list-inside text-gray-700 space-y-2">
-              {selectedProduct.nextGenFeatures.map((feature, idx) => (
+              {selectedProduct.nextGenFeatures?.map((feature, idx) => (
                 <li key={idx} className="flex items-start">
                   <BadgeCheck className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-1" />
                   {feature}
@@ -204,19 +367,6 @@ const ProductDetailsPage = () => {
             </ul>
           </div>
         )}
-
-        {/* {selectedProduct.features && (
-          <div className="p-6 bg-white rounded-lg shadow-md">
-            <ul className="list-disc list-inside text-gray-700 space-y-2">
-              {selectedProduct.features.map((feature, idx) => (
-                <li key={idx} className="flex items-start">
-                  <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-1" />
-                  {feature}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )} */}
 
         {selectedProduct.applicationSteps && (
           <div className="p-6 bg-white rounded-lg shadow-md">
@@ -232,30 +382,16 @@ const ProductDetailsPage = () => {
           </div>
         )}
 
-        {/* {selectedProduct.specialFeatures && (
-          <div className="p-6 bg-white rounded-lg shadow-md">
-            <h5 className="font-semibold text-xl mb-4 flex items-center">
-              <Star className="w-5 h-5 mr-2 text-yellow-700" />
-              Special Features
-            </h5>
-            <ul className="list-disc list-inside text-gray-700 space-y-2">
-              {selectedProduct.specialFeatures.map((feature, idx) => (
-                <li key={idx}>{feature}</li>
-              ))}
-            </ul>
-          </div>
-        )} */}
-
-        {/* {selectedProduct.specialOffer && (
-          <div className="p-6 bg-red-100 rounded-lg text-red-800 font-medium text-lg flex items-center shadow-md">
-            {selectedProduct.specialOffer}
-          </div>
-        )} */}
-        {selectedProduct.hasTechData && (
+        {selectedProduct.hasTechData && selectedProduct.techData && (
           <div className="p-6 bg-white rounded-lg shadow-md">
             <TechnicalDataTable data={selectedProduct.techData} />
           </div>
         )}
+
+        {/* --- NEW SECTION: Product Comparison Table --- */}
+        {selectedProduct.comparisonTable && renderComparisonTable()}
+        {/* ------------------------------------------- */}
+
         {selectedProduct.brochures && selectedProduct.brochures.length > 0 && (
           <div className="p-6 bg-white rounded-lg shadow-md">
             <h5 className="font-semibold text-xl mb-4 flex items-center">
