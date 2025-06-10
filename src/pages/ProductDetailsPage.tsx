@@ -219,7 +219,7 @@ const ProductDetailsPage = () => {
                       headerKey === "MCG WATER TREATER" ||
                       headerKey === "NORMAL WATER"
                     ) {
-                      textAlignClass = "text-center";  
+                      textAlignClass = "text-center";
                       if (value === "Yes" || value.includes("Yes (")) {
                         // Handle "Yes (3X)"
                         displayContent = (
@@ -260,7 +260,7 @@ const ProductDetailsPage = () => {
                         displayContent = value; // Default to text for "0 TDS", "500-1000 TDS" etc.
                       }
                     } else {
-                        displayContent = value;
+                      displayContent = value;
                     }
 
                     return (
@@ -280,7 +280,6 @@ const ProductDetailsPage = () => {
       </div>
     );
   };
-
   return (
     <div className="container mx-auto px-4 py-8 bg-gray-50 min-h-screen">
       <button
@@ -302,7 +301,7 @@ const ProductDetailsPage = () => {
             </p>
           </div>
         )}
-        {renderDescription()} 
+        {renderDescription()}
         <hr className="my-8" />
         <div className="flex flex-col md:flex-row items-start lg:items-stretch gap-8">
           <div className="lg:w-2/5 flex flex-col items-start text-start">
@@ -383,17 +382,12 @@ const ProductDetailsPage = () => {
               Key Features
             </h4>
             <ul className="list-disc list-inside text-gray-700 space-y-2">
-              {selectedProduct.nextGenFeatures?.map(
-                (
-                  feature,
-                  idx  
-                ) => (
-                  <li key={idx} className="flex items-start">
-                    <BadgeCheck className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-1" />
-                    {feature}
-                  </li>
-                )
-              )}
+              {selectedProduct.nextGenFeatures?.map((feature, idx) => (
+                <li key={idx} className="flex items-start">
+                  <BadgeCheck className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-1" />
+                  {feature}
+                </li>
+              ))}
             </ul>
           </div>
         )}
@@ -417,8 +411,8 @@ const ProductDetailsPage = () => {
             <div className="p-6 bg-white rounded-lg shadow-md">
               <TechnicalDataTable data={selectedProduct.techData} />
             </div>
-          )} 
-        {selectedProduct.comparisonTable && renderComparisonTable()}  
+          )}
+        {selectedProduct.comparisonTable && renderComparisonTable()}
         {selectedProduct.brochures && selectedProduct.brochures.length > 0 && (
           <div className="p-6 bg-white rounded-lg shadow-md">
             <h5 className="font-semibold text-xl mb-4 flex items-center">

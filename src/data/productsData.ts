@@ -573,50 +573,49 @@ export const dallasProducts = [
     nextGenFeatures: nextGenFeatures_WaterTreater, // Used specific next-gen features
     brochures: defaultBrochures,
 
-  comparisonTable: {
-      headers: [
-        "Feature",
-        "Green Building",
-        "Reducing Heat",
-        "Direct Application",
-        "Line & Smooth Level",
-        "Finish",
-        "Time Saving",
-        "Quality Assurance",
-        "Water Curing",
-        "Shrinkage Cracks",
-      ],
-      rows: [
-        {
-          material: "Aafee Gypsum Plaster",
-          features: {
-            "Green Building": "Yes",
-            "Reducing Heat": "Yes",
-            "Direct Application": "Yes",
-            "Line & Smooth Level": "Yes",
-            "Finish": "Yes",
-            "Time Saving": "Yes",
-            "Quality Assurance": "Yes",
-            "Water Curing": "Don't Require",
-            "Shrinkage Cracks": "Don't Occur",
-          },
-        },
-        {
-          material: "Sand Cement Plaster",
-          features: {
-            "Green Building": "No",
-            "Reducing Heat": "No",
-            "Direct Application": "Yes",
-            "Line & Smooth Level": "-",
-            "Finish": "-",
-            "Time Saving": "-",
-            "Quality Assurance": "-",
-            "Water Curing": "Needed",
-            "Shrinkage Cracks": "High Risk",
-          },
-        },
-      ],
-        },
+  // ... (previous product properties)
+
+comparisonTable: {
+  headers: [
+    "Material", // Add 'Material' to headers
+    "Green Building",
+    "Reducing Heat",
+    "Direct Application",
+    "Line & Smooth Level",
+    "Finish",
+    "Time Saving",
+    "Quality Assurance",
+    "Water Curing",
+    "Shrinkage Cracks",
+  ],
+  rows: [
+    {
+      "Material": "Aafee Gypsum Plaster", // Direct mapping
+      "Green Building": "Yes",
+      "Reducing Heat": "Yes",
+      "Direct Application": "Yes",
+      "Line & Smooth Level": "Yes",
+      "Finish": "Yes",
+      "Time Saving": "Yes",
+      "Quality Assurance": "Yes",
+      "Water Curing": "Don't Require",
+      "Shrinkage Cracks": "Don't Occur",
+    },
+    {
+      "Material": "Sand Cement Plaster", // Direct mapping
+      "Green Building": "No",
+      "Reducing Heat": "No",
+      "Direct Application": "Yes",
+      "Line & Smooth Level": "-",
+      "Finish": "-",
+      "Time Saving": "-",
+      "Quality Assurance": "-",
+      "Water Curing": "Needed",
+      "Shrinkage Cracks": "High Risk",
+    },
+  ],
+},
+ 
     },
 ];
 
@@ -679,7 +678,7 @@ export const ceramikhaProducts = [
     id: "ceramikha-gypsum-plaster",
     name: "Gypsum Plaster",
     category: "Ceramikha",
-     productTagline: "Next-Gen DampProof Ceramikha Gypsum Plaster",
+    productTagline: "Next-Gen DampProof Ceramikha Gypsum Plaster",
     tagline: "Green Building, Safer Homes, Healthier Children",
     image: Ceramikha,
     icon: "🏺",
@@ -708,33 +707,39 @@ export const ceramikhaProducts = [
       "Color guide",
       "Maintenance instructions",
     ],
-    applicationSteps: [  
+    applicationSteps: [
       "Prepare surface by cleaning and leveling.",
       "Mix Ceramikha Gypsum Plaster with water to a consistent paste.",
       "Apply uniformly using appropriate tools.",
       "Ensure proper drying and finishing for optimal results.",
-      "Follow product specific guidelines for best performance."
+      "Follow product specific guidelines for best performance.",
     ],
     warranty: "5 Year Guarantee",
     deliveryTime: "3-5 days",
-    hasTechData: true, 
-    techData: ceramikhaGypsumPlasterTechData, 
+    hasTechData: true,
+    techData: ceramikhaGypsumPlasterTechData,
     flexibleServiceOptions: flexibleServiceOptions,
-    nextGenFeatures: nextGenFeatures_Ceramic, 
+    nextGenFeatures: nextGenFeatures_Ceramic,
     brochures: defaultBrochures,
-     description: [
-      "Gypsum plaster is well-known for its practical benefits—cost efficiency, no curing, and no need for cement, sand, or wall putty. But its most important advantage is often overlooked",
+    // --- CHANGE THIS PART ---
+    description: `Gypsum plaster is well-known for its practical benefits—cost efficiency, no curing, and no need for cement, sand, or wall putty. But its most important advantage is often overlooked
 
-  "  It’s a core part of the Green Building concept. Its primary value lies in being 100% toxin-free and environmentally safe.",
-"    This isn’t just an alternative to cement-sand plaster—it’s a completely different class of material. Strength like rock or water resistance like plastic may sound impressive, but they don't qualify as Green Building certified.",
-"    Only scientifically enhanced, eco-friendly materials like gypsum plaster can offer 100x more protection for your home—especially when it comes to the health of your family. Everything else falls behind.",
-"    If you truly love your family, ask yourself — are you protecting them from hidden toxins and unseen long-term harm?",
-"    Health is our greatest wealth, and the well-being of our women and children is our real strength.",
-"    Choose the Green Building concept for your home’s interiors — and give your loved ones the safety they deserve.",
-"    Only international-standard Gypsum Plaster can truly offer this level of protection. That’s why we created CERAMIkha — a scientifically crafted product, developed by expert scientists with International standards.",
-"    It’s far from ordinary. This is an imported, scientifically enhanced, high-performance plaster—expertly engineered to ensure 100% safety for women and children.",
- 
-     ]
+It’s a core part of the Green Building concept. Its primary value lies in being 100% toxin-free and environmentally safe.
+
+This isn’t just an alternative to cement-sand plaster—it’s a completely different class of material. Strength like rock or water resistance like plastic may sound impressive, but they don't qualify as Green Building certified.
+
+Only scientifically enhanced, eco-friendly materials like gypsum plaster can offer 100x more protection for your home—especially when it comes to the health of your family. Everything else falls behind.
+
+If you truly love your family, ask yourself — are you protecting them from hidden toxins and unseen long-term harm?
+
+Health is our greatest wealth, and the well-being of our women and children is our real strength.
+
+Choose the Green Building concept for your home’s interiors — and give your loved ones the safety they deserve.
+
+Only international-standard Gypsum Plaster can truly offer this level of protection. That’s why we created CERAMIkha — a scientifically crafted product, developed by expert scientists with International standards.
+
+It’s far from ordinary. This is an imported, scientifically enhanced, high-performance plaster—expertly engineered to ensure 100% safety for women and children.`,
+    // -------------------------
   },
 ];
 

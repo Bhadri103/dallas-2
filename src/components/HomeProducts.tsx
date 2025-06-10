@@ -145,7 +145,7 @@ const ProductsPage = () => {
               {dallasProducts.map((product) => (
                 <div
                   key={product.id}
-                  className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer flex flex-col" // Added flex flex-col for button positioning
+                  className="bg-white pt-3 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer flex flex-col" // Added flex flex-col for button positioning
                   onClick={() => navigate(`/products/${product.id}`)}
                 >
                   <div className="relative">
@@ -188,7 +188,7 @@ const ProductsPage = () => {
               {ceramicaProducts.map((product) => (
                 <div
                   key={product.id}
-                  className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer flex flex-col"
+                  className="bg-white p-4 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer flex flex-col"
                   onClick={() => navigate(`/products/${product.id}`)}
                 >
                   <div className="relative">
@@ -231,7 +231,7 @@ const ProductsPage = () => {
               {drProofProducts.map((product) => (
                 <div
                   key={product.id}
-                  className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer flex flex-col"
+                  className="bg-white p-5 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer flex flex-col"
                   onClick={() => navigate(`/products/${product.id}`)}
                 >
                   <div className="relative">
