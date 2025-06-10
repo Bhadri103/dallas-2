@@ -9,10 +9,10 @@ import {
   Layers,
   BadgeCheck,
   CheckCircle, // Used for 'Yes' in tables
-  XCircle,     // Used for 'No' in tables
+  XCircle, // Used for 'No' in tables
   MinusCircle, // Used for '-' in tables
   Download,
-  Table,       // Added for the comparison table section header
+  Table, // Added for the comparison table section header
 } from "lucide-react";
 import { allProducts } from "../data/productsData"; // Ensure productsData is correctly imported
 
@@ -51,7 +51,6 @@ interface ComparisonTableData {
   rows: OldComparisonTableRow[]; // Now expects the old structure
 }
 
-
 interface Product {
   id: string;
   name: string;
@@ -79,7 +78,6 @@ interface Product {
   comparisonTable?: ComparisonTableData; // For the comparison table
   brochures?: Brochure[];
 }
-
 
 // Component for displaying technical data table
 const TechnicalDataTable = ({ data }: { data: TechDataRow[] }) => (
@@ -113,7 +111,9 @@ const ProductDetailsPage = () => {
   const navigate = useNavigate();
 
   // Find the selected product based on the productId from the URL
-  const selectedProduct = allProducts.find((p) => p.id === productId) as Product | undefined; // Type assertion
+  const selectedProduct = allProducts.find((p) => p.id === productId) as
+    | Product
+    | undefined; // Type assertion
 
   // Scroll to the top of the page when productId changes
   useEffect(() => {
@@ -192,7 +192,8 @@ const ProductDetailsPage = () => {
     return (
       <div className="p-6 bg-white rounded-lg shadow-md">
         <h4 className="font-semibold text-xl text-gray-800 mb-3 flex items-center">
-          <Table className="w-5 h-5 mr-2 text-blue-700" /> {/* Using Table icon */}
+          <Table className="w-5 h-5 mr-2 text-blue-700" />{" "}
+          {/* Using Table icon */}
           Product Comparison
         </h4>
         <div className="overflow-x-auto">
@@ -214,7 +215,10 @@ const ProductDetailsPage = () => {
             </thead>
             <tbody>
               {rows.map((row, rowIndex) => (
-                <tr key={rowIndex} className={rowIndex % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                <tr
+                  key={rowIndex}
+                  className={rowIndex % 2 === 0 ? "bg-white" : "bg-gray-50"}
+                >
                   <td className="py-3 px-4 text-sm text-gray-800 border-b border-gray-200 font-medium">
                     {row.material}
                   </td>
@@ -222,25 +226,54 @@ const ProductDetailsPage = () => {
                     // *** KEY CHANGE HERE: Access value from row.features ***
                     const value = row.features[header];
                     let displayContent;
-                    let textAlignClass = 'text-center'; // Most feature columns are centered
+                    let textAlignClass = "text-center"; // Most feature columns are centered
 
                     // Render icons based on common text values
                     if (value === "Yes") {
-                      displayContent = <CheckCircle className="w-5 h-5 text-green-500 mx-auto" title="Yes" />;
+                      displayContent = (
+                        <CheckCircle
+                          className="w-5 h-5 text-green-500 mx-auto"
+                          title="Yes"
+                        />
+                      );
                     } else if (value === "No") {
-                      displayContent = <XCircle className="w-5 h-5 text-red-500 mx-auto" title="No" />;
+                      displayContent = (
+                        <XCircle
+                          className="w-5 h-5 text-red-500 mx-auto"
+                          title="No"
+                        />
+                      );
                     } else if (value === "-") {
-                      displayContent = <MinusCircle className="w-5 h-5 text-gray-400 mx-auto" title="Not Applicable" />;
-                    } else if (value === "Don't Require" || value === "Don't Occur") {
-                      displayContent = <span className="text-green-600 font-medium">{value}</span>;
+                      displayContent = (
+                        <MinusCircle
+                          className="w-5 h-5 text-gray-400 mx-auto"
+                          title="Not Applicable"
+                        />
+                      );
+                    } else if (
+                      value === "Don't Require" ||
+                      value === "Don't Occur"
+                    ) {
+                      displayContent = (
+                        <span className="text-green-600 font-medium">
+                          {value}
+                        </span>
+                      );
                     } else if (value === "Needed" || value === "High Risk") {
-                      displayContent = <span className="text-red-600 font-medium">{value}</span>;
+                      displayContent = (
+                        <span className="text-red-600 font-medium">
+                          {value}
+                        </span>
+                      );
                     } else {
                       displayContent = value; // Default to text for other values
                     }
 
                     return (
-                      <td key={colIndex} className={`py-3 px-4 text-sm text-gray-700 border-b border-gray-200 ${textAlignClass}`}>
+                      <td
+                        key={colIndex}
+                        className={`py-3 px-4 text-sm text-gray-700 border-b border-gray-200 ${textAlignClass}`}
+                      >
                         {displayContent}
                       </td>
                     );
@@ -253,7 +286,6 @@ const ProductDetailsPage = () => {
       </div>
     );
   };
-
 
   return (
     <div className="container mx-auto px-4 py-8 bg-gray-50 min-h-screen">
@@ -278,9 +310,8 @@ const ProductDetailsPage = () => {
         )}
         {renderDescription()} {/* Render Product Overview (Description) */}
         <hr className="my-8" />
-
-        <div className="flex flex-col md:flex-row items-start lg:items-stretch gap-8">
-          <div className="lg:w-2/5 flex flex-col items-start text-start">
+        <div className="flex flex-col md:flex-row items-start lg:items-stretch gap-8 xl:flex-col">
+          <div className="lg:w-2/5 xl:w-full flex flex-col items-start text-start">
             <div className="flex-grow flex flex-col justify-start items-start p-4">
               <h1 className="text-2xl sm:text-2xl font-extrabold text-start text-blue-800 mb-2">
                 {selectedProduct.category.toUpperCase()}{" "}
@@ -298,7 +329,7 @@ const ProductDetailsPage = () => {
             </div>
           </div>
 
-          <div className="lg:w-3/5  bg-white rounded-lg h-full flex flex-col">
+          <div className="lg:w-3/5 xl:w-full bg-white rounded-lg h-full flex flex-col">
             {selectedProduct.flexibleServiceOptions && (
               <>
                 <h5 className="font-semibold text-xl mb-4 flex items-center">
