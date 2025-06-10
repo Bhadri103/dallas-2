@@ -8,9 +8,10 @@ import {
   ArrowLeft,
   Layers,
   BadgeCheck,
-  CheckCircle, // Used for 'Yes' in tables
-  XCircle,     // Used for 'No' in tables
-  MinusCircle, // Used for '-' in tables
+  CheckCircle, 
+  XCircle,      
+  MinusCircle,  
+  // MinusCircle,  
   Download,
   Table,       // Added for the comparison table section header
 } from "lucide-react";
