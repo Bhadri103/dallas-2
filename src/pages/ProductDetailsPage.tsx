@@ -8,12 +8,11 @@ import {
   ArrowLeft,
   Layers,
   BadgeCheck,
-  CheckCircle, 
-  XCircle,      
-  MinusCircle,  
-  // MinusCircle,  
+  CheckCircle,
+  XCircle,
+  MinusCircle,
   Download,
-  Table,       // Added for the comparison table section header
+  Table, // Added for the comparison table section header
 } from "lucide-react";
 import { allProducts } from "../data/productsData"; // Ensure productsData is correctly imported
 
@@ -26,7 +25,7 @@ const callLink = `tel:${contactNumber}`;
 interface Brochure {
   name: string;
   url: string;
-  language: string;
+  language: string; // Assuming you have a language property
 }
 
 interface TechDataRow {
@@ -41,17 +40,14 @@ interface FlexibleServiceOption {
   points: string[];
 }
 
-// Updated ComparisonTableRow for the "Ceramikha Gypsum Plaster" structure
-interface OldComparisonTableRow {
-  material: string;
-  features: { [key: string]: string };
+interface ComparisonTableRow {
+  [key: string]: string; // Allows dynamic access like row["Properties"]
 }
 
 interface ComparisonTableData {
   headers: string[];
-  rows: OldComparisonTableRow[]; // Now expects the old structure
+  rows: ComparisonTableRow[];
 }
-
 
 interface Product {
   id: string;
@@ -76,11 +72,10 @@ interface Product {
   techData?: TechDataRow[];
   flexibleServiceOptions?: FlexibleServiceOption[];
   nextGenFeatures?: string[];
+  brochures?: Brochure[];
   description?: string; // Multi-line string for description
   comparisonTable?: ComparisonTableData; // For the comparison table
-  brochures?: Brochure[];
 }
-
 
 // Component for displaying technical data table
 const TechnicalDataTable = ({ data }: { data: TechDataRow[] }) => (
@@ -114,7 +109,9 @@ const ProductDetailsPage = () => {
   const navigate = useNavigate();
 
   // Find the selected product based on the productId from the URL
-  const selectedProduct = allProducts.find((p) => p.id === productId) as Product | undefined; // Type assertion
+  const selectedProduct = allProducts.find((p) => p.id === productId) as
+    | Product
+    | undefined; // Type assertion
 
   // Scroll to the top of the page when productId changes
   useEffect(() => {
@@ -155,7 +152,7 @@ const ProductDetailsPage = () => {
     const descriptionPoints = selectedProduct.description
       .split("\n\n")
       .map((point) => point.trim()) // Trim whitespace from each point
-      .filter((point) => point.length > 0); // Remove any empty strings that might result
+      .filter((point) => point.length > 0); // Remove any empty points
 
     if (descriptionPoints.length === 0) {
       return null;
@@ -179,7 +176,7 @@ const ProductDetailsPage = () => {
     );
   };
 
-  // UPDATED Helper function to render the comparison table with icons
+  // Helper function to render the comparison table with icons
   const renderComparisonTable = () => {
     if (!selectedProduct.comparisonTable) {
       return null;
@@ -187,23 +184,18 @@ const ProductDetailsPage = () => {
 
     const { headers, rows } = selectedProduct.comparisonTable;
 
-    // Filter out "Feature" header as it's represented by the 'material' column
-    const featureHeaders = headers.filter((header) => header !== "Feature");
-
     return (
       <div className="p-6 bg-white rounded-lg shadow-md">
         <h4 className="font-semibold text-xl text-gray-800 mb-3 flex items-center">
-          <Table className="w-5 h-5 mr-2 text-blue-700" /> {/* Using Table icon */}
+          <Table className="w-5 h-5 mr-2 text-blue-700" />{" "}
+          {/* Using Table icon */}
           Product Comparison
         </h4>
         <div className="overflow-x-auto">
           <table className="min-w-full bg-white border border-gray-200 rounded-lg shadow-sm">
             <thead className="bg-gray-100">
               <tr>
-                <th className="py-3 px-4 text-left text-sm font-semibold text-gray-600 border-b border-gray-200">
-                  Material
-                </th>
-                {featureHeaders.map((header, idx) => (
+                {headers.map((header, idx) => (
                   <th
                     key={idx}
                     className="py-3 px-4 text-left text-sm font-semibold text-gray-600 border-b border-gray-200"
@@ -215,33 +207,67 @@ const ProductDetailsPage = () => {
             </thead>
             <tbody>
               {rows.map((row, rowIndex) => (
-                <tr key={rowIndex} className={rowIndex % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-                  <td className="py-3 px-4 text-sm text-gray-800 border-b border-gray-200 font-medium">
-                    {row.material}
-                  </td>
-                  {featureHeaders.map((header, colIndex) => {
-                    // *** KEY CHANGE HERE: Access value from row.features ***
-                    const value = row.features[header];
+                <tr
+                  key={rowIndex}
+                  className={rowIndex % 2 === 0 ? "bg-white" : "bg-gray-50"}
+                >
+                  {headers.map((headerKey, colIndex) => {
+                    const value = row[headerKey];
                     let displayContent;
-                    let textAlignClass = 'text-center'; // Most feature columns are centered
-
-                    // Render icons based on common text values
-                    if (value === "Yes") {
-                      displayContent = <CheckCircle className="w-5 h-5 text-green-500 mx-auto" title="Yes" />;
-                    } else if (value === "No") {
-                      displayContent = <XCircle className="w-5 h-5 text-red-500 mx-auto" title="No" />;
-                    } else if (value === "-") {
-                      displayContent = <MinusCircle className="w-5 h-5 text-gray-400 mx-auto" title="Not Applicable" />;
-                    } else if (value === "Don't Require" || value === "Don't Occur") {
-                      displayContent = <span className="text-green-600 font-medium">{value}</span>;
-                    } else if (value === "Needed" || value === "High Risk") {
-                      displayContent = <span className="text-red-600 font-medium">{value}</span>;
+                    let textAlignClass = "text-left";
+                    if (
+                      headerKey === "MCG WATER TREATER" ||
+                      headerKey === "NORMAL WATER"
+                    ) {
+                      textAlignClass = "text-center";  
+                      if (value === "Yes" || value.includes("Yes (")) {
+                        // Handle "Yes (3X)"
+                        displayContent = (
+                          <CheckCircle
+                            className="w-5 h-5 text-green-500 mx-auto"
+                            title={value}
+                          />
+                        );
+                      } else if (value === "No") {
+                        displayContent = (
+                          <XCircle
+                            className="w-5 h-5 text-red-500 mx-auto"
+                            title={value}
+                          />
+                        );
+                      } else if (value === "-") {
+                        displayContent = (
+                          <MinusCircle
+                            className="w-5 h-5 text-gray-400 mx-auto"
+                            title="Not Applicable"
+                          />
+                        );
+                      } else if (value === "High" || value.includes("High (")) {
+                        // Handle "High (10-15%)", "High (20-30%)"
+                        displayContent = (
+                          <span className="text-green-600 font-medium">
+                            {value}
+                          </span>
+                        );
+                      } else if (value === "Low" || value.includes("Low (")) {
+                        // Handle "Low"
+                        displayContent = (
+                          <span className="text-red-600 font-medium">
+                            {value}
+                          </span>
+                        );
+                      } else {
+                        displayContent = value; // Default to text for "0 TDS", "500-1000 TDS" etc.
+                      }
                     } else {
-                      displayContent = value; // Default to text for other values
+                        displayContent = value;
                     }
 
                     return (
-                      <td key={colIndex} className={`py-3 px-4 text-sm text-gray-700 border-b border-gray-200 ${textAlignClass}`}>
+                      <td
+                        key={colIndex}
+                        className={`py-3 px-4 text-sm text-gray-700 border-b border-gray-200 ${textAlignClass}`}
+                      >
                         {displayContent}
                       </td>
                     );
@@ -254,7 +280,6 @@ const ProductDetailsPage = () => {
       </div>
     );
   };
-
 
   return (
     <div className="container mx-auto px-4 py-8 bg-gray-50 min-h-screen">
@@ -277,9 +302,8 @@ const ProductDetailsPage = () => {
             </p>
           </div>
         )}
-        {renderDescription()} {/* Render Product Overview (Description) */}
+        {renderDescription()} 
         <hr className="my-8" />
-
         <div className="flex flex-col md:flex-row items-start lg:items-stretch gap-8">
           <div className="lg:w-2/5 flex flex-col items-start text-start">
             <div className="flex-grow flex flex-col justify-start items-start p-4">
@@ -359,12 +383,17 @@ const ProductDetailsPage = () => {
               Key Features
             </h4>
             <ul className="list-disc list-inside text-gray-700 space-y-2">
-              {selectedProduct.nextGenFeatures?.map((feature, idx) => (
-                <li key={idx} className="flex items-start">
-                  <BadgeCheck className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-1" />
-                  {feature}
-                </li>
-              ))}
+              {selectedProduct.nextGenFeatures?.map(
+                (
+                  feature,
+                  idx  
+                ) => (
+                  <li key={idx} className="flex items-start">
+                    <BadgeCheck className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-1" />
+                    {feature}
+                  </li>
+                )
+              )}
             </ul>
           </div>
         )}
@@ -383,16 +412,13 @@ const ProductDetailsPage = () => {
           </div>
         )}
 
-        {selectedProduct.hasTechData && selectedProduct.techData && (
-          <div className="p-6 bg-white rounded-lg shadow-md">
-            <TechnicalDataTable data={selectedProduct.techData} />
-          </div>
-        )}
-
-        {/* --- NEW SECTION: Product Comparison Table --- */}
-        {selectedProduct.comparisonTable && renderComparisonTable()}
-        {/* ------------------------------------------- */}
-
+        {selectedProduct.hasTechData &&
+          selectedProduct.techData && ( // Check if techData exists
+            <div className="p-6 bg-white rounded-lg shadow-md">
+              <TechnicalDataTable data={selectedProduct.techData} />
+            </div>
+          )} 
+        {selectedProduct.comparisonTable && renderComparisonTable()}  
         {selectedProduct.brochures && selectedProduct.brochures.length > 0 && (
           <div className="p-6 bg-white rounded-lg shadow-md">
             <h5 className="font-semibold text-xl mb-4 flex items-center">
