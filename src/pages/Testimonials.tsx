@@ -350,7 +350,7 @@ const Testimonials: React.FC = () => {
         </div>
 
         {/* Testimonials Section */}
-        <section className="mb-20">
+        {/* <section className="mb-20">
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
             What Our Clients Say
           </h2>
@@ -380,16 +380,7 @@ const Testimonials: React.FC = () => {
                   <div className="flex items-center justify-center gap-1 mb-4">
                     {renderStars(testimonials[currentTestimonial].rating)}
                   </div>
-                  {/* <div className="flex flex-wrap justify-center gap-2">
-                    {testimonials[currentTestimonial].tags.map((tag, index) => (
-                      <span
-                        key={index}
-                        className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-xs font-medium"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div> */}
+                 
                 </div>
                 <div className="lg:w-2/3">
                   <blockquote className="text-lg text-gray-700 mb-6 leading-relaxed">
@@ -449,7 +440,7 @@ const Testimonials: React.FC = () => {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
         <CustomerReviews />
         {/* <section className="mb-20">
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">

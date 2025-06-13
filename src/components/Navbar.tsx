@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Factory, Menu, X, ChevronDown, ChevronRight } from "lucide-react";
-  const logo = "./images/logo.png";
+import logo from './images/logo.png'
 interface SubItem {
   label: string;
   path: string;

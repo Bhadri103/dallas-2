@@ -13,8 +13,7 @@ import {
   MapPin,
   PhoneCall,
 } from "lucide-react";
-  const logo = "./images/logo.png";
-
+import logo from './images/logo.png'
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 

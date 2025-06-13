@@ -167,9 +167,9 @@ const ProductDetailsPage = () => {
         <ul className="list-none text-gray-700 space-y-2">
           {descriptionPoints.map((point, idx) => (
             <li key={idx} className="flex items-start">
-              <BadgeCheck className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-1" />
+              {/* <BadgeCheck className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-1" /> */}
               <p>{point}</p>
-            </li>
+         </li>
           ))}
         </ul>
       </div>
@@ -293,7 +293,7 @@ const ProductDetailsPage = () => {
       <div className="bg-white rounded-2xl shadow-xl overflow-hidden p-8 mb-8">
         {selectedProduct.category && (
           <div className="mb-4">
-            <h1 className="text-4xl font-extrabold text-red-600 underline text-center mb-2 tracking-wide">
+            <h1 className="text-3xl font-extrabold text-red-600 underline text-center mb-2 tracking-wide">
               {selectedProduct.category.toUpperCase()}{" "}
             </h1>
             <p className="text-xl text-gray-600 mt-2 text-center">

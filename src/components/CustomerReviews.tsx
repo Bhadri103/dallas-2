@@ -1,39 +1,48 @@
 import React, { useState, useEffect } from "react";
+import video1 from "./video/NoushadPuthiyangadi.mp4";
+import video2 from "./video/MuhammedKutty.mp4";
+import video3 from "./video/HarisMalabar.mp4"; 
+import thumbnail1 from "./video/thumbnails/NoushadPuthiyangadi.png";
+import thumbnail2 from "./video/thumbnails/MuhammedKutty.png";
+import thumbnail3 from "./video/thumbnails/haris-malabar.png";
 
 const customerReviews = [
   {
     id: 1,
-    customerName: "Rajesh Kumar",
-    title: "Exceptional Waterproofing Service - Kochi Residential Complex",
+    customerName: "Noushad",
+    title: "Empowering Success: Noushad Puthiyangadi's Journey with Dallas Wall care",
     description:
-      "Our 200-unit complex had severe leakage issues. Their waterproofing solution has been perfect for 2 years now. Highly recommended!",
-    videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video IDs
+      "Overcoming challenges to achieving new milestones, discover how this collaboration has shaped his path and led to remarkable achievements",
+    videoSrc: video1,
+    thumbnail: thumbnail1,
     rating: 5,
-    location: "Kochi, Kerala",
+    location: "Puthiyangadi, Calicut",
     projectType: "Residential Complex",
     reviewDate: "2024",
-    serviceType: "Complete Waterproofing",
+    serviceType: "Wall Plaster",
   },
   {
     id: 2,
-    customerName: "Dr. Priya Menon",
+    customerName: "Muhammed Kutty",
     title: "Amazing Heritage Building Restoration Experience",
     description:
       "They preserved our family heritage property beautifully while solving all waterproofing issues. Professional team with great attention to detail.",
-    videoId: "ScMzIvxBSi4", // Replace with actual YouTube video IDs
+    videoSrc: video2,
+    thumbnail: thumbnail2,  
     rating: 5,
-    location: "Mysore, Karnataka",
+    location: "Othukungal, Kerala",
     projectType: "Heritage Building",
     reviewDate: "2023",
     serviceType: "Restoration & Waterproofing",
   },
   {
     id: 3,
-    customerName: "Arjun Nair",
+    customerName: "Haris Malabar",
     title: "Premium Villa Complex - Outstanding Results",
     description:
       "Luxury villa owners in our community are extremely satisfied. No basement flooding, perfect terrace waterproofing. Worth every penny!",
-    videoId: "kJQP7kiw5Fk",
+    videoSrc: video3,
+    thumbnail: thumbnail3, // Now correctly points to an image file
     rating: 5,
     location: "Thiruvananthapuram, Kerala",
     projectType: "Luxury Villas",
@@ -104,9 +113,7 @@ const CustomerReviews = () => {
     return Array.from({ length: 5 }, (_, i) => (
       <span
         key={i}
-        className={`text-lg ${
-          i < rating ? "text-yellow-400" : "text-gray-300"
-        }`}
+        className={`text-lg ${i < rating ? "text-yellow-400" : "text-gray-300"}`}
       >
         ⭐
       </span>
@@ -115,7 +122,7 @@ const CustomerReviews = () => {
 
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 bg-gradient-to-br from-yellow-50  ">
-      <style jsx>{`
+      <style  >{`
         @keyframes fadeIn {
           from {
             opacity: 0;
@@ -268,7 +275,7 @@ const CustomerReviews = () => {
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold text-center text-gray-800 relative z-10">
           Customer <span className="text-red-600">Reviews</span>
-        </h2>{" "}
+        </h2> 
         <p className="text-gray-600 mt-4 text-lg max-w-2xl mx-auto">
           Hear what our satisfied customers have to say about our waterproofing
           services
@@ -285,24 +292,24 @@ const CustomerReviews = () => {
           >
             <div className="video-thumbnail">
               <img
-                src={`https://img.youtube.com/vi/${review.videoId}/maxresdefault.jpg`}
+                src={review.thumbnail} // Now correctly uses an image file
                 alt={review.title}
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
               <div className="play-button"></div>
-              <div className="absolute top-4 left-4">
+              {/* <div className="absolute top-4 left-4">
                 <span className="service-badge">{review.serviceType}</span>
-              </div>
-              <div className="absolute bottom-4 right-4 bg-black/70 text-white px-3 py-1 rounded-full text-sm flex items-center gap-1">
+              </div> */}
+              {/* <div className="absolute bottom-4 right-4 bg-black/70 text-white px-3 py-1 rounded-full text-sm flex items-center gap-1">
                 <span>⭐</span>
                 <span>{review.rating}</span>
-              </div>
+              </div> */}
             </div>
 
             <div className="p-6">
               <div className="flex items-center justify-between mb-3">
-                <h3 className="    text-red-500 text-lg font-bold">
+                <h3 className="  text-red-500 text-lg font-bold">
                   {review.customerName}
                 </h3>
                 <div className="flex">{renderStars(review.rating)}</div>
@@ -312,12 +319,12 @@ const CustomerReviews = () => {
                 {review.title}
               </h4>
 
-              <p className="text-gray-600 text-sm mb-4 line-clamp-3 italic">
+              {/* <p className="text-gray-600 text-sm mb-4 line-clamp-3 italic">
                 "{review.description}"
-              </p>
+              </p> */}
 
               <div className="flex flex-wrap gap-3 text-xs text-gray-500">
-                <div className="flex items-center gap-1 bg-gray-50 px-2 py-1 rounded-full">
+                {/* <div className="flex items-center gap-1 bg-gray-50 px-2 py-1 rounded-full">
                   <span className="font-medium">📍</span>
                   <span>{review.location}</span>
                 </div>
@@ -328,14 +335,14 @@ const CustomerReviews = () => {
                 <div className="flex items-center gap-1 bg-gray-50 px-2 py-1 rounded-full">
                   <span className="font-medium">📅</span>
                   <span>{review.reviewDate}</span>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Video Modal */}
+      {/* Video Modal - This part remains the same for playing the video */}
       {selectedVideo && (
         <div className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4">
           <button
@@ -350,14 +357,15 @@ const CustomerReviews = () => {
               className="relative"
               style={{ paddingBottom: "56.25%", height: 0 }}
             >
-              <iframe
+              <video
                 className="modal-iframe absolute top-0 left-0 w-full h-full"
-                src={`https://www.youtube.com/embed/${selectedVideo.videoId}?autoplay=1&rel=0`}
+                src={selectedVideo.videoSrc}
                 title={selectedVideo.title}
-                frameBorder="0"
+                controls
+                autoPlay // Added autoPlay for convenience when modal opens
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
-              ></iframe>
+              />
             </div>
 
             <div className="mt-6 text-white text-center">

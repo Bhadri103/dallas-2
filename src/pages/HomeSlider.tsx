@@ -4,8 +4,6 @@ import AnimatedSection from "../components/AnimatedSection";
 import { ArrowRight, Shield, Star, Users } from "lucide-react";
 import HomeProducts from "../components/HomeProducts";
 
- 
- 
 const Aafee = "./images/Aafee.png";
 const Banner = "./images/Banner.jpeg";
 const Ceramikha = "./images/Ceramikha.png";
@@ -17,10 +15,6 @@ const DallasReadyPlaster = "./images/DallasReadyPlasty.png";
 const DallasSupremeGyplast = "./images/SupremeGplastSingle.png";
 const DallasTileAdhensive = "./images/DallasTileAdhensive.png";
 const SupremeGplast = "./images/SupremeGplastWhite.png";
-
-
-
-
 
 const homeSlides = [
   {
@@ -71,14 +65,14 @@ const Home = () => {
         <AnimatedSection>
           <div className="w-4/5 mx-auto">
             <div className="marquee-container pl-6 mb-6">
-              <p className="marquee text-base sm:text-lg md:text-xl text-blue-500 font-bold">
+              <p className="marquee text-lg sm:text-xl md:text-2xl text-blue-500 font-bold">
                 Recognized as India's only manufacturer of Next-Gen buildings
                 that meet international standards
               </p>
             </div>
 
             <div className="pl-6">
-              <p className="text-sm sm:text-base md:text-lg text-center bg-gradient-to-r from-red-600 to-yellow-400 bg-clip-text text-transparent">
+              <p className="text-base sm:text-lg md:text-xl text-center font-bold bg-gradient-to-r from-red-600 to-yellow-400 bg-clip-text text-transparent">
                 DALLAS, an international waterproof building product, is set
                 apart not just by endorsements from doctors or engineers—it's a
                 scientifically made scientist product

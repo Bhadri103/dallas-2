@@ -108,7 +108,7 @@ const Home = () => {
           animation: fade-in 0.8s ease-out forwards;
         }
       `}</style>
-      <CompletedProjects />
+      {/* <CompletedProjects /> */}
       <CustomerReviews />
  <section className="py-20 bg-gray-100 text-gray-900 relative">
         <div className="container mx-auto px-4 relative z-10">

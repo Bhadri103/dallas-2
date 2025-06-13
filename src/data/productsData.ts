@@ -720,16 +720,14 @@ export const ceramikhaProducts = [
     techData: ceramikhaGypsumPlasterTechData,
     flexibleServiceOptions: flexibleServiceOptions,
     nextGenFeatures: nextGenFeatures_Ceramic,
-    brochures: defaultBrochures,
-    // --- CHANGE THIS PART ---
+    brochures: defaultBrochures, 
     description: `Gypsum plaster is well-known for its practical benefits—cost efficiency, no curing, and no need for cement, sand, or wall putty. But its most important advantage is often overlooked
 
 It’s a core part of the Green Building concept. Its primary value lies in being 100% toxin-free and environmentally safe.
 
-This isn’t just an alternative to cement-sand plaster—it’s a completely different class of material. Strength like rock or water resistance like plastic may sound impressive, but they don't qualify as Green Building certified.
-
-Only scientifically enhanced, eco-friendly materials like gypsum plaster can offer 100x more protection for your home—especially when it comes to the health of your family. Everything else falls behind.
-
+or water resistance like plastic may sound impressive, but they don't qualify as Green Building certified.
+This isn’t just an alternative to cement-sand plaster—it’s a completely different class of material. Strength like rock 
+Only scientifically enhanced, eco-friendly materials like gypsum plaster can offer 100x more protection for your home—especially when it comes to the health of your family. Everything else falls behind. 
 If you truly love your family, ask yourself — are you protecting them from hidden toxins and unseen long-term harm?
 
 Health is our greatest wealth, and the well-being of our women and children is our real strength.

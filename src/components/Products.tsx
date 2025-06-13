@@ -10,9 +10,9 @@ import {
   Activity,
   Target,
   MapPin,
-  ChevronDown, // Add this
-  ChevronUp, // Add this
-  ArrowRight, // Import ArrowRight icon
+  ChevronDown,  
+  ChevronUp, 
+  ArrowRight,
 } from "lucide-react";
 import {
   dallasProducts,
@@ -22,7 +22,7 @@ import {
   brandCategories,
   wallPlasterTechData,
 } from "../data/productsData";
-const Banner = "./images/Banner.jpeg";
+import Banner from './images/Banner.jpeg'
 const ProductsPage = () => {
   const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -100,8 +100,7 @@ const ProductsPage = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
       <>
-        {/* Hero Section */}
-        <section className="relative h-96 overflow-hidden">
+         <section className="relative h-96 overflow-hidden">
           <div className="absolute inset-0">
             <img
               src={heroSlides[currentSlide].image}
@@ -357,7 +356,7 @@ const ProductsPage = () => {
             </div>
           </div>
         </section>
-        <section className="py-16 bg-white">
+        {/* <section className="py-16 bg-white">
           <div className="max-w-6xl mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -398,14 +397,14 @@ const ProductsPage = () => {
                 to your location!
               </p>
               <a
-                href="/products" // Changed href from tel: to /products
+                href="/products" 
                 className="inline-flex items-center bg-red-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-red-700 transition-colors shadow-lg"
               >
                 Know more
               </a>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* FAQ Section */}
         <section className="py-16 bg-gray-100">

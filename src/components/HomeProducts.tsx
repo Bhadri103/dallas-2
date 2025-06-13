@@ -1,55 +1,50 @@
 import React, { useState, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
-
-const Aafee = "./images/Aafee.png";
-const Banner = "./images/Banner.jpeg";
-const Ceramikha = "./images/Ceramikha.png";
-const DallasGroutPlus = "./images/GroutPlus.png";
-const DallasWallutty = "./images/DallasWallutty.png";
-const DallasDrM1Bond = "./images/DallasDrM1Bond.jpeg";
-const DallasGypsumPlasty = "./images/DallasGypsmPlasty.png";
-const DallasReadyPlaster = "./images/DallasReadyPlasty.png";
-const DallasSupremeGyplast = "./images/SupremeGplastSingle.png";
-const DallasTileAdhensive = "./images/DallasTileAdhensive.png";
-const SupremeGplastWhite = "./images/SupremeGplastWhite.png";
+import { useNavigate } from "react-router-dom";
+import Aafee from "./images/Aafee.png";
+import Banner from "./images/Banner.png";
+import Ceramikha from "./images/Ceramikha.png";
+import DallasDrM1Bond from "./images/DallasDrM1Bond.jpeg";
+import DallasGypsumPlasty from "./images/DallasGypsmPlasty.png";
+import DallasGroutPlus from "./images/GroutPlus.png";
+import DallasReadyPlaster from "./images/DallasReadyPlasty.png";
+import DallasTileAdhensive from "./images/DallasTileAdhensive.png";
+import SupremeGplastWhite from "./images/SupremeGplastWhite.png";
 
 const ProductsPage = () => {
-  const navigate = useNavigate(); // Initialize the navigate hook
-
-  // Brand Categories (no changes as per request)
+  const navigate = useNavigate();
   const brandCategories = [
     {
       id: "dallas",
       name: "Dallas",
-      tagline: "Premium Construction Solutions",
+      tagline: "India's 1st Next-Gen DampProof Wallcare Products",
       image: Banner,
       description: "India's leading waterproof construction materials",
     },
     {
-      id: "ceramica",
-      name: "Ceramica",
-      tagline: "Advanced Ceramic Solutions",
+      id: "Ceramikha",
+      name: "Ceramikha",
+      tagline: "Green Building, Safer Homes, Healthier Children",
       image: Ceramikha,
       description: "High-quality ceramic and finishing products",
     },
     {
       id: "drproof",
       name: "Dr. Proof",
-      tagline: "Waterproofing Specialists",
+      tagline: "India's 1st Next-Gen DampProof Dr. Proof",
       image: DallasDrM1Bond,
       description: "Professional waterproofing solutions",
     },
   ];
   const dallasProducts = [
-      {
-      id: "wall-plaster", // Consistent ID, assuming this is "Ready Plaster"
+    {
+      id: "wall-plaster",
       name: "Wall-Plaster",
       image: DallasReadyPlaster,
       price: "₹450/bag",
     },
     {
-      id: "wall-putty",  
+      id: "wall-putty",
       name: "Wall-Putty",
       image: SupremeGplastWhite,
       price: "₹350/bag",
@@ -61,24 +56,22 @@ const ProductsPage = () => {
       price: "₹380/bag",
     },
     {
-    id: "tile-adhesive",
+      id: "tile-adhesive",
       name: " Tile-Adhesive",
       image: DallasTileAdhensive,
       price: "₹350/bag",
     },
     {
-    id: "grout-plus",
+      id: "grout-plus",
       name: " Grout-Plus",
       image: DallasGroutPlus,
       price: "₹280/bag",
     },
-  
   ];
 
-  // Ceramica Products - Added click handler
   const ceramicaProducts = [
     {
-      id: "ceramica-gypsum-plaster",
+      id: "ceramikha-gypsum-plaster",
       name: "Ceramikha",
       image: Ceramikha,
       price: "₹420/bag",
@@ -88,7 +81,7 @@ const ProductsPage = () => {
   // DrProof Products - Added click handler
   const drProofProducts = [
     {
-      id: "m1-bond",
+  id: "dr-proof-m1-bond",
       name: "Dr. M1 Bond",
       image: DallasDrM1Bond,
       price: "₹580/bag",
@@ -96,12 +89,12 @@ const ProductsPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <section className="pt-16 pb-12">
+    <div className=" n ">
+      <section className="pt-16 pb-3">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Our <span className="text-red-600">Product Brands</span>
+              Our <span className="text-red-600">Products </span>
             </h2>
             <p className="text-xl text-gray-600">
               Quality over quantity - High-performance construction materials
@@ -112,20 +105,20 @@ const ProductsPage = () => {
             {brandCategories.map((brand) => (
               <div
                 key={brand.id}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="bg-white pt-4 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col h-full cursor-pointer"
               >
                 <div className="relative">
                   <img
                     src={brand.image}
                     alt={brand.name}
-                    className="w-full h-48 object-contain"
+                    className="w-full h-28 object-contain"
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                    <div className="text-center text-white">
-                      <h3 className="text-2xl font-bold mb-2">{brand.name}</h3>
-                      <p className="text-sm">{brand.tagline}</p>
-                    </div>
-                  </div>
+                </div>
+                <div className="p-6 flex flex-col flex-grow items-center justify-center text-center">
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">
+                    {brand.name}
+                  </h3>
+                  {/* <p className="text-sm text-gray-600">{brand.tagline}</p> */}
                 </div>
               </div>
             ))}
@@ -134,10 +127,10 @@ const ProductsPage = () => {
           <div className="mb-16">
             <div className="text-center mb-8">
               <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                <span className="text-red-600">Dallas</span> Products
+                <span className="text-red-600">DALLAS</span> Products
               </h3>
-              <p className="text-gray-600">
-                Premium waterproof construction solutions
+              <p className="text-xl text-gray-600">
+                India's 1st Next-Gen DampProof Wallcare Products
               </p>
             </div>
 
@@ -155,7 +148,7 @@ const ProductsPage = () => {
                       className="w-full h-48 object-contain"
                     />
                   </div>
-                  <div className="p-4 flex flex-col flex-grow justify-between"> {/* Added flex-grow and justify-between */}
+                  <div className="p-4 flex flex-col flex-grow justify-between">
                     <h4 className="font-semibold text-center text-gray-800 text-lg mb-4">
                       {product.name}
                     </h4>
@@ -177,10 +170,13 @@ const ProductsPage = () => {
           <div className="mb-16">
             <div className="text-center mb-8">
               <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                <span className="text-red-600">Ceramica</span> Products
+                <span className="text-red-600">
+                  CREAMI<span className="text-4xl text-yellow-600">kha</span>{" "}
+                </span>{" "}
+                Products
               </h3>
-              <p className="text-gray-600">
-                Advanced ceramic and finishing solutions
+              <p className="text-xl text-gray-600">
+                Green Building, Safer Homes, Healthier Children
               </p>
             </div>
 
@@ -220,18 +216,18 @@ const ProductsPage = () => {
           <div className="mb-16">
             <div className="text-center mb-8">
               <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                <span className="text-red-600">Dr. Proof</span> Products
+                <span className="text-red-600">Dr. PROOF</span> Products
               </h3>
-              <p className="text-gray-600">
-                Professional waterproofing specialists
+              <p className="text-xl text-gray-600">
+                India's 1st Next-Gen DampProof Dr. Proof
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {drProofProducts.map((product) => (
                 <div
                   key={product.id}
-                  className="bg-white p-5 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer flex flex-col"
+                  className="bg-white p-4 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer flex flex-col"
                   onClick={() => navigate(`/products/${product.id}`)}
                 >
                   <div className="relative">
@@ -257,15 +253,15 @@ const ProductsPage = () => {
                   </div>
                 </div>
               ))}
-            </div>
+            </div> 
           </div>
           <div className="w-full flex justify-center">
             <button
               onClick={() => navigate("/products")}
-              className="inline-flex items-center justify-center bg-red-600 text-white text-lg font-semibold px-10 py-4 rounded-full shadow-lg hover:bg-red-700 hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1"
+              className="inline-flex items-center justify-center bg-red-600 text-white  font-medium px-3 py-4 rounded-full shadow-lg hover:bg-red-700 hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1"
             >
               Explore All Products
-              <ArrowRight className="ml-3 w-6 h-6" />
+              <ArrowRight className="ml-2 w-3 h-3 " />
             </button>
           </div>
         </div>
