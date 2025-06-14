@@ -1,11 +1,11 @@
-import Aafee from "../images/CombainedProduct/Aafee.png";
+import Aafee from "../images/CombainedProduct/dallas-drbond.png";
 import Banner from "../images/Banner.jpeg";
 import Ceramikha from "../images/Ceramikha.png";
+import ceramikhaBanner from "../images/ceramikhaBanner.jpeg";
 import DallasGroutPlus from "../images/GroutPlus.png";
 import DallasWallutty from "../images/CombainedProduct/DallasWallutty.png";
 import DallasDrM1Bond from "../images/DallasDrM1Bond.jpeg";
 import DallasGypsumPlasty from "../images/DallasGypsmPlasty.png";
-// import DallasGypsumPlasty from "../images/DallasGypsmPlasty.png";
 import DallasReadyPlaster from "../images/CombainedProduct/DallasReadyPlasty.png";
 import DallasTileAdhensive from "../images/DallasTileAdhensive.png";
 
@@ -683,9 +683,9 @@ export const ceramikhaProducts = [
     image: Ceramikha,
     icon: "🏺",
     price: "For bulk order discount upto 40 %",
-    originalPrice: "₹550/bag", // Added placeholder
-    savings: "₹80 per bag", // Added placeholder
-    discount: "Custom Discounts", // Added placeholder
+    originalPrice: "₹550/bag",
+    savings: "₹80 per bag",
+    discount: "Custom Discounts",
     features: ["Ceramic Technology", "High Durability", "Smooth Finish"],
     benefits: [
       "Premium quality",
@@ -721,22 +721,18 @@ export const ceramikhaProducts = [
     flexibleServiceOptions: flexibleServiceOptions,
     nextGenFeatures: nextGenFeatures_Ceramic,
     brochures: defaultBrochures, 
-    description: `Gypsum plaster is well-known for its practical benefits—cost efficiency, no curing, and no need for cement, sand, or wall putty. But its most important advantage is often overlooked
+    ceramikhaBanner:ceramikhaBanner,
+        description: ` 
+       
+Gypsum plaster is well-known for its practical benefits cost efficiency, no curing, and no need for cement, sand, or wall putty. But its most important advantage is often overlooked: It’s a core part of the Green Building concept. Its primary value lies in being 100% toxin-free and environmentally safe.
 
-It’s a core part of the Green Building concept. Its primary value lies in being 100% toxin-free and environmentally safe.
 
-or water resistance like plastic may sound impressive, but they don't qualify as Green Building certified.
-This isn’t just an alternative to cement-sand plaster—it’s a completely different class of material. Strength like rock 
-Only scientifically enhanced, eco-friendly materials like gypsum plaster can offer 100x more protection for your home—especially when it comes to the health of your family. Everything else falls behind. 
-If you truly love your family, ask yourself — are you protecting them from hidden toxins and unseen long-term harm?
+This isn’t just an alternative to cement-sand plaster it’s a completely different class of material. Strength like rock or water resistance like plastic may sound impressive, but they don't qualify as Green Building certified. Only scientifically enhanced, eco-friendly materials like gypsum plaster can offer 100x more protection for your home especially when it comes to the health of your family. Everything else falls behind. If you truly love your family, ask yourself   are you protecting them from hidden toxins and unseen long-term harm? Health is our greatest wealth, and the well-being of our women and children is our real strength.
 
-Health is our greatest wealth, and the well-being of our women and children is our real strength.
 
-Choose the Green Building concept for your home’s interiors — and give your loved ones the safety they deserve.
+Choose the Green Building concept for your home’s interiors   and give your loved ones the safety they deserve. Only international-standard Gypsum Plaster can truly offer this level of protection. That’s why we created CERAMIkha   a scientifically crafted product, developed by expert scientists with International standards. It’s far from ordinary. This is an imported, scientifically enhanced, high-performance plaster expertly engineered to ensure 100% safety for women and children.
 
-Only international-standard Gypsum Plaster can truly offer this level of protection. That’s why we created CERAMIkha — a scientifically crafted product, developed by expert scientists with International standards.
-
-It’s far from ordinary. This is an imported, scientifically enhanced, high-performance plaster—expertly engineered to ensure 100% safety for women and children.`,
+`,
     // -------------------------
   },
 ];

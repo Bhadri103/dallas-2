@@ -74,10 +74,10 @@ interface Product {
   nextGenFeatures?: string[];
   brochures?: Brochure[];
   description?: string; // Multi-line string for description
+  ceramikhaBanner?: string; // Multi-line string for description
   comparisonTable?: ComparisonTableData; // For the comparison table
 }
 
-// Component for displaying technical data table
 const TechnicalDataTable = ({ data }: { data: TechDataRow[] }) => (
   <div className="overflow-x-auto">
     <div className="mb-4 flex items-center justify-between">
@@ -107,21 +107,16 @@ const TechnicalDataTable = ({ data }: { data: TechDataRow[] }) => (
 const ProductDetailsPage = () => {
   const { productId } = useParams();
   const navigate = useNavigate();
-
-  // Find the selected product based on the productId from the URL
   const selectedProduct = allProducts.find((p) => p.id === productId) as
     | Product
-    | undefined; // Type assertion
+    | undefined;
 
-  // Scroll to the top of the page when productId changes
   useEffect(() => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
   }, [productId]);
-
-  // If no product is found, display a "Product Not Found" message
   if (!selectedProduct) {
     return (
       <div className="text-center py-20 bg-gray-50 min-h-screen">
@@ -142,17 +137,14 @@ const ProductDetailsPage = () => {
     );
   }
 
-  // Helper function to render the description as a list
   const renderDescription = () => {
     if (!selectedProduct.description) {
       return null;
     }
-
-    // Split the description by double newline characters to get individual paragraphs/points.
     const descriptionPoints = selectedProduct.description
       .split("\n\n")
-      .map((point) => point.trim()) // Trim whitespace from each point
-      .filter((point) => point.length > 0); // Remove any empty points
+      .map((point) => point.trim())
+      .filter((point) => point.length > 0);
 
     if (descriptionPoints.length === 0) {
       return null;
@@ -167,16 +159,14 @@ const ProductDetailsPage = () => {
         <ul className="list-none text-gray-700 space-y-2">
           {descriptionPoints.map((point, idx) => (
             <li key={idx} className="flex items-start">
-              {/* <BadgeCheck className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-1" /> */}
               <p>{point}</p>
-         </li>
+            </li>
           ))}
         </ul>
       </div>
     );
   };
 
-  // Helper function to render the comparison table with icons
   const renderComparisonTable = () => {
     if (!selectedProduct.comparisonTable) {
       return null;
@@ -187,9 +177,7 @@ const ProductDetailsPage = () => {
     return (
       <div className="p-6 bg-white rounded-lg shadow-md">
         <h4 className="font-semibold text-xl text-gray-800 mb-3 flex items-center">
-          <Table className="w-5 h-5 mr-2 text-blue-700" />{" "}
-          {/* Using Table icon */}
-          Product Comparison
+          <Table className="w-5 h-5 mr-2 text-blue-700" /> Product Comparison
         </h4>
         <div className="overflow-x-auto">
           <table className="min-w-full bg-white border border-gray-200 rounded-lg shadow-sm">
@@ -301,7 +289,22 @@ const ProductDetailsPage = () => {
             </p>
           </div>
         )}
-        {renderDescription()}
+        {selectedProduct.ceramikhaBanner && (
+          <div className="flex flex-col md:flex-row items-center gap-4 mb-4">
+            {/* Left Image */}
+            <div className="w-full lg:w-1/2">
+              <img
+                src={selectedProduct.ceramikhaBanner}
+                alt="Banner"
+                className="w-full h-auto rounded-md"
+              />
+            </div>
+
+            {/* Right Content */}
+            <div className="w-full lg:w-1/2">{renderDescription()}</div>
+          </div>
+        )}
+
         <hr className="my-8" />
         <div className="flex flex-col md:flex-row items-start lg:items-stretch gap-8">
           <div className="lg:w-2/5 flex flex-col items-start text-start">
