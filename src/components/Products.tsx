@@ -19,6 +19,7 @@ import {
   drProofProducts,
   ceramikhaProducts,
   heroSlides,
+  matrixProducts,
   brandCategories,
   wallPlasterTechData,
 } from "../data/productsData";
@@ -221,6 +222,24 @@ const ProductsPage = () => {
                 ))}
               </div>
             </div>
+            {/* Ceramikha Products */}
+            <div className="mb-16">
+              <div className="flex items-center mb-8">
+                <div className="flex-grow h-px bg-gradient-to-r from-transparent via-amber-500 to-transparent"></div>
+
+                <h3 className="mx-6 text-2xl md:text-3xl font-bold text-red bg-white px-4 py-2 rounded-full shadow-lg">
+                  Matrix Solutions
+                </h3>
+
+                <div className="flex-grow h-px bg-gradient-to-r from-transparent via-amber-500 to-transparent"></div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {matrixProducts.map((product) => (
+                  <ProductCard key={product.id} product={product} />
+                ))}
+              </div>
+            </div>
+             
 
             <style jsx>{`
               @keyframes fadeIn {

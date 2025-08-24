@@ -8,6 +8,8 @@ import DallasDrM1Bond from "../images/DallasDrM1Bond.jpeg";
 import DallasGypsumPlasty from "../images/DallasGypsmPlasty.png";
 import DallasReadyPlaster from "../images/CombainedProduct/DallasReadyPlasty.png";
 import DallasTileAdhensive from "../images/DallasTileAdhensive.png";
+import MatrixGypsmBond from "../images/matrixgypsmbond.png";
+import Matrixgyp from "../images/matrixgypMatrix.png";
 
 const flexibleServiceOptions = [
   {
@@ -170,7 +172,45 @@ export const wallPlasterTechData = [
   { property: "Drying Time", value: "6-8 hours (surface dry)", isCode: "" },
   { property: "Working Temperature", value: "5°C to 40°C", isCode: "" },
 ];
- 
+ export const gypMatrixTechData = [
+  { property: "Product Name", value: "GypMATRIX International Waterproof Gypsum Plaster", isCode: "" },
+  { property: "Manufacturer", value: "Matrix Wallcare Pvt Ltd", isCode: "" },
+  { property: "Product Code", value: "4001", isCode: "" },
+  { property: "Appearance", value: "Fine, off-white powder", isCode: "" },
+  { property: "Binder Base", value: "High-purity gypsum with waterproof polymers", isCode: "" },
+  { property: "Bulk Density", value: "850 – 950 kg/m³", isCode: "IS 2542 (Part 1/Sec 1)" },
+  { property: "Water Demand", value: "65–70% by weight", isCode: "" },
+  { property: "Pot Life (Workability Time)", value: "25 – 30 minutes", isCode: "" },
+  { property: "Initial Setting Time", value: "7 – 10 minutes", isCode: "IS 2542 (Part 1/Sec 1)" },
+  { property: "Final Setting Time", value: "15 – 20 minutes", isCode: "IS 2542 (Part 1/Sec 1)" },
+  { property: "Coverage (10–12 mm thickness)", value: "1 bag (25 kg) covers approx. 20–22 sq. ft.", isCode: "" },
+  { property: "Recommended Thickness", value: "8–12 mm (walls), 6–8 mm (ceilings)", isCode: "" },
+  { property: "Compressive Strength (7 days)", value: "≥ 7.5 N/mm²", isCode: "IS 2542 (Part 1/Sec 1)" },
+  { property: "Flexural Strength", value: "≥ 3.0 N/mm²", isCode: "IS 2542 (Part 1/Sec 1)" },
+  { property: "Bond Strength to Substrate", value: "≥ 0.8 N/mm²", isCode: "IS 15477:2019" },
+  { property: "Thermal Conductivity", value: "0.35 – 0.40 W/mK", isCode: "IS 3362:1985" },
+  { property: "Fire Resistance", value: "> 2 hours at 750°C", isCode: "IS 3808:2009" },
+  { property: "Water Absorption (Ordinary Gypsum)", value: "18–20%", isCode: "" },
+  { property: "Water Absorption (GypMATRIX)", value: "≤ 6% (3X more waterproof)", isCode: "IS 3085:1986" },
+  { property: "Capillary Water Rise", value: "< 3 mm after 24 hrs", isCode: "" },
+  { property: "Moisture Resistance", value: "Class MR ≥ 85 (Excellent)", isCode: "" },
+  { property: "Application Temperature Range", value: "+5°C to +45°C", isCode: "" },
+  { property: "Shelf Life", value: "12 months", isCode: "" },
+];
+
+// Matrix-specific next-gen features
+const nextGenFeatures_GypMatrix = [
+  "3X Waterproof Protection – Advanced Polymers Technology",
+  "International Quality Standards",
+  "Ready-to-Use – No Curing Required",
+  "Smooth, Paint-Ready Finish – No Wall Putty Needed",
+  "Green Building Certified – Eco-Friendly & Non-Toxic",
+  "Fire-Resistant & Heat-Insulating Properties",
+  "Lightweight Yet 3X Stronger than Ordinary Gypsum",
+  "Fast-Setting Technology – Speeds Up Projects",
+  "No Shrinkage or Cracks – Lifetime Protection",
+  "Superior Durability Compared to Traditional Plasters"
+]
 export const wallPuttyTechData = [
   { property: "Product Name", value: "Dallas Wall Putty", isCode: "" },
   { property: "Manufacturer", value: "Dallas WellCare Pvt Ltd.", isCode: "" },
@@ -618,7 +658,264 @@ comparisonTable: {
  
     },
 ];
+// Matrix Wallcare Product Configuration
+// Add this to your existing products data structure
+  
+export const matrixProducts = [
+  {
+    id: "gypmatrix-gypsum-plaster",
+    name: "Gypsum Bond",
+    category: "Matrix",
+    productTagline: "International Quality • 3X Stronger • 3X Waterproof",
+    tagline: "Next-Generation Wall Care Solutions",
+    image:MatrixGypsmBond, // You'll need to add the actual image import
+    icon: "🔬",
+    price: "For bulk order discount upto 40 %",
+    originalPrice: "₹580/bag",
+    savings: "₹90 per bag",
+    discount: "Bulk Order Benefits",
+    features: ["3X Waterproof Protection", "International Quality", "Ready-to-Use Formula"],
+    benefits: [
+      "3X waterproof protection",
+      "No curing required",
+      "Paint-ready smooth finish",
+      "Green building certified",
+      "Fire-resistant properties",
+      "Lightweight yet strong",
+      "Fast-setting technology",
+      "No shrinkage or cracks",
+      "Heat-insulating",
+      "Eco-friendly & non-toxic"
+    ],
+    specialFeatures: [
+      "Advanced polymer chemistry formulation",
+      "International grade damp-proof technology",
+      "Scientific research-backed product",
+      "Superior alternative to traditional plasters",
+      "Modern construction solution",
+      "Professional-grade performance"
+    ],
+    packageContents: [
+      "GypMATRIX Gypsum Plaster (25 KG bag)",
+      "Technical application guide",
+      "Quality assurance certificate",
+      "Product performance guarantee"
+    ],
+    applicationSteps: [
+      "Ensure surface is clean, dry, and free from dust or loose particles",
+      "Mix GypMATRIX with 65-70% clean water by weight to form a smooth paste",
+      "Apply uniformly using a trowel to achieve 8-12mm thickness for walls",
+      "Level and smooth the surface while the material is workable (25-30 minutes)",
+      "Allow to set completely (15-20 minutes final setting time)",
+      "Surface is ready for direct painting - no putty required"
+    ],
+    usageAreas: [
+      "Home interiors: walls and ceilings",
+      "Commercial and institutional projects",
+      "Decorative surfaces requiring premium finish",
+      "Modern damp-proof construction",
+      "Green building projects"
+    ],
+    warranty: "Lifetime Damp-Proof Guarantee",
+    deliveryTime: "2-3 days",
+    hasTechData: true,
+    techData: gypMatrixTechData,
+    flexibleServiceOptions: flexibleServiceOptions,
+    nextGenFeatures: nextGenFeatures_GypMatrix,
+    brochures: defaultBrochures,
+    matrixBanner: "MatrixBanner", // You'll need to add the actual banner image
+    description: `
+GypMATRIX Gypsum Plaster represents the pinnacle of modern wall care technology. Developed by Matrix Wallcare Pvt Ltd, this international-grade, damp-proof gypsum plaster is engineered to be 3 times more effective than ordinary gypsum plaster.
 
+What sets GypMATRIX apart is its advanced polymer chemistry that delivers 3X waterproof protection while maintaining the ease of application that gypsum is known for. Unlike traditional sand-cement plaster, GypMATRIX requires no curing, sets quickly, and provides a smooth, paint-ready finish that eliminates the need for wall putty.
+
+This isn't just another construction material – it's a scientifically engineered solution that combines international quality standards with practical benefits. The advanced polymers reduce water absorption drastically, from the typical 18-20% of ordinary gypsum to just ≤6%, making it truly 3X more waterproof.
+
+GypMATRIX is Green Building certified, ensuring it's 100% eco-friendly and non-toxic – making it safe for your family while contributing to sustainable construction practices. Its fire-resistant and heat-insulating properties add an extra layer of safety and comfort to your home.
+
+With Matrix Wallcare's commitment to innovation-driven solutions and scientific research, GypMATRIX delivers on the promise of next-generation wall care that's stronger, more durable, and environmentally responsible. Choose GypMATRIX for construction that's built for the future.
+`,
+    
+    comparisonTable: {
+      headers: [
+        "Material",
+        "Waterproof Rating",
+        "Curing Required",
+        "Setting Time",
+        "Finish Quality",
+        "Putty Requirement",
+        "Fire Resistance",
+        "Green Certified",
+        "Strength Factor",
+        "Durability"
+      ],
+      rows: [
+        {
+          "Material": "GypMATRIX Gypsum Plaster",
+          "Waterproof Rating": "3X (≤6% absorption)",
+          "Curing Required": "No",
+          "Setting Time": "15-20 minutes",
+          "Finish Quality": "Paint-Ready Smooth",
+          "Putty Requirement": "Not Required",
+          "Fire Resistance": ">2 hours at 750°C",
+          "Green Certified": "Yes",
+          "Strength Factor": "3X Stronger",
+          "Durability": "Lifetime Protection"
+        },
+        {
+          "Material": "Ordinary Gypsum Plaster",
+          "Waterproof Rating": "Standard (18-20%)",
+          "Curing Required": "No",
+          "Setting Time": "20-30 minutes",
+          "Finish Quality": "Good",
+          "Putty Requirement": "Usually Required",
+          "Fire Resistance": "Standard",
+          "Green Certified": "Basic",
+          "Strength Factor": "Standard",
+          "Durability": "Good"
+        },
+        {
+          "Material": "Sand Cement Plaster",
+          "Waterproof Rating": "Basic",
+          "Curing Required": "Yes (7-28 days)",
+          "Setting Time": "24-48 hours",
+          "Finish Quality": "Requires Putty",
+          "Putty Requirement": "Always Required",
+          "Fire Resistance": "Variable",
+          "Green Certified": "No",
+          "Strength Factor": "Traditional",
+          "Durability": "Crack Risk"
+        }
+      ]
+    }
+  },{
+    id: "gypmatrix-gypsum",
+    name: "Gypsum Matrix",
+    category: "Matrix",
+     productTagline: "International Quality • 3X Stronger • 3X Waterproof",
+    tagline: "Next-Generation Wall Care Solutions",
+    image:Matrixgyp, // You'll need to add the actual image import
+    icon: "🔬",
+    price: "For bulk order discount upto 40 %",
+    originalPrice: "₹580/bag",
+    savings: "₹90 per bag",
+    discount: "Bulk Order Benefits",
+    features: ["3X Waterproof Protection", "International Quality", "Ready-to-Use Formula"],
+    benefits: [
+      "3X waterproof protection",
+      "No curing required",
+      "Paint-ready smooth finish",
+      "Green building certified",
+      "Fire-resistant properties",
+      "Lightweight yet strong",
+      "Fast-setting technology",
+      "No shrinkage or cracks",
+      "Heat-insulating",
+      "Eco-friendly & non-toxic"
+    ],
+    specialFeatures: [
+      "Advanced polymer chemistry formulation",
+      "International grade damp-proof technology",
+      "Scientific research-backed product",
+      "Superior alternative to traditional plasters",
+      "Modern construction solution",
+      "Professional-grade performance"
+    ],
+    packageContents: [
+      "GypMATRIX Gypsum Plaster (25 KG bag)",
+      "Technical application guide",
+      "Quality assurance certificate",
+      "Product performance guarantee"
+    ],
+    applicationSteps: [
+      "Ensure surface is clean, dry, and free from dust or loose particles",
+      "Mix GypMATRIX with 65-70% clean water by weight to form a smooth paste",
+      "Apply uniformly using a trowel to achieve 8-12mm thickness for walls",
+      "Level and smooth the surface while the material is workable (25-30 minutes)",
+      "Allow to set completely (15-20 minutes final setting time)",
+      "Surface is ready for direct painting - no putty required"
+    ],
+    usageAreas: [
+      "Home interiors: walls and ceilings",
+      "Commercial and institutional projects",
+      "Decorative surfaces requiring premium finish",
+      "Modern damp-proof construction",
+      "Green building projects"
+    ],
+    warranty: "Lifetime Damp-Proof Guarantee",
+    deliveryTime: "2-3 days",
+    hasTechData: true,
+    techData: gypMatrixTechData,
+    flexibleServiceOptions: flexibleServiceOptions,
+    nextGenFeatures: nextGenFeatures_GypMatrix,
+    brochures: defaultBrochures,
+    matrixBanner: "MatrixBanner", // You'll need to add the actual banner image
+    description: `
+GypMATRIX Gypsum Plaster represents the pinnacle of modern wall care technology. Developed by Matrix Wallcare Pvt Ltd, this international-grade, damp-proof gypsum plaster is engineered to be 3 times more effective than ordinary gypsum plaster.
+
+What sets GypMATRIX apart is its advanced polymer chemistry that delivers 3X waterproof protection while maintaining the ease of application that gypsum is known for. Unlike traditional sand-cement plaster, GypMATRIX requires no curing, sets quickly, and provides a smooth, paint-ready finish that eliminates the need for wall putty.
+
+This isn't just another construction material – it's a scientifically engineered solution that combines international quality standards with practical benefits. The advanced polymers reduce water absorption drastically, from the typical 18-20% of ordinary gypsum to just ≤6%, making it truly 3X more waterproof.
+
+GypMATRIX is Green Building certified, ensuring it's 100% eco-friendly and non-toxic – making it safe for your family while contributing to sustainable construction practices. Its fire-resistant and heat-insulating properties add an extra layer of safety and comfort to your home.
+
+With Matrix Wallcare's commitment to innovation-driven solutions and scientific research, GypMATRIX delivers on the promise of next-generation wall care that's stronger, more durable, and environmentally responsible. Choose GypMATRIX for construction that's built for the future.
+`,
+    
+    comparisonTable: {
+      headers: [
+        "Material",
+        "Waterproof Rating",
+        "Curing Required",
+        "Setting Time",
+        "Finish Quality",
+        "Putty Requirement",
+        "Fire Resistance",
+        "Green Certified",
+        "Strength Factor",
+        "Durability"
+      ],
+      rows: [
+        {
+          "Material": "GypMATRIX Gypsum Plaster",
+          "Waterproof Rating": "3X (≤6% absorption)",
+          "Curing Required": "No",
+          "Setting Time": "15-20 minutes",
+          "Finish Quality": "Paint-Ready Smooth",
+          "Putty Requirement": "Not Required",
+          "Fire Resistance": ">2 hours at 750°C",
+          "Green Certified": "Yes",
+          "Strength Factor": "3X Stronger",
+          "Durability": "Lifetime Protection"
+        },
+        {
+          "Material": "Ordinary Gypsum Plaster",
+          "Waterproof Rating": "Standard (18-20%)",
+          "Curing Required": "No",
+          "Setting Time": "20-30 minutes",
+          "Finish Quality": "Good",
+          "Putty Requirement": "Usually Required",
+          "Fire Resistance": "Standard",
+          "Green Certified": "Basic",
+          "Strength Factor": "Standard",
+          "Durability": "Good"
+        },
+        {
+          "Material": "Sand Cement Plaster",
+          "Waterproof Rating": "Basic",
+          "Curing Required": "Yes (7-28 days)",
+          "Setting Time": "24-48 hours",
+          "Finish Quality": "Requires Putty",
+          "Putty Requirement": "Always Required",
+          "Fire Resistance": "Variable",
+          "Green Certified": "No",
+          "Strength Factor": "Traditional",
+          "Durability": "Crack Risk"
+        }
+      ]
+    }
+  }
+];
 export const drProofProducts = [
   {
     id: "dr-proof-m1-bond",
@@ -740,6 +1037,7 @@ Choose the Green Building concept for your home’s interiors   and give your lo
 export const allProducts = [
   ...dallasProducts,
   ...drProofProducts,
+   ...matrixProducts,
   ...ceramikhaProducts,
 ];
 

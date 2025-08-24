@@ -301,7 +301,7 @@ const ProductDetailsPage = () => {
             </div>
 
             {/* Right Content */}
-            <div className="w-full lg:w-1/2">{renderDescription()}</div>
+            <div className="w-full lgno:w-1/2">{renderDescription()}</div>
           </div>
         )}
 
@@ -416,7 +416,7 @@ const ProductDetailsPage = () => {
             </div>
           )}
         {selectedProduct.comparisonTable && renderComparisonTable()}
-        {selectedProduct.brochures && selectedProduct.brochures.length > 0 && (
+        {/* {selectedProduct.brochures && selectedProduct.brochures.length > 0 && (
           <div className="p-6 bg-white rounded-lg shadow-md">
             <h5 className="font-semibold text-xl mb-4 flex items-center">
               <Download className="w-5 h-5 mr-2 text-blue-700" />
@@ -438,7 +438,7 @@ const ProductDetailsPage = () => {
               ))}
             </div>
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );
