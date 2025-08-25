@@ -3,7 +3,9 @@ import Slider from "../components/Slider";
 import AnimatedSection from "../components/AnimatedSection";
 import { ArrowRight, Shield, Star, Users } from "lucide-react";
 import HomeProducts from "../components/HomeProducts";
-
+import Banner1 from "../images/Wallputt.png";
+import DallasBanner from "../images/DallasBanner.png";
+import ceramikhaBanner from "../images/Ceramic.png";
 const Aafee = "./images/Aafee.png";
 const Banner = "./images/Banner.jpeg";
 const Ceramikha = "./images/Ceramikha.png";
@@ -16,6 +18,24 @@ const DallasSupremeGyplast = "./images/SupremeGplastSingle.png";
 const DallasTileAdhensive = "./images/DallasTileAdhensive.png";
 const SupremeGplast = "./images/SupremeGplastWhite.png";
 
+// const homeSlides = [
+//   {
+//     image: Banner1,
+//     title: "India's 1st Next-Gen Damp Proof Wall Care Products",
+//     description:
+//       "Revolutionizing construction with innovative waterproof solutions",
+//   },
+//   {
+//     image: DallasBanner,
+//     title: "Scientific Excellence",
+//     description: "Backed by advanced research and cutting-edge technology",
+//   },
+//   {
+//     image: ceramikhaBanner,
+//     title: "Trusted by Thousands",
+//     description: "Over 15,000 successful projects across South India",
+//   },
+// ];
 const homeSlides = [
   {
     image: "https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg",
@@ -58,7 +78,7 @@ const features = [
 
 const Home = () => {
   return (
-    <div className="bg-gradient-to-b from-white via-gray-50 to-gray-100 min-h-screen">
+    <div className="bg-gradient-to-b from-white via- -50 to-gray-100 min-h-screen">
       <Slider slides={homeSlides} effect="fade" />
 
       <div className="container mx-auto px-6 py-20 ">

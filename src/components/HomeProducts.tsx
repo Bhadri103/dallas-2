@@ -45,6 +45,13 @@ const ProductsPage = () => {
       image: makado,
       description: "Professional waterproofing solutions",
     },
+    {
+      id: "Matrix",
+      name: "Matrix",
+      tagline: "India's 1st Next-Gen Wallcare products",
+      image: matrixgypMatrix,
+      description: "Professional waterproofing solutions",
+    },
   ];
   const dallasProducts = [
     {
@@ -236,7 +243,48 @@ const ProductsPage = () => {
               ))}
             </div>
           </div>
+      <div className="mb-16">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                <span className="text-red-600">Matrix</span> Products
+              </h3>
+              <p className="text-xl text-gray-600">
+                India's 1st Next-Gen Wallcare products
+              </p>
+            </div>
 
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {matrixProducts.map((product) => (
+                <div
+                  key={product.id}
+                  className="bg-white p-4 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer flex flex-col"
+                  onClick={() => navigate(`/products/${product.id}`)}
+                >
+                  <div className="relative">
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full h-48 object-contain"
+                    />
+                  </div>
+                  <div className="p-4 flex flex-col flex-grow justify-between">
+                    <h4 className="font-semibold text-center text-gray-800 text-lg mb-4">
+                      {product.name}
+                    </h4>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        navigate(`/products/${product.id}`);
+                      }}
+                      className="mt-auto inline-flex items-center justify-center bg-red-600 text-white text-md font-semibold px-4 py-2 rounded-full shadow-md hover:bg-red-700 hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-0.5 self-center"
+                    >
+                      Know More <ArrowRight className="ml-2 w-4 h-4" />
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div> 
+          </div>
           <div className="mb-16">
             <div className="text-center mb-8">
               <h3 className="text-2xl md:text-3xl font-bold mb-4">
@@ -279,48 +327,7 @@ const ProductsPage = () => {
               ))}
             </div> 
           </div>
-          <div className="mb-16">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                <span className="text-red-600">Matrix</span> Products
-              </h3>
-              <p className="text-xl text-gray-600">
-                India's 1st Next-Gen Wallcare products
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {matrixProducts.map((product) => (
-                <div
-                  key={product.id}
-                  className="bg-white p-4 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer flex flex-col"
-                  onClick={() => navigate(`/products/${product.id}`)}
-                >
-                  <div className="relative">
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="w-full h-48 object-contain"
-                    />
-                  </div>
-                  <div className="p-4 flex flex-col flex-grow justify-between">
-                    <h4 className="font-semibold text-center text-gray-800 text-lg mb-4">
-                      {product.name}
-                    </h4>
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        navigate(`/products/${product.id}`);
-                      }}
-                      className="mt-auto inline-flex items-center justify-center bg-red-600 text-white text-md font-semibold px-4 py-2 rounded-full shadow-md hover:bg-red-700 hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-0.5 self-center"
-                    >
-                      Know More <ArrowRight className="ml-2 w-4 h-4" />
-                    </button>
-                  </div>
-                </div>
-              ))}
-            </div> 
-          </div>
+    
           <div className="w-full flex justify-center">
             <button
               onClick={() => navigate("/products")}
